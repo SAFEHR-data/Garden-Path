@@ -28,7 +28,8 @@ website:
           - access/accessing_virtual_machines.qmd
       - section: "Accessing EHR and DICOM data"
         contents:
-          - notebooks/researcher_journey.ipynb
+          - notebooks/data_lake_access.ipynb
+          - notebooks/dicom_access.ipynb
   repo-url: https://github.com/UCLH-DIF/End-User-Docs
   repo-actions: [edit, issue]
 
