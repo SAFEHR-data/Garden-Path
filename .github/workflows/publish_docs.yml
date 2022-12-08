@@ -1,0 +1,26 @@
+on:
+  push:
+    branches:
+      - main
+workflow_dispatch:
+
+name: Publish Quarto Docs
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Render Quarto Projectr
+        uses: quarto-dev/quarto-actions/render@v2
+        with:
+          to: html
+          path: docs
+

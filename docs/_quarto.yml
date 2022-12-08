@@ -1,0 +1,39 @@
+project:
+  type: website
+  title: "A FlowEHR User Guidebook"
+  preview:
+    port: 8100
+
+execute:
+  freeze: auto
+
+website:
+  title: "FlowEHR User documentation"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+    right:
+      - icon: github
+        href: https://github.com/UCLH-DIF/FlowEHR
+        aria-label: GitHub
+  page-navigation: true  # navigate from one page to the next
+  page-footer: |
+    FlowEHR user documentation
+  sidebar:
+    style: "docked"
+    contents:
+      - section: "Accessing the TRE"
+        contents:
+          - access/accessing_virtual_machines.qmd
+      - section: "Accessing EHR and DICOM data"
+        contents:
+          - notebooks/researcher_journey.ipynb
+  repo-url: https://github.com/UCLH-DIF/End-User-Docs
+  repo-actions: [edit, issue]
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
