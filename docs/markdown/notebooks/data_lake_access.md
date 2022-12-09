@@ -1,13 +1,8 @@
 
 # Accessing EHR data from the TRE
 
-As a researcher, I want to
-
--\[X\] access (EHR, reports) data stored in the ADSL storage  
--\[ \] access DICOM data in the Azure DICOM service  
--\[ \] load DICOM images  
--\[ \] match radiology reports to images  
--\[ \] perform basic analysis (report completeness etc)
+This notebook describes the process of accessing EHR data stored within
+a TRE-accessible Azure Data Lake Storage Gen2 (ADLS) instance.
 
 ### Authenticate with Azure
 
@@ -26,7 +21,7 @@ input_data_fs_name="data-lake-storage-flowehr-dev"
 gold_zone_path="GoldZone/patients/"
 ```
 
-Import dependencies and define functions to query data
+### Import dependencies and define functions to query data
 
 ``` python
 #Function definitions inspired by MS docs
@@ -36,6 +31,7 @@ from azure.storage.filedatalake import DataLakeServiceClient
 from azure.core._match_conditions import MatchConditions
 from azure.storage.filedatalake._models import ContentSettings
 from azure.identity import DefaultAzureCredential, AzureCliCredential
+
 def initialize_storage_account_ad(storage_account_name):
     try:  
         global service_client
@@ -106,10 +102,6 @@ List the contents of the specified directory within the ADLS file system
 available_files = list_directory_contents(storage_account_name, input_data_fs_name, gold_zone_path)
 ```
 
-``` python
-available_files
-```
-
 Download all files found
 
 ``` python
@@ -128,17 +120,4 @@ download_file_from_directory(storage_account_name, input_data_fs_name, gold_zone
 import pandas as pd
 local_df = pd.read_parquet(f"downloaded_data/{available_files[0].rsplit('/',1)[-1]}")
 local_df.head()
-```
-
-### Optional - Creating new directories within ADLS Gen2 storage
-
-Potentially not a path we want users going down - can be prevented with
-correct RBAC settings
-
-``` python
-create_directory(storage_account_name, input_data_fs_name, "documentation-notebooks")
-```
-
-``` python
-upload_file_to_directory(storage_account_name, input_data_fs_name, "documentation-notebooks", "data_lake_access.ipynb", "./data_lake_access.ipynb")
 ```

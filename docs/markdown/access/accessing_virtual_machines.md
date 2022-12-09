@@ -9,7 +9,8 @@ setup to access a Jupyter notebook once inside the VM.
 
 ## Creating a new VM
 
-1.  Visit <https://flowehrtre.uksouth.cloudapp.azure.com/>
+1.  Visit the FlowEHR Azure TRE landing page URL (please request from a
+    member of the team)
 2.  Select an appropriate Workspace from the list provided
 3.  Under `Workspace Services`, select the `VMs` option
 4.  Under `Resources`, you will see any previously created VMs. If there
@@ -44,7 +45,7 @@ setup to access a Jupyter notebook once inside the VM.
 
 ## Connecting to a created VM
 
-1.  Visit https://flowehrtre.uksouth.cloudapp.azure.com/
+1.  Visit the FlowEHR Azure TRE landing page URL
 2.  Select an appropriate Workspace from the list provided
 3.  Under `Workspace Services`, select the `VMs` option
 4.  Under `Resources`, you will see any previously created VMs
