@@ -4,9 +4,9 @@ format: html
 ---
 As a user of FlowEHR you will need to create a virtual machine (VM) within an Azure Workspace in order to access FlowEHR assets within a secure Trusted Research Environment (TRE). The following instructions describe the process of VM creation and access, as well as some initial setup to access a Jupyter notebook once inside the VM.
 
-## Creating a new VM  
+## Creating a new VM
 
-1. Visit [https://flowehrtre.uksouth.cloudapp.azure.com/](https://flowehrtre.uksouth.cloudapp.azure.com/)
+1. Visit the FlowEHR Azure TRE landing page URL (please request from a member of the team)
 2. Select an appropriate Workspace from the list provided
 3. Under `Workspace Services`, select the `VMs` option
 4. Under `Resources`, you will see any previously created VMs. If there are none, select `Create New` in the upper right
@@ -27,7 +27,7 @@ As a user of FlowEHR you will need to create a virtual machine (VM) within an Az
 2. Select `Action > Start`
 
 ## Connecting to a created VM
-1. Visit https://flowehrtre.uksouth.cloudapp.azure.com/
+1. Visit the FlowEHR Azure TRE landing page URL
 2. Select an appropriate Workspace from the list provided
 3. Under `Workspace Services`, select the `VMs` option
 4. Under `Resources`, you will see any previously created VMs
@@ -37,6 +37,3 @@ As a user of FlowEHR you will need to create a virtual machine (VM) within an Az
 1. Select the three dots at the upper right of the VM entry under `Resources`
 2. Select `Action > Stop`
 3. When the VM has been deallocated, repeat step 1. and select `Delete`
-
-
-
