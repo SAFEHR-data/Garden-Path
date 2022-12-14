@@ -110,8 +110,4 @@ pip install -r requirements.txt
 
 Data provided has gone through an anonymisation step and will not entirely look like the original data due to the removal of PII and consequent structural changes that may appear as a result, such as line break removals.
 
-
-
-
-
-
+As such, structural elements of reports such as line breaks or sentence lengths should **not** be used to generate features as inputs to machine learning models.
