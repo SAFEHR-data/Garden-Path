@@ -98,3 +98,20 @@ conda install jupyterlab ipykernel
 python -m ipykernel install --user --name=my_env
 jupyter lab
 ```
+## Accessing EHR and DICOM data within the TRE
+This documentation is accompanied by Jupyter notebook files which provide detailed examples of accessing and viewing EHR and DICOM data from within a Jupyter Lab environment within a TRE VM.
+
+Before launching the notebooks and after following the steps in the [above example](#example-using-a-virtual-environment-within-a-jupyter-notebook), install required dependencies within your created virtual environment with
+```bash
+pip install -r requirements.txt
+```
+
+### A note on the data accessible from the TRE
+
+Data provided has gone through an anonymisation step and will not entirely look like the original data due to the removal of PII and consequent structural changes that may appear as a result, such as line break removals.
+
+
+
+
+
+
