@@ -141,7 +141,7 @@ Within this environment, navigate to the example notebooks provided. When runnin
 
 This documentation is accompanied by Jupyter notebook files which provide detailed examples of accessing and viewing EHR and DICOM data from within a Jupyter Lab environment within a TRE VM.
 
-Before launching the notebooks and after following the steps in the [above example](#example-running-a-jupyter-notebook-from-this-documentation-with-with-a-virtual-environment), install required dependencies within your created virtual environment with
+Before launching the notebooks and after following the steps in the [above example](#example-running-a-jupyter-notebook-from-this-documentation-within-a-virtual-environment), install required dependencies within your created virtual environment with
 
 ```bash
 pip install -r requirements.txt
