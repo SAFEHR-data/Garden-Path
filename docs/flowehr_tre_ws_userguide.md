@@ -90,7 +90,7 @@ configuration can only be changed by the TRE administrators
 
 Gitea is used in the TRE to mirror code repositories from the internet.
 You can browse the repositories available in Gitea from your Workspace
-VM using the URL https://gitea-&lt;tre-id&gt;.azurewebsites.com.
+VM using the URL https://gitea-*[tre-id]*.azurewebsites.com.
 *(Check with your TRE administrator for the correct URL)*
 
 Contact your TRE administrator if you need to add a git repository to
@@ -112,7 +112,7 @@ pull from the Nexus server rather than directly from the internet.
 
 You can explore the available repositories mirrored by the Nexus
 server from your VM using
-https://nexus-&lt;tre-id&gt;.&lt;location&gt;.azurewebsites.com.
+https://nexus-*[tre-id]*.*[location]*.azurewebsites.com.
 *(Check with your TRE administrator for the correct URL)*
 
 Click on the 'Browse' link to see the full list of repositories
