@@ -103,6 +103,12 @@ the Workspace Owner has added a Virtual Machines Service to the Workspace,
 users can connect to the service and add Virtual Machines for their personal
 use.
 
+From the Workspace Overview page, you can find important information about your
+workspace by clicking the details tab. One key piece of inoformation here is the 
+'Workspace id'. This is a four-character code, that is appended to the names of 
+the resources deployed in your workspace. Workspace ID can be useful to know when
+you are connecting to resources such as [AMLS](#azure-machine-learning-services-amls)
+
 ### Access a Virtual Machine
 
 Look for the Virtual Machines or Virtual Desktops Service in the Services 
@@ -137,10 +143,19 @@ url' which you can use to access the AMLS service from your Virtual Machine.
 
 ![](assets/amls-url.png)
 
-An alternative to copy and pasting this URL, is simple to note down the 
-'Azureml workspace name' from the details tab. Then from within your 
+An alternative to copy and pasting this URL, is simple to note down workspace id. 
+Then from within your 
 workspace VM, navigate to 'https://ml.azure.com' and logon. You will be asked 
-to select the workspace that you wish to connect to
+to select the workspace that you wish to connect to. 
+
+First sign-in using the same credentials that you use to access the TRE. Then 
+navigate to Workspace and select the workspace corresponding to your TRE 
+Workspace ID (the resource group for the workspace contains the workspace id 
+as its last four characters):
+
+![](assets/aml-workspace.png)
+
+
 
 ## Shared Services
 
