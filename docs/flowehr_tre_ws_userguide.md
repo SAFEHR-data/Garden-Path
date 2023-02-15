@@ -124,7 +124,10 @@ you have access to:
 
 The Virtual Machines in your Workspace
 allow you to interact with the private resources in the Workspace
-and with the Shared Services common to all workspaces.
+and with the Shared Services common to all workspaces. When you connect
+to a VM that you have created, you will be automatically logged-in with
+a user account with administrator rights. So, on a Linux VM, you will be
+able to run privileged commands via `sudo`. 
 
 Detailed instructions for using a VM can be found in the
 [Accessing Virtual Machines](accessing_virtual_machines.md) document
@@ -171,7 +174,7 @@ configuration can only be changed by the TRE administrators
 
 Gitea is used in the TRE to mirror code repositories from the internet.
 You can browse the repositories available in Gitea from your Workspace
-VM using the URL ```https://gitea-[TRE-ID].azurewebsites.com```.
+VM using the URL ```https://gitea-[TRE-ID].azurewebsites.net```.
 *(Check with your TRE administrator for the correct URL)*
 
 Contact your TRE administrator if you need to add a git repository to
@@ -193,8 +196,31 @@ pull from the Nexus server rather than directly from the internet.
 
 You can explore the available repositories mirrored by the Nexus
 server from your VM using
-```https://nexus-[TRE-ID].[LOCATION].azurewebsites.com```.
+```https://nexus-[TRE-ID].[LOCATION].cloudapp.azure.com```.
 *(Check with your TRE administrator for the correct URL)*
 
 Click on the 'Browse' link to see the full list of repositories
-that are in the Nexus mirror.
+that are in the Nexus mirror. 
+
+![](assets/nexus-browse.png)
+
+If you need to configure an application to use a nexus repo, 
+you can click the 'copy' button in 
+the URL column for the mirror that you are interested in. Then 
+you can set your application to use this mirror. 
+
+For instance, 
+if you want to configure python to use the pypi mirror on the Nexus
+server you could type: 
+
+    pip config --user set global.index https://nexus-[TRE-ID].[LOCATION].cloudapp.azure.com/repository/pypi/pypi
+    pip config --user set global.index-url https://nexus-[TRE-ID].[LOCATION].cloudapp.azure.com/pypi/simple
+    pip config --user set global.trusted-host nexus-[TRE-ID].[LOCATION].cloudapp.azure.com
+
+For Python, you may find that this has already been setup on your VM. You can check this by running:
+
+    pip config list
+
+Similarly, on a Linux VM, the VM will be configured to use the apt repositories from Nexus. 
+If you run `sudo apt update`, you will see that apt will only search for updates from the
+Nexus server.
