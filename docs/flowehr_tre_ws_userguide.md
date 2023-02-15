@@ -3,6 +3,7 @@
 ## Table of Contents
 
 - [Welcome to your FlowEHR TRE Workspace](#welcome-to-your-flowehr-tre-workspace)
+- [Getting Started](#getting-started)
 - [The TRE Landing Page](#the-tre-landing-page)
 - [Using a Workspace](#using-a-workspace)
 - [Shared Services](#shared-services)
@@ -24,6 +25,13 @@ resources and Workspace data restricted to the users assigned to the Workspace.
 Users from other Workspaces will not be able to see or interact with your
 Workspace resources or data.
 
+## Getting Started
+
+Your TRE administrator will provide you with the following information:
+1) Account details to logon and access TRE resources
+2) The address for the TRE Portal
+3) One or more Workspace IDs
+
 
 ## The TRE Landing Page
 
@@ -35,44 +43,117 @@ To get access to your TRE Workspace, you must first logon to the TRE portal.
 Your TRE administrator will provide you with the URL to access the portal along
 with a logon id that grants you access to Workspace resources.
 
-Once logged-in, you will see the TRE Landing Page, displaying:
+Once logged-in, you will see the TRE Landing Page:
 
-1. The TRE Header
-2. The TRE navigation side-panel and
-3. The 'Workspaces' page
+![](assets/tre-landing-page.png)
 
-The 'Workspaces' page contains Widget(s) for the Workspaces that you have been
-granted access to.
+The main components of the Landing Page are:
 
-Each Widget consists of a:
+1. [The TRE Header](#the-tre-header)
+2. [The TRE Navigation Side-Panel](#the-navigation-side-panel)
+3. [The 'Workspaces' Pane](#the-workspace-pane)
+4. The TRE Footer
 
-1. Name
-2. Description
-3. Information Button
-4. Breadcrumb Menu
+### The TRE Header
 
-Clicking the 'Name' field of a Workspace widget will connect you to the Workspace.
+![](assets/tre-header.png)
+
+The TRE Header contains the following links:
+
+1. The home link - a half-full (we're optimists) beaker named 'Azure TRE'. Use this link to return to the Landing Page from any location within the TRE application. 
+2. A notifications bell - an icon which can be used for quick access to any notifications you may have
+3. An account link - you can use this link to logout of the TRE 
+
+### The Navigation Side-Panel
+
+![](assets/side-panel.png)
+
+The Navigation Side-Panel provides context-sensitive navigation within the TRE application. 
+
+### The Workspace Pane
+
+![](assets/workspace-pane.png)
+
+The 'Workspaces' Pane contains Card(s) for the Workspaces that you have been granted access to in the TRE.
+
+Each Card displays:
+
+1. The Workspace Name
+2. Description for the Workspace
+3. An information button
+4. A Cost-Notifier button: displays the accumulated costs for the workspace
+
+Clicking the Workspace Name or a blank space on a Workspace Card will connect you to the Workspace. 
+
 
 ## Using a Workspace
 
 Once connected to a workspace, you'll be able to see the services installed in
 the Workspace and also the Shared Services available to all Workspaces.
 
+![](assets/workspace-services.png)
+
+The 'Create New' button can be used to add services to the Workspace. 
 Only TRE Administrators or Workspace Owners can add Services to a Workspace.
+
 However, certain Workspace Services provide User Resources which enable all
 workspace users to add these resources to the Workspace. Specifically,
-the Virtual Desktop Service provides a Virtual Machine User Resource. Once
-the Workspace Owner has added a Virtual Desktop Service to the Workspace,
+the Virtual Machines Service provides a Virtual Machine User Resource. Once
+the Workspace Owner has added a Virtual Machines Service to the Workspace,
 users can connect to the service and add Virtual Machines for their personal
 use.
+
+From the Workspace Overview page, you can find important information about your
+workspace by clicking the details tab. One key piece of information here is the 
+'Workspace id'. This is a four-character code, that is appended to the names of 
+the resources deployed in your workspace. Workspace ID can be useful to know when
+you are connecting to resources such as [AMLS](#azure-machine-learning-services-amls)
+
+### Access a Virtual Machine
+
+Look for the Virtual Machines or Virtual Desktops Service in the Services 
+section of your workspace:
+
+![](assets/vm-service.png)
+
+Avoid the 'connect' button and instead click on the title of the Virtual Machines
+Service Card. This will take you to a page showing all the Virtual Machines that
+you have access to: 
+
+![](assets/vm-resources.png)
 
 The Virtual Machines in your Workspace
 allow you to interact with the private resources in the Workspace
 and with the Shared Services common to all workspaces.
 
 Detailed instructions for using a VM can be found in the
-[Accessing Virtual Machines](accessing_virtual_machines.md)
-document
+[Accessing Virtual Machines](accessing_virtual_machines.md) document
+
+### Azure Machine Learning Services (AMLS)
+
+The Azure Machine Learning Services in your workspace are provisioned in 
+a private virtual network - there is no direct access to the service over 
+the internet. Because the Virtual Machines are deployed to the same private
+network as AMLS, you can connect to AMLS from within a Virtual Machine.
+
+You'll need to know the URL to use for connecting. Click on the Azure Machine
+Learning service in your workspace then select the details tab. Towards the 
+bottom left of this page you will see the value for the 'internal connection
+url' which you can use to access the AMLS service from your Virtual Machine. 
+
+![](assets/amls-url.png)
+
+An alternative to copy and pasting this URL, involves using your Workspace ID 
+(which you can find in the via Workspace > Overview > Details). Having
+logged-on to your workspace VM, navigate to 'https://ml.azure.com' and 
+sign-in using the same credentials that you use to access the TRE. Then 
+navigate to 'Workspaces' and select the workspace corresponding to your TRE 
+Workspace ID (the resource group for the workspace contains the workspace id 
+as its last four characters):
+
+![](assets/aml-workspace.png)
+
+
 
 ## Shared Services
 
