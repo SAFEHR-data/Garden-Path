@@ -124,7 +124,10 @@ you have access to:
 
 The Virtual Machines in your Workspace
 allow you to interact with the private resources in the Workspace
-and with the Shared Services common to all workspaces.
+and with the Shared Services common to all workspaces. When you connect
+to a VM that you have created, you will be automatically logged-in with
+a user account with administrator rights. So, on a Linux VM, you will be
+able to run privileged commands via `sudo`. 
 
 Detailed instructions for using a VM can be found in the
 [Accessing Virtual Machines](accessing_virtual_machines.md) document
@@ -201,9 +204,12 @@ that are in the Nexus mirror.
 
 ![](assets/nexus-browse.png)
 
-If you need to use the a mirror, you can click the 'copy' button in 
+If you need to configure an application to use a nexus repo, 
+you can click the 'copy' button in 
 the URL column for the mirror that you are interested in. Then 
-you can set your application to use this mirror. For instance, 
+you can set your application to use this mirror. 
+
+For instance, 
 if you want to configure python to use the pypi mirror on the Nexus
 server you could type: 
 
@@ -214,3 +220,7 @@ server you could type:
 For Python, you may find that this has already been setup on your VM. You can check this by running:
 
     pip config list
+
+Similarly, on a Linux VM, the VM will be configured to use the apt repositories from Nexus. 
+If you run `sudo apt update`, you will see that apt will only search for updates from the
+Nexus server.
