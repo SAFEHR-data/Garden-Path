@@ -27,7 +27,7 @@ Workspace resources or data.
 
 ## Getting Started
 
-You're TRE administrator will provide you with the following information:
+Your TRE administrator will provide you with the following information:
 1) Account details to logon and access TRE resources
 2) The address for the TRE Portal
 3) One or more Workspace IDs
@@ -104,7 +104,7 @@ users can connect to the service and add Virtual Machines for their personal
 use.
 
 From the Workspace Overview page, you can find important information about your
-workspace by clicking the details tab. One key piece of inoformation here is the 
+workspace by clicking the details tab. One key piece of information here is the 
 'Workspace id'. This is a four-character code, that is appended to the names of 
 the resources deployed in your workspace. Workspace ID can be useful to know when
 you are connecting to resources such as [AMLS](#azure-machine-learning-services-amls)
@@ -134,7 +134,7 @@ Detailed instructions for using a VM can be found in the
 The Azure Machine Learning Services in your workspace are provisioned in 
 a private virtual network - there is no direct access to the service over 
 the internet. Because the Virtual Machines are deployed to the same private
-network as AMLS, you can connect to the AMLS from within a Virtual Machine.
+network as AMLS, you can connect to AMLS from within a Virtual Machine.
 
 You'll need to know the URL to use for connecting. Click on the Azure Machine
 Learning service in your workspace then select the details tab. Towards the 
@@ -143,13 +143,11 @@ url' which you can use to access the AMLS service from your Virtual Machine.
 
 ![](assets/amls-url.png)
 
-An alternative to copy and pasting this URL, is simple to note down workspace id. 
-Then from within your 
-workspace VM, navigate to 'https://ml.azure.com' and logon. You will be asked 
-to select the workspace that you wish to connect to. 
-
-First sign-in using the same credentials that you use to access the TRE. Then 
-navigate to Workspace and select the workspace corresponding to your TRE 
+An alternative to copy and pasting this URL, involves using your Workspace ID 
+(which you can find in the via Workspace > Overview > Details). Having
+logged-on to your workspace VM, navigate to 'https://ml.azure.com' and 
+sign-in using the same credentials that you use to access the TRE. Then 
+navigate to 'Workspaces' and select the workspace corresponding to your TRE 
 Workspace ID (the resource group for the workspace contains the workspace id 
 as its last four characters):
 
