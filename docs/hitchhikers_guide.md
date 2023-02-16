@@ -20,23 +20,6 @@
 
 # Pip Envs
 - Pip environments have also been configured to work with `Nexus`. 
-SPOTlight Data
-￼
-
-Id
-5cbce1b2-768f-4161-b4ff-ce45db2ada5d
-
-Creator
-AA
-AL-HINDAWI, Ahmed (UNIVERSITY COLLEGE LONDON HOSPITALS NHS FOUNDATION TRUST)
-Type
-import
-
-Status
-approved
-
-Workspace
-
 - This means that any `pip install` command should work out of the box
 - We advise that you create a conda environment (as above), and install any packages that are not in conda using `pip` within that conda environment
 
@@ -45,26 +28,8 @@ There is an installation of Visual Studio Code but has limited functionality for
 
 # R/RStudio
 - There is an installation of R (version 4.1) and RStudio with basic packages.
-- A mirror of packages available on CRAN has been developed and thus the installation of package is possible:
-	- Specifically, rstan and brms installatio
-SPOTlight Data
-￼
-
-Id
-5cbce1b2-768f-4161-b4ff-ce45db2ada5d
-
-Creator
-AA
-AL-HINDAWI, Ahmed (UNIVERSITY COLLEGE LONDON HOSPITALS NHS FOUNDATION TRUST)
-Type
-import
-
-Status
-approved
-
-Workspace
-
-- Copy and paste the link from the azure machine learning details 
+- A mirror of packages available on CRAN has been developed and thus the installation of packages is possible:
+	- Specifically, we've tested `rstan` and `brms` installations as they require downloading and compilation capabilities.
 
 # Airlock
 To transfer files into the workspace/VM - there are two things you'll need:
