@@ -11,20 +11,18 @@
 - Use the machine with the lowest resources (CPU and RAM) that facilitates your work. This can always be upgraded later if you need. We recommend starting at `CPU=2, RAM=8GB`
 - Wait for your VM to load, this might take a couple of minutes. You might need to refresh your screen to ensure that the VM has been deployed/provisioned/available.
 
-# Conda Envs
+# Python
+## Conda Environments
 - Conda has been configured to use a local mirror of `conda` and `conda-forge` in a framework called Nexus. This means that you will have access to most, but not all, packages and some of them will be outdated. 
 - There are some conda environments that have already been made with pytorch/tensorflow/automl. Ideally those should be used in the first instance and packages can be added to that.
 - If you wish to create your own environment, ensure that you have activated your base conda environment using `conda activate` prior to creating any other conda environments
 - If you do wish to install other conda-like installers (e.g. `mamba`), ensure that the base conda environment has been activated so that the configuration files for `Nexus` has migrated into the mamba configuration. 
 	- You'll probably have more success with `conda-forge` as your default channel as `Nexus` mirrors that more successfully. To do this, run: `conda config --add channels conda-forge`
 
-# Pip Envs
+## Pip Environments
 - Pip environments have also been configured to work with `Nexus`. 
 - This means that any `pip install` command should work out of the box
 - We advise that you create a conda environment (as above), and install any packages that are not in conda using `pip` within that conda environment
-
-# Visual Studio Code
-There is an installation of Visual Studio Code but has limited functionality for extensions due to security reasons. It also does not have access to 
 
 # R/RStudio
 - There is an installation of R (version 4.1) and RStudio with basic packages.
@@ -54,3 +52,12 @@ To transfer files into the workspace/VM - there are two things you'll need:
 - Go back to the Azure TRE, you should still have the dialog with the Airlock open on the right hand size. If you have closed it, you can double click on the title of your upload that you created. Click on `Submit`.
 - This will now require a person to approve the ingress of the data into the Azure TRE. You can view the progress of this from this screen.
 - Once approved, your files will be located in the workspace
+
+
+# Integrated Development Environments (IDEs)
+
+## Visual Studio Code
+There is an installation of Visual Studio Code but has limited functionality for extensions due to security reasons. It also does not have access to Remote Extensions and thus docker installations within Remote Extensions is not currently possible.
+
+## PyCharm Community Edition
+There is an installation of PyCharm, it is the community edition and is thus limited in scope and it also does not have support for external extensions for the security reasons.
