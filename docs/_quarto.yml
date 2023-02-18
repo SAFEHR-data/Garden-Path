@@ -1,0 +1,50 @@
+project:
+  type: website
+  preview:
+    port: 8235
+
+execute:
+  freeze: auto
+
+website:
+  title: "FlowEHR Hitch-Hiking"
+  description: "End user documentation for FlowEHR"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: https://www.flowehr.io
+        text: About
+    right:
+      - icon: github
+        href: https://github.com/UCLH-Foundry/FlowEHR-Hitchhiker-Guide
+        aria-label: GitHub
+  page-navigation: true
+  page-footer: |
+    Built for the NHS | Developed at UCLH | 2021-2023
+  sidebar:
+    style: docked
+    contents:
+      - section: User orientation
+        contents:
+          - href: ./accessing_virtual_machines.qmd
+          - href: ./flowehr_tre_ws_userguide.qmd
+          - href: ./hitchhikers_guide.qmd
+      - section: "User Contributions"
+        contents:
+          - notebooks/contributing.qmd
+          - notebooks/vignettes.qmd
+  repo-url: https://github.com/UCLH-Foundry/FlowEHR-Hitchhiker-Guide
+  repo-actions: [edit, issue]
+  repo-subdir: docs
+          
+        
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+
+

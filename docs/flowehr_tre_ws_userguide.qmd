@@ -1,16 +1,6 @@
-# FlowEHR TRE Workspace User Guide
-
-## Table of Contents
-
-- [Welcome to your FlowEHR TRE Workspace](#welcome-to-your-flowehr-tre-workspace)
-- [Getting Started](#getting-started)
-- [The TRE Landing Page](#the-tre-landing-page)
-- [Using a Workspace](#using-a-workspace)
-- [Shared Services](#shared-services)
-    - [Gitea](#gitea)
-    - [Nexus](#nexus)
-
-## Welcome to your FlowEHR TRE Workspace
+---
+title: Trusted Research Environment
+---
 
 The FlowEHR TRE (Trusted Research Environment) provides a safe and secure
 environment to run clinical research on real data generated in
@@ -130,7 +120,7 @@ a user account with administrator rights. So, on a Linux VM, you will be
 able to run privileged commands via `sudo`. 
 
 Detailed instructions for using a VM can be found in the
-[Accessing Virtual Machines](accessing_virtual_machines.md) document
+[Accessing Virtual Machines](accessing_virtual_machines.qmd) document
 
 ### Azure Machine Learning Services (AMLS)
 

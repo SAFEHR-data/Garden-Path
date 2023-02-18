@@ -1,4 +1,6 @@
-# TRE access and usage guide
+---
+title: Virtual Machines
+---
 
 As a user of FlowEHR you will need to create a virtual machine (VM)
 within an Azure Workspace in order to access FlowEHR assets within a
