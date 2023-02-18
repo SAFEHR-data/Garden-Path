@@ -1,0 +1,10 @@
+---
+title: "Vignettes"
+listing:
+    contents:
+        - "*.ipynb"
+        - "*.qmd"
+    type: table
+    sort:
+        - "date desc"
+---
