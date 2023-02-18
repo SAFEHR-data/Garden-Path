@@ -1,0 +1,10 @@
+[
+  {
+    "listing": "/notebooks/vignettes.html",
+    "items": [
+      "/notebooks/data_lake_access.html",
+      "/notebooks/dicom_access.html",
+      "/notebooks/contributing.html"
+    ]
+  }
+]
