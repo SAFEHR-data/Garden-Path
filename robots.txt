@@ -1,1 +1,1 @@
-Sitemap: https://github.com/UCLH-Foundry/FlowEHR-Hitchhiker-Guide/sitemap.xml
+Sitemap: https://github.com/UCLH-Foundry/FlowEHR-Hitchhiking/sitemap.xml
