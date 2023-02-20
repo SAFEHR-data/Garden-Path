@@ -10,6 +10,8 @@ website:
   title: "FlowEHR Hitch-Hiking"
   description: "End user documentation for FlowEHR"
   navbar:
+    logo: images/logo-dark.png
+    title: false
     left:
       - href: index.qmd
         text: Home
@@ -37,14 +39,16 @@ website:
   repo-url: https://github.com/UCLH-Foundry/FlowEHR-Hitchhiker-Guide
   repo-actions: [edit, issue]
   repo-subdir: docs
-          
         
-
 format:
   html:
-    theme: cosmo
-    css: styles.css
-    toc: true
-
-
+    theme:
+      light: [flatly, scss/light.scss]
+      dark: [darkly, scss/dark.scss]
+    css: scss/styles.css
+    code-link: true
+    link-external-icon: true
+    link-external-newwindow: true
+    smooth-scroll: true
+    highlight-style: gruvbox
 
