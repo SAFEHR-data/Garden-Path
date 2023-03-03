@@ -1,0 +1,16 @@
+---
+title: "Notebooks"
+listing:
+    id: notebooks-listings
+    contents:
+        - "*.ipynb"
+    type: table
+    sort:
+        - "date desc"
+    categories: true
+---
+
+Vignettes, and examples presented as RMarkdown or Jupyter Notebooks. See the notes on [contributing](../faq/contributing.qmd) if you wish to share your own work.
+
+::: {#notebooks-listings}
+:::

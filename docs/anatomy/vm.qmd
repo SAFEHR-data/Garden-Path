@@ -1,5 +1,7 @@
 ---
 title: Virtual Machines
+author: Ahmed Al-Hindawi, Tom Frost
+date: 2023-03-04
 ---
 
 As a user of FlowEHR you will need to create a virtual machine (VM)

@@ -1,5 +1,7 @@
 ---
 title: Trusted Research Environment
+author: Dave Ramlakhan
+date: 2023-03-04
 ---
 
 The FlowEHR TRE (Trusted Research Environment) provides a safe and secure
@@ -120,7 +122,7 @@ a user account with administrator rights. So, on a Linux VM, you will be
 able to run privileged commands via `sudo`. 
 
 Detailed instructions for using a VM can be found in the
-[Accessing Virtual Machines](accessing_virtual_machines.qmd) document
+[Accessing Virtual Machines](vm.qmd) document
 
 ### Azure Machine Learning Services (AMLS)
 

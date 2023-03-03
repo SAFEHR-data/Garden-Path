@@ -1,5 +1,7 @@
 ---
-title: Onboarding Walk-through
+title: Data science onboarding
+author: Ahmed Al-Hindawi, Tom Frost
+date: 2023-03-04
 ---
 
 ## Login
@@ -22,6 +24,7 @@ title: Onboarding Walk-through
 - If you wish to create your own environment, ensure that you have activated your base conda environment using `conda activate` prior to creating any other conda environments
 - If you do wish to install other conda-like installers (e.g. `mamba`), ensure that the base conda environment has been activated so that the configuration files for `Nexus` has migrated into the mamba configuration. 
 	- You'll probably have more success with `conda-forge` as your default channel as `Nexus` mirrors that more successfully. To do this, run: `conda config --add channels conda-forge`
+- On first use, jump into a terminal and `conda init`
 
 ### Pip Environments
 - Pip environments have also been configured to work with `Nexus`. 
@@ -65,3 +68,9 @@ There is an installation of Visual Studio Code but has limited functionality for
 
 ### PyCharm Community Edition
 There is an installation of PyCharm, it is the community edition and is thus limited in scope and it also does not have support for external extensions for the security reasons.
+
+
+## Assorted notes and tips
+
+- shared file system at `/vm-shared-storage/`
+- when logging in to Azure ML within the TRE then you need to use the MFA token from https://portal.azure.com/#home not from NHS email
