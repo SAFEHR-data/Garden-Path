@@ -98,11 +98,39 @@
     "text": "Assorted notes and tips\n\nshared file system at /vm-shared-storage/\nwhen logging in to Azure ML within the TRE then you need to use the MFA token from https://portal.azure.com/#home not from NHS email"
   },
   {
+    "objectID": "personas/datascientist/datascientist.html",
+    "href": "personas/datascientist/datascientist.html",
+    "title": "FlowEHR Hitch-Hiking",
+    "section": "",
+    "text": "You will wrangle data, and build models.\nYou might come from a background of - NHS analytics - Data science - Machine learning for health"
+  },
+  {
+    "objectID": "personas/steward/steward.html",
+    "href": "personas/steward/steward.html",
+    "title": "FlowEHR Hitch-Hiking",
+    "section": "",
+    "text": "You will manage the applications and models on the FlowEHR platform to ensure their quality and safety."
+  },
+  {
+    "objectID": "personas/developer/developer.html",
+    "href": "personas/developer/developer.html",
+    "title": "FlowEHR Hitch-Hiking",
+    "section": "",
+    "text": "You will developer applications for healthcare, sometimes using models built by the data science team."
+  },
+  {
     "objectID": "personas/personas.html",
     "href": "personas/personas.html",
     "title": "Personas",
     "section": "",
     "text": "Infrastructure Engineer: Creates Azure infrastructure via Terraform code\nData Engineer: Writes data transformation code\nInternal Innovators:\n\nApp Developer: Uses a synthetic data store to build apps + dashboards\nData Scientist: Uses a TRE to build ML models against patient data\n\nSteward: Monitors and manages ML models and apps"
+  },
+  {
+    "objectID": "personas/administrator/administrator.html",
+    "href": "personas/administrator/administrator.html",
+    "title": "FlowEHR Hitch-Hiking",
+    "section": "",
+    "text": "You are will deploy, maintain and manage the FlowEHR platform for your healthcare provider."
   },
   {
     "objectID": "about.html",
