@@ -1,61 +1,5 @@
 [
   {
-    "objectID": "whoami/personas.html",
-    "href": "whoami/personas.html",
-    "title": "Personas",
-    "section": "",
-    "text": "Infrastructure Engineer: Creates Azure infrastructure via Terraform code\nData Engineer: Writes data transformation code\nInternal Innovators:\n\nApp Developer: Uses a synthetic data store to build apps + dashboards\nData Scientist: Uses a TRE to build ML models against patient data\n\nSteward: Monitors and manages ML models and apps"
-  },
-  {
-    "objectID": "data-scientist/onboarding.html",
-    "href": "data-scientist/onboarding.html",
-    "title": "Data science onboarding",
-    "section": "",
-    "text": "Use authenticator app - can be any authenticator app, google or microsoft\nRequires to have an NHS.net email. If you do not have access this needs to be arranged with an UCLH/Azure TRE Administrator\nView the available workspaces\n\nThis is a shared area commonly for people to collaborate on a project together.\nThis has shared storage"
-  },
-  {
-    "objectID": "data-scientist/onboarding.html#create-machine",
-    "href": "data-scientist/onboarding.html#create-machine",
-    "title": "Data science onboarding",
-    "section": "Create machine",
-    "text": "Create machine\n\nClick virtual machines (VM) to go into the personal list of available machines. Do not click on Connect as this will take you to a different place.\nCreate a VM with the specified ID - this can be anything of your choosing as this is only visible to you.\nUse the machine with the lowest resources (CPU and RAM) that facilitates your work. This can always be upgraded later if you need. We recommend starting at CPU=2, RAM=8GB\nWait for your VM to load, this might take a couple of minutes. You might need to refresh your screen to ensure that the VM has been deployed/provisioned/available."
-  },
-  {
-    "objectID": "data-scientist/onboarding.html#python",
-    "href": "data-scientist/onboarding.html#python",
-    "title": "Data science onboarding",
-    "section": "Python",
-    "text": "Python\n\nConda Environments\n\nConda has been configured to use a local mirror of conda and conda-forge in a framework called Nexus. This means that you will have access to most, but not all, packages and some of them will be outdated.\nThere are some conda environments that have already been made with pytorch/tensorflow/automl. Ideally those should be used in the first instance and packages can be added to that.\nIf you wish to create your own environment, ensure that you have activated your base conda environment using conda activate prior to creating any other conda environments\nIf you do wish to install other conda-like installers (e.g. mamba), ensure that the base conda environment has been activated so that the configuration files for Nexus has migrated into the mamba configuration.\n\nYou’ll probably have more success with conda-forge as your default channel as Nexus mirrors that more successfully. To do this, run: conda config --add channels conda-forge\n\nOn first use, jump into a terminal and conda init\n\n\n\nPip Environments\n\nPip environments have also been configured to work with Nexus.\nThis means that any pip install command should work out of the box\nWe advise that you create a conda environment (as above), and install any packages that are not in conda using pip within that conda environment"
-  },
-  {
-    "objectID": "data-scientist/onboarding.html#rrstudio",
-    "href": "data-scientist/onboarding.html#rrstudio",
-    "title": "Data science onboarding",
-    "section": "R/RStudio",
-    "text": "R/RStudio\n\nThere is an installation of R (version 4.1) and RStudio with basic packages.\nA mirror of packages available on CRAN has been developed and thus the installation of packages is possible:\n\nSpecifically, we’ve tested rstan and brms installations as they require downloading and compilation capabilities."
-  },
-  {
-    "objectID": "data-scientist/onboarding.html#airlock",
-    "href": "data-scientist/onboarding.html#airlock",
-    "title": "Data science onboarding",
-    "section": "Airlock",
-    "text": "Airlock\nTo transfer files into the workspace/VM - there are two things you’ll need: 1. An airlock transfer request which gives you a link to a Storage Blob that is a temporary container link (SAS) to upload to 2. Microsoft Azure Storage Explorer app - this is available for Windows, MacOS, and Linux (as a snap and a tar)\n\nImport File Transfer\n\nEnsure that the file you wish to transfer is a single file - if you wish to transfer many files, zip them.\nIf you have not downloaded the Microsoft Azure Storage Explorer installed, do so now.\nClick on Airlock on the menu in the Azure TRE\nYou’ll be greeted with a list of current active requests (if any).\nTo start the process, click on New Request and then click on import - this will open a dialog on the right where you can name and describe your airlock transfer request\nOnce you’ve created the transfer request, you’ll be greeted with another dialog on the right describing the request. Copy the SAS URL - this step is important\nOpen the Microsoft Azure Storage Explorer. You’ll be greeted with a Get Started Page called Storage Explorer. If this is not available, exit and open it again or open a new window. Failing that, click on Help, then Reset\nClick on Attach to a resource - this will open a new window titled Select a Resource\nClick on Blob container\nThen select Shared access signature URL (SAS), then click Next\nThen past the SAS URL that copied from the Airlock transfer window in the Azure TRE into the blob container SAS URL. The Display name will be populated automatically.\nClick Next, and then Connect. After a moment, you will be greeted with a new Tab which has a Upload button on the top left hand side. Click that and select Upload Files...\nThis will open another dialog box titled Upload Files. Click on the ... next to the “No Files Selected”\nClick Upload. This will take a little while depending on the size of the file and the speed of your connection.\nGo back to the Azure TRE, you should still have the dialog with the Airlock open on the right hand size. If you have closed it, you can double click on the title of your upload that you created. Click on Submit.\nThis will now require a person to approve the ingress of the data into the Azure TRE. You can view the progress of this from this screen.\nOnce approved, your files will be located in the workspace"
-  },
-  {
-    "objectID": "data-scientist/onboarding.html#integrated-development-environments-ides",
-    "href": "data-scientist/onboarding.html#integrated-development-environments-ides",
-    "title": "Data science onboarding",
-    "section": "Integrated Development Environments (IDEs)",
-    "text": "Integrated Development Environments (IDEs)\n\nVisual Studio Code\nThere is an installation of Visual Studio Code but has limited functionality for extensions due to security reasons. It also does not have access to Remote Extensions and thus docker installations within Remote Extensions is not currently possible.\n\n\nPyCharm Community Edition\nThere is an installation of PyCharm, it is the community edition and is thus limited in scope and it also does not have support for external extensions for the security reasons."
-  },
-  {
-    "objectID": "data-scientist/onboarding.html#assorted-notes-and-tips",
-    "href": "data-scientist/onboarding.html#assorted-notes-and-tips",
-    "title": "Data science onboarding",
-    "section": "Assorted notes and tips",
-    "text": "Assorted notes and tips\n\nshared file system at /vm-shared-storage/\nwhen logging in to Azure ML within the TRE then you need to use the MFA token from https://portal.azure.com/#home not from NHS email"
-  },
-  {
     "objectID": "quickstart/10_prerequisites.html",
     "href": "quickstart/10_prerequisites.html",
     "title": "Prerequisites for FlowEHR",
@@ -103,6 +47,62 @@
     "title": "Accessing the EHR data from the TRE",
     "section": "",
     "text": "This notebook describes the process of accessing EHR data stored within a TRE-accessible Azure Data Lake Storage Gen2 (ADLS) instance.\nNote that PII has been masked from reports stored in the TRE and as a consequence structural changes may have appeared with respect to the original data.\nFeatures intended for use as inputs to machine learning models should not include or be derived from structural information from reports (e.g. line breaks, sentence length) stored in the storage instance detailed below.\n\n\nOpen the link shown in a browser outside of the TRE, enter the code and log in with your user account\n\n!az login --use-device-code\n\n\n\n\n\nstorage_account_name = \"stflowehrdev\"\ninput_data_fs_name=\"data-lake-storage-flowehr-dev\"\ndata_directory_path=\"GoldZone/patients/\"\n\nImport dependencies and define functions to query data\n\n#Function definitions inspired by MS docs\n#at https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-directory-file-acl-python\nimport os, uuid, sys\nfrom azure.storage.filedatalake import DataLakeServiceClient\nfrom azure.core._match_conditions import MatchConditions\nfrom azure.storage.filedatalake._models import ContentSettings\nfrom azure.identity import DefaultAzureCredential, AzureCliCredential\n\nclass StorageClient:\n    def __init__(self, storage_account_name):\n        self.storage_account_name = storage_account_name\n        self.service_client = self.initialize_storage_account_ad()\n\n    def initialize_storage_account_ad(self):\n        try:          \n            credential = AzureCliCredential()\n            service_client = DataLakeServiceClient(account_url=f\"https://{self.storage_account_name}.dfs.core.windows.net\", credential=credential)\n\n            return service_client\n        except Exception as e:\n            print(e)\n            return\n\n    def download_file_from_directory(self, file_syst, directory, file_name):\n        try:\n            file_system_client = self.service_client.get_file_system_client(file_system=file_syst)\n            directory_client = file_system_client.get_directory_client(directory)\n            if not os.path.exists(\"downloaded_data\"):\n                os.makedirs(\"downloaded_data\")\n            print\n            local_file = open(f\"downloaded_data/{file_name}\",'wb')\n            file_client = directory_client.get_file_client(file_name)\n            download = file_client.download_file()\n            downloaded_bytes = download.readall()\n            local_file.write(downloaded_bytes)\n            local_file.close()\n            return\n        except Exception as e:\n            print(e)\n            return\n                          \n    def list_directory_contents(self, file_syst, directory):\n        try:\n            file_system_client = self.service_client.get_file_system_client(file_system=file_syst)\n\n            paths = file_system_client.get_paths(path=directory)\n\n            path_list = []\n            for path in paths:\n                path_list.append(path.name)\n            return path_list\n\n        except Exception as e:\n            print(e)\n            return\n                             \n    def create_directory(self, file_syst, directory):\n        try:\n            file_system_client = self.service_client.get_file_system_client(file_system=file_syst)\n            file_system_client.create_directory(directory)\n            return\n        except Exception as e:\n            print(e)\n            return\n    def upload_file_to_directory(self, file_syst, directory, uploaded_file_name, file_to_upload):\n        try:\n            file_system_client = self.service_client.get_file_system_client(file_system=file_syst)\n            directory_client = file_system_client.get_directory_client(directory)\n            file_client = directory_client.create_file(uploaded_file_name)\n            with open(file_to_upload, 'r') as local_file:\n                file_contents = local_file.read()\n                file_client.append_data(data=file_contents, offset=0, length=len(file_contents))\n                file_client.flush_data(len(file_contents))\n            return\n        except Exception as e:\n            print(e)\n            return\n\n\n\n\n\nclient = StorageClient(storage_account_name)\n\n\n\n\n\navailable_files = client.list_directory_contents(input_data_fs_name, data_directory_path)\nprint(available_files)\n\n\n\n\n\n[client.download_file_from_directory(input_data_fs_name, data_directory_path, datafile.rsplit(\"/\",1)[-1]) for datafile in available_files]\n\n\n\n\n\nclient.download_file_from_directory(input_data_fs_name, data_directory_path, available_files[0].rsplit(\"/\", 1)[-1])\n\n\n\n\n\nimport re\nimport pandas as pd\nparquet = []\ncsv = []\nfor x in available_files:\n    parquet_re = re.match(\"^.*\\.parquet\", x)\n    csv_re = re.match(\"^.*\\.csv\", x)\n    if parquet_re is not None:\n        parquet.append(parquet_re.group(0))\n    if csv_re is not None:\n        csv.append(csv_re.group(0))\n\n\n\n\nlocal_df = pd.read_parquet(f\"downloaded_data/{parquet[0].rsplit('/',1)[-1]}\")\nlocal_df.head()\n\n\n\n\n\nlocal_df = pd.read_csv(f\"downloaded_data/{csv[0].rsplit('/',1)[-1]}\")\nlocal_df.head()"
+  },
+  {
+    "objectID": "personas/datascientist/onboarding.html",
+    "href": "personas/datascientist/onboarding.html",
+    "title": "Data science onboarding",
+    "section": "",
+    "text": "Use authenticator app - can be any authenticator app, google or microsoft\nRequires to have an NHS.net email. If you do not have access this needs to be arranged with an UCLH/Azure TRE Administrator\nView the available workspaces\n\nThis is a shared area commonly for people to collaborate on a project together.\nThis has shared storage"
+  },
+  {
+    "objectID": "personas/datascientist/onboarding.html#create-machine",
+    "href": "personas/datascientist/onboarding.html#create-machine",
+    "title": "Data science onboarding",
+    "section": "Create machine",
+    "text": "Create machine\n\nClick virtual machines (VM) to go into the personal list of available machines. Do not click on Connect as this will take you to a different place.\nCreate a VM with the specified ID - this can be anything of your choosing as this is only visible to you.\nUse the machine with the lowest resources (CPU and RAM) that facilitates your work. This can always be upgraded later if you need. We recommend starting at CPU=2, RAM=8GB\nWait for your VM to load, this might take a couple of minutes. You might need to refresh your screen to ensure that the VM has been deployed/provisioned/available."
+  },
+  {
+    "objectID": "personas/datascientist/onboarding.html#python",
+    "href": "personas/datascientist/onboarding.html#python",
+    "title": "Data science onboarding",
+    "section": "Python",
+    "text": "Python\n\nConda Environments\n\nConda has been configured to use a local mirror of conda and conda-forge in a framework called Nexus. This means that you will have access to most, but not all, packages and some of them will be outdated.\nThere are some conda environments that have already been made with pytorch/tensorflow/automl. Ideally those should be used in the first instance and packages can be added to that.\nIf you wish to create your own environment, ensure that you have activated your base conda environment using conda activate prior to creating any other conda environments\nIf you do wish to install other conda-like installers (e.g. mamba), ensure that the base conda environment has been activated so that the configuration files for Nexus has migrated into the mamba configuration.\n\nYou’ll probably have more success with conda-forge as your default channel as Nexus mirrors that more successfully. To do this, run: conda config --add channels conda-forge\n\nOn first use, jump into a terminal and conda init\n\n\n\nPip Environments\n\nPip environments have also been configured to work with Nexus.\nThis means that any pip install command should work out of the box\nWe advise that you create a conda environment (as above), and install any packages that are not in conda using pip within that conda environment"
+  },
+  {
+    "objectID": "personas/datascientist/onboarding.html#rrstudio",
+    "href": "personas/datascientist/onboarding.html#rrstudio",
+    "title": "Data science onboarding",
+    "section": "R/RStudio",
+    "text": "R/RStudio\n\nThere is an installation of R (version 4.1) and RStudio with basic packages.\nA mirror of packages available on CRAN has been developed and thus the installation of packages is possible:\n\nSpecifically, we’ve tested rstan and brms installations as they require downloading and compilation capabilities."
+  },
+  {
+    "objectID": "personas/datascientist/onboarding.html#airlock",
+    "href": "personas/datascientist/onboarding.html#airlock",
+    "title": "Data science onboarding",
+    "section": "Airlock",
+    "text": "Airlock\nTo transfer files into the workspace/VM - there are two things you’ll need: 1. An airlock transfer request which gives you a link to a Storage Blob that is a temporary container link (SAS) to upload to 2. Microsoft Azure Storage Explorer app - this is available for Windows, MacOS, and Linux (as a snap and a tar)\n\nImport File Transfer\n\nEnsure that the file you wish to transfer is a single file - if you wish to transfer many files, zip them.\nIf you have not downloaded the Microsoft Azure Storage Explorer installed, do so now.\nClick on Airlock on the menu in the Azure TRE\nYou’ll be greeted with a list of current active requests (if any).\nTo start the process, click on New Request and then click on import - this will open a dialog on the right where you can name and describe your airlock transfer request\nOnce you’ve created the transfer request, you’ll be greeted with another dialog on the right describing the request. Copy the SAS URL - this step is important\nOpen the Microsoft Azure Storage Explorer. You’ll be greeted with a Get Started Page called Storage Explorer. If this is not available, exit and open it again or open a new window. Failing that, click on Help, then Reset\nClick on Attach to a resource - this will open a new window titled Select a Resource\nClick on Blob container\nThen select Shared access signature URL (SAS), then click Next\nThen past the SAS URL that copied from the Airlock transfer window in the Azure TRE into the blob container SAS URL. The Display name will be populated automatically.\nClick Next, and then Connect. After a moment, you will be greeted with a new Tab which has a Upload button on the top left hand side. Click that and select Upload Files...\nThis will open another dialog box titled Upload Files. Click on the ... next to the “No Files Selected”\nClick Upload. This will take a little while depending on the size of the file and the speed of your connection.\nGo back to the Azure TRE, you should still have the dialog with the Airlock open on the right hand size. If you have closed it, you can double click on the title of your upload that you created. Click on Submit.\nThis will now require a person to approve the ingress of the data into the Azure TRE. You can view the progress of this from this screen.\nOnce approved, your files will be located in the workspace"
+  },
+  {
+    "objectID": "personas/datascientist/onboarding.html#integrated-development-environments-ides",
+    "href": "personas/datascientist/onboarding.html#integrated-development-environments-ides",
+    "title": "Data science onboarding",
+    "section": "Integrated Development Environments (IDEs)",
+    "text": "Integrated Development Environments (IDEs)\n\nVisual Studio Code\nThere is an installation of Visual Studio Code but has limited functionality for extensions due to security reasons. It also does not have access to Remote Extensions and thus docker installations within Remote Extensions is not currently possible.\n\n\nPyCharm Community Edition\nThere is an installation of PyCharm, it is the community edition and is thus limited in scope and it also does not have support for external extensions for the security reasons."
+  },
+  {
+    "objectID": "personas/datascientist/onboarding.html#assorted-notes-and-tips",
+    "href": "personas/datascientist/onboarding.html#assorted-notes-and-tips",
+    "title": "Data science onboarding",
+    "section": "Assorted notes and tips",
+    "text": "Assorted notes and tips\n\nshared file system at /vm-shared-storage/\nwhen logging in to Azure ML within the TRE then you need to use the MFA token from https://portal.azure.com/#home not from NHS email"
+  },
+  {
+    "objectID": "personas/personas.html",
+    "href": "personas/personas.html",
+    "title": "Personas",
+    "section": "",
+    "text": "Infrastructure Engineer: Creates Azure infrastructure via Terraform code\nData Engineer: Writes data transformation code\nInternal Innovators:\n\nApp Developer: Uses a synthetic data store to build apps + dashboards\nData Scientist: Uses a TRE to build ML models against patient data\n\nSteward: Monitors and manages ML models and apps"
   },
   {
     "objectID": "about.html",
