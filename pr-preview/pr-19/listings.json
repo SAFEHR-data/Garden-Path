@@ -1,15 +1,15 @@
 [
   {
-    "listing": "/faq/faq.html",
-    "items": [
-      "/faq/contributing.html"
-    ]
-  },
-  {
     "listing": "/vignettes/vignettes.html",
     "items": [
       "/vignettes/data_lake_access.html",
       "/vignettes/dicom_access.html"
+    ]
+  },
+  {
+    "listing": "/faq/faq.html",
+    "items": [
+      "/faq/contributing.html"
     ]
   }
 ]
