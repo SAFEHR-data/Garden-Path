@@ -19,4 +19,4 @@ quarto preview
 
 Don't forget that changes to config (e.g. `_quarto.yml` may need you to rerun `quarto render` to ensure the whole site is correctly rebuilt)
 
-When you push to either *dev* or *main* branches, then a GitHub Action (see `.github/workflows/publish.yml`) will be triggered that should publish the current documentation to https://hylode.github.io/HyUi/.
+When you push to either *dev* or *main* branches, a GitHub Action (see `.github/workflows/publish.yml`) will be triggered to publish the current documentation to the [Garden Path site](https://uclh-foundry.github.io/Garden-Path/).
