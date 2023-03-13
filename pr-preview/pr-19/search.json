@@ -221,7 +221,7 @@
     "href": "personas/personas.html",
     "title": "Personas",
     "section": "",
-    "text": "Infrastructure Engineer: Creates Azure infrastructure via Terraform code. Also know as the platform administrator or maintainer\nData Scientist: Writes data transformation code, and builds models. Could also be an NHS analyst where the task is similar but is likely to use different tools (SSMS, PowerBI etc. and rely less on inference)\nInternal Innovators:\n\nApp Developer: Uses a synthetic data store to build apps + dashboards\nData Scientist: Uses a TRE to build ML models against patient data\n\nSteward: Monitors and manages ML models and apps"
+    "text": "Infrastructure Engineer: I create Azure infrastructure via Terraform code, and I am also known as the platform administrator or maintainer.\nData Scientist: I writes data transformation code, and build models. I could also be an NHS analyst where the task is similar but I am likely to use different tools (SSMS, PowerBI etc. and rely less on inference).\nInternal Innovators:\n\nApp Developer: I use a synthetic data store to build apps + dashboards.\nData Scientist: I use a TRE to build ML models against patient data.\n\nSteward: I monitors and manages ML models and apps. I have a background that is a convergence of the Clinical Safety Officer role, and an ML-Ops practitioner."
   },
   {
     "objectID": "personas/developer/developer.html",
