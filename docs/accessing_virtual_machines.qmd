@@ -9,7 +9,7 @@ describe the process of VM creation and access, as well as some initial
 setup to access a Jupyter notebook once inside the VM.
 
 This documentation relies heavily upon the official [AzureTRE
-docs](https://microsoft.github.io/AzureTRE/using-tre/tre-for-research/using-vms/)
+docs](https://microsoft.github.io/AzureTRE/latest/tre-templates/shared-services/nexus/)
 which should be consulted before performing the below steps.
 
 ## Creating a new VM
@@ -71,14 +71,14 @@ restricted.
 
 ### GitHub
 
-Access to repositories hosted on https://github.com/ is restricted. Repositories can be mirrored on an ad-hoc basis to a TRE-accessible [Gitea](https://gitea.io) instance, where this documentation can also be found.
+Access to repositories hosted on [GitHub](https://github.com/) is restricted. Repositories can be mirrored on an ad-hoc basis to a TRE-accessible [Gitea](https://gitea.io) instance, where this documentation can also be found.
 
 You should be supplied with the URL for the Gitea instance during your onboarding. If you have not received the Gitea URL, please request it from member of the team.
 
 ### APT packages
 
 The VM has access to software packages via a
-[Nexus](https://microsoft.github.io/AzureTRE/tre-templates/shared-services/nexus/)
+[Nexus](https://microsoft.github.io/AzureTRE/latest/tre-templates/shared-services/nexus/)
 mirror
 
 ### Python packages via Conda and PyPI
