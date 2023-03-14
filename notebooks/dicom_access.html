@@ -319,7 +319,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>response_query<span class="sc">.</span>status_code<span class="op">=</span><span class="sc">}</span><span class="ss">, </span><span class="sc">{</span>response_query<span class="sc">.</span>content<span class="op">=</span><span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Extract study IDs from response content - returned as bytes</p>
-<p>StudyInstanceUID corresponds to 0020000D - see https://dicom.nema.org/medical/dicom/current/output/html/part18.html</p>
+<p>StudyInstanceUID corresponds to 0020000D - see the <a href="https://dicom.nema.org/medical/dicom/current/output/html/part18.html">DICOM documentation for details</a></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>r <span class="op">=</span> json.loads(response_query.content.decode())</span>
@@ -702,7 +702,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var filterRegex = new RegExp(/https:\/\/github\.com\/UCLH-Foundry\/FlowEHR-Hitchhiking/);
+      var filterRegex = new RegExp(/https:\/\/github\.com\/UCLH-Foundry\/Garden-Path/);
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href);
     }

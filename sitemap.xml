@@ -1,39 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://github.com/UCLH-Foundry/FlowEHR-Hitchhiking/flowehr_tre_ws_userguide.html</loc>
-    <lastmod>2023-02-23T16:14:45.656Z</lastmod>
+    <loc>https://github.com/UCLH-Foundry/Garden-Path/accessing_virtual_machines.html</loc>
+    <lastmod>2023-03-14T16:49:11.261Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/UCLH-Foundry/FlowEHR-Hitchhiking/about.html</loc>
-    <lastmod>2023-02-23T16:14:47.688Z</lastmod>
+    <loc>https://github.com/UCLH-Foundry/Garden-Path/hitchhikers_guide.html</loc>
+    <lastmod>2023-03-14T16:49:13.569Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/UCLH-Foundry/FlowEHR-Hitchhiking/notebooks/dicom_access.html</loc>
-    <lastmod>2023-02-23T16:14:48.140Z</lastmod>
+    <loc>https://github.com/UCLH-Foundry/Garden-Path/flowehr_tre_ws_userguide.html</loc>
+    <lastmod>2023-03-14T16:49:14.073Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/UCLH-Foundry/FlowEHR-Hitchhiking/notebooks/vignettes.html</loc>
-    <lastmod>2023-02-23T16:14:48.516Z</lastmod>
+    <loc>https://github.com/UCLH-Foundry/Garden-Path/notebooks/dicom_access.html</loc>
+    <lastmod>2023-03-14T16:49:14.633Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/UCLH-Foundry/FlowEHR-Hitchhiking/notebooks/contributing.html</loc>
-    <lastmod>2023-02-23T16:14:49.060Z</lastmod>
+    <loc>https://github.com/UCLH-Foundry/Garden-Path/notebooks/data_lake_access.html</loc>
+    <lastmod>2023-03-14T16:49:15.097Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/UCLH-Foundry/FlowEHR-Hitchhiking/notebooks/data_lake_access.html</loc>
-    <lastmod>2023-02-23T16:14:49.424Z</lastmod>
+    <loc>https://github.com/UCLH-Foundry/Garden-Path/notebooks/contributing.html</loc>
+    <lastmod>2023-03-14T16:49:15.757Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/UCLH-Foundry/FlowEHR-Hitchhiking/index.html</loc>
-    <lastmod>2023-02-23T16:14:49.752Z</lastmod>
+    <loc>https://github.com/UCLH-Foundry/Garden-Path/notebooks/vignettes.html</loc>
+    <lastmod>2023-03-14T16:49:16.245Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/UCLH-Foundry/FlowEHR-Hitchhiking/accessing_virtual_machines.html</loc>
-    <lastmod>2023-02-23T16:14:50.136Z</lastmod>
+    <loc>https://github.com/UCLH-Foundry/Garden-Path/about.html</loc>
+    <lastmod>2023-03-14T16:49:16.629Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/UCLH-Foundry/FlowEHR-Hitchhiking/hitchhikers_guide.html</loc>
-    <lastmod>2023-02-23T16:14:50.544Z</lastmod>
+    <loc>https://github.com/UCLH-Foundry/Garden-Path/index.html</loc>
+    <lastmod>2023-03-14T16:49:17.017Z</lastmod>
   </url>
 </urlset>

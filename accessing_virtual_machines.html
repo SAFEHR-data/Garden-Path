@@ -255,7 +255,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </header>
 
 <p>As a user of FlowEHR you will need to create a virtual machine (VM) within an Azure Workspace in order to access FlowEHR assets within a secure Trusted Research Environment (TRE). The following instructions describe the process of VM creation and access, as well as some initial setup to access a Jupyter notebook once inside the VM.</p>
-<p>This documentation relies heavily upon the official <a href="https://microsoft.github.io/AzureTRE/using-tre/tre-for-research/using-vms/">AzureTRE docs</a> which should be consulted before performing the below steps.</p>
+<p>This documentation relies heavily upon the official <a href="https://microsoft.github.io/AzureTRE/latest/tre-templates/shared-services/nexus/">AzureTRE docs</a> which should be consulted before performing the below steps.</p>
 <section id="creating-a-new-vm" class="level2">
 <h2 class="anchored" data-anchor-id="creating-a-new-vm">Creating a new VM</h2>
 <ol type="1">
@@ -311,12 +311,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>As the VM is located within a TRE, most outbound internet access is restricted.</p>
 <section id="github" class="level3">
 <h3 class="anchored" data-anchor-id="github">GitHub</h3>
-<p>Access to repositories hosted on https://github.com/ is restricted. Repositories can be mirrored on an ad-hoc basis to a TRE-accessible <a href="https://gitea.io">Gitea</a> instance, where this documentation can also be found.</p>
+<p>Access to repositories hosted on <a href="https://github.com/">GitHub</a> is restricted. Repositories can be mirrored on an ad-hoc basis to a TRE-accessible <a href="https://gitea.io">Gitea</a> instance, where this documentation can also be found.</p>
 <p>You should be supplied with the URL for the Gitea instance during your onboarding. If you have not received the Gitea URL, please request it from member of the team.</p>
 </section>
 <section id="apt-packages" class="level3">
 <h3 class="anchored" data-anchor-id="apt-packages">APT packages</h3>
-<p>The VM has access to software packages via a <a href="https://microsoft.github.io/AzureTRE/tre-templates/shared-services/nexus/">Nexus</a> mirror</p>
+<p>The VM has access to software packages via a <a href="https://microsoft.github.io/AzureTRE/latest/tre-templates/shared-services/nexus/">Nexus</a> mirror</p>
 </section>
 <section id="python-packages-via-conda-and-pypi" class="level3">
 <h3 class="anchored" data-anchor-id="python-packages-via-conda-and-pypi">Python packages via Conda and PyPI</h3>
@@ -621,7 +621,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var filterRegex = new RegExp(/https:\/\/github\.com\/UCLH-Foundry\/FlowEHR-Hitchhiking/);
+      var filterRegex = new RegExp(/https:\/\/github\.com\/UCLH-Foundry\/Garden-Path/);
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href);
     }
