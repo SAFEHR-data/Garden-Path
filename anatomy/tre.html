@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Dave Ramlakhan">
+<meta name="dcterms.date" content="2023-03-04">
 
-<title>FlowEHR Hitch-Hiking - The Hitch-hiker’s guide to FlowEHR</title>
+<title>FlowEHR Hitch-Hiking - Trusted Research Environment</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,24 +25,26 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../anatomy/vm.html" rel="next">
+<link href="../personas/steward/steward.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -63,7 +67,7 @@ ul.task-list li input[type="checkbox"] {
 <style>html{ scroll-behavior: smooth; }</style>
 
 
-<link rel="stylesheet" href="scss/styles.css">
+<link rel="stylesheet" href="../scss/styles.css">
 </head>
 
 <body class="nav-sidebar docked nav-fixed fullcontent">
@@ -73,8 +77,8 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./images/logo-dark.png" alt="" class="navbar-logo">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../images/logo-dark.png" alt="" class="navbar-logo">
     </a>
   </div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -83,7 +87,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page">
+    <a class="nav-link" href="../index.html">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
@@ -91,7 +95,7 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">FlowEHR.io</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html">
+    <a class="nav-link" href="../about.html">
  <span class="menu-text">About</span></a>
   </li>  
 </ul>
@@ -111,7 +115,7 @@ ul.task-list li input[type="checkbox"] {
     </nav>
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">The Hitch-hiker’s guide to FlowEHR</h1>
+      <h1 class="quarto-secondary-nav-title">Trusted Research Environment</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -134,37 +138,37 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./quickstart/10_prerequisites.html" class="sidebar-item-text sidebar-link">Prerequisites</a>
+  <a href="../quickstart/10_prerequisites.html" class="sidebar-item-text sidebar-link">Prerequisites</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./quickstart/20_setup.html" class="sidebar-item-text sidebar-link">Set-up</a>
+  <a href="../quickstart/20_setup.html" class="sidebar-item-text sidebar-link">Set-up</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./quickstart/30_connecting.html" class="sidebar-item-text sidebar-link">Connecting to data</a>
+  <a href="../quickstart/30_connecting.html" class="sidebar-item-text sidebar-link">Connecting to data</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./quickstart/40_features.html" class="sidebar-item-text sidebar-link">Feature building</a>
+  <a href="../quickstart/40_features.html" class="sidebar-item-text sidebar-link">Feature building</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./quickstart/50_modelling.html" class="sidebar-item-text sidebar-link">Modelling</a>
+  <a href="../quickstart/50_modelling.html" class="sidebar-item-text sidebar-link">Modelling</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./quickstart/60_deployment.html" class="sidebar-item-text sidebar-link">Application deployment</a>
+  <a href="../quickstart/60_deployment.html" class="sidebar-item-text sidebar-link">Application deployment</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./quickstart/70_stewardship.html" class="sidebar-item-text sidebar-link">Stewardship</a>
+  <a href="../quickstart/70_stewardship.html" class="sidebar-item-text sidebar-link">Stewardship</a>
   </div>
 </li>
       </ul>
@@ -179,7 +183,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./personas/personas.html" class="sidebar-item-text sidebar-link">Personas</a>
+  <a href="../personas/personas.html" class="sidebar-item-text sidebar-link">Personas</a>
   </div>
 </li>
       </ul>
@@ -194,12 +198,12 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./personas/datascientist/datascientist.html" class="sidebar-item-text sidebar-link">Overview</a>
+  <a href="../personas/datascientist/datascientist.html" class="sidebar-item-text sidebar-link">Overview</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./personas/datascientist/onboarding.html" class="sidebar-item-text sidebar-link">Onboarding</a>
+  <a href="../personas/datascientist/onboarding.html" class="sidebar-item-text sidebar-link">Onboarding</a>
   </div>
 </li>
       </ul>
@@ -214,7 +218,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./personas/developer/developer.html" class="sidebar-item-text sidebar-link">Overview</a>
+  <a href="../personas/developer/developer.html" class="sidebar-item-text sidebar-link">Overview</a>
   </div>
 </li>
       </ul>
@@ -229,7 +233,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./personas/administrator/administrator.html" class="sidebar-item-text sidebar-link">Overview</a>
+  <a href="../personas/administrator/administrator.html" class="sidebar-item-text sidebar-link">Overview</a>
   </div>
 </li>
       </ul>
@@ -244,7 +248,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./personas/steward/steward.html" class="sidebar-item-text sidebar-link">Overview</a>
+  <a href="../personas/steward/steward.html" class="sidebar-item-text sidebar-link">Overview</a>
   </div>
 </li>
       </ul>
@@ -259,12 +263,12 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./anatomy/tre.html" class="sidebar-item-text sidebar-link">Trusted Research Environment</a>
+  <a href="../anatomy/tre.html" class="sidebar-item-text sidebar-link active">Trusted Research Environment</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./anatomy/vm.html" class="sidebar-item-text sidebar-link">Virtual Machines</a>
+  <a href="../anatomy/vm.html" class="sidebar-item-text sidebar-link">Virtual Machines</a>
   </div>
 </li>
       </ul>
@@ -279,12 +283,12 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./vignettes/vignettes.html" class="sidebar-item-text sidebar-link">Vignettes</a>
+  <a href="../vignettes/vignettes.html" class="sidebar-item-text sidebar-link">Vignettes</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./faq/faq.html" class="sidebar-item-text sidebar-link">FAQ</a>
+  <a href="../faq/faq.html" class="sidebar-item-text sidebar-link">FAQ</a>
   </div>
 </li>
       </ul>
@@ -299,14 +303,26 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">The Hitch-hiker’s guide to FlowEHR</h1>
+<h1 class="title d-none d-lg-block">Trusted Research Environment</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Dave Ramlakhan </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">March 4, 2023</p>
+    </div>
+  </div>
   
     
   </div>
@@ -314,28 +330,112 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>FlowEHR is a development and deployment platform for digital research and innovation for healthcare providers. It provides technical controls to protect privacy but an smooth pathway for deployment of data driven products to the clinic or the bedside. Whilst it is a platform to bridge the AI chasm for health, we anticipate health data researchers, application developers, and clinical analysts to accompany us on our journey.</p>
-<p>Our aim is …</p>
-<ul>
-<li>to protect patient privacy</li>
-<li>to enable collaboration between different users</li>
-<li>to make illuminate the risks of data and algorithms applied to healthcare</li>
-<li>to work at the pace of the decision maker</li>
-</ul>
-<p>These are principles are sometimes framed as barries but only by full engaging with each of them will it be possible to use data to improve the quality and safety of health care. When combined we believe this will <em>enable</em> the deployment of digital tools to solve operational and clinical problems.</p>
-<p>Our original use case was the safe &amp; effective development &amp; deployment of real-time translational Machine Learning interventions into clinical and operational settings inside a busy NHS hospital.</p>
-<section id="next-steps" class="level2">
-<h2 class="anchored" data-anchor-id="next-steps">Next steps</h2>
-<p>We would recommend using the <a href="./quickstart/quickstart.html">QuickStart guide</a> to follow and ‘end-to-end’ walkthrough of an application from concept to implementation. This will begin with deploying the FlowEHR infrastructure for personal use with synthetic data, and end with inspecting the performance of an algorithm in the (simulated) wild.</p>
-<p>Specific users may wish to dive directly into documentation relevant to their role. This includes</p>
-<ul>
-<li>the <a href="./personas/datascientist/datascientist.html">data scientist</a> for those providing analytical insights or building models against live data</li>
-<li>the <a href="./personas/developer/developer.html">application developer</a> for those building and deploying applications</li>
-<li>the <a href="./personas/administrator/administrator.html">platform maintainer</a> for those responsible for installing and mananaging the platform</li>
-<li>the <a href="./personas/steward/steward.html">algorithm steward</a> for those using the platform to monitor, audit and observe data driven applications in use</li>
-</ul>
+<p>The FlowEHR TRE (Trusted Research Environment) provides a safe and secure environment to run clinical research on real data generated in clinical settings. The FlowEHR TRE builds upon the work of the <a href="https://github.com/microsoft/AzureTRE">Microsoft Azure TRE</a> to provide access to cloud-scale computing environments to conduct real-world Machine Learning experiments from initial inception through to operational deployment.</p>
+<p>TRE Workspaces are designed to be project-specific, with access to the Workspace resources and Workspace data restricted to the users assigned to the Workspace. Users from other Workspaces will not be able to see or interact with your Workspace resources or data.</p>
+<section id="getting-started" class="level2">
+<h2 class="anchored" data-anchor-id="getting-started">Getting Started</h2>
+<p>Your TRE administrator will provide you with the following information: 1) Account details to logon and access TRE resources 2) The address for the TRE Portal 3) One or more Workspace IDs</p>
+</section>
+<section id="the-tre-landing-page" class="level2">
+<h2 class="anchored" data-anchor-id="the-tre-landing-page">The TRE Landing Page</h2>
+<p>TRE Workspaces are deployed to a virtual private network and the resources available in the Workspace are designed to have no direct internet access and are not accessible from the internet either.</p>
+<p>To get access to your TRE Workspace, you must first logon to the TRE portal. Your TRE administrator will provide you with the URL to access the portal along with a logon id that grants you access to Workspace resources.</p>
+<p>Once logged-in, you will see the TRE Landing Page:</p>
+<p><img src="assets/tre-landing-page.png" class="img-fluid"></p>
+<p>The main components of the Landing Page are:</p>
+<ol type="1">
+<li><a href="#the-tre-header">The TRE Header</a></li>
+<li><a href="#the-navigation-side-panel">The TRE Navigation Side-Panel</a></li>
+<li><a href="#the-workspace-pane">The ‘Workspaces’ Pane</a></li>
+<li>The TRE Footer</li>
+</ol>
+<section id="the-tre-header" class="level3">
+<h3 class="anchored" data-anchor-id="the-tre-header">The TRE Header</h3>
+<p><img src="assets/tre-header.png" class="img-fluid"></p>
+<p>The TRE Header contains the following links:</p>
+<ol type="1">
+<li>The home link - a half-full (we’re optimists) beaker named ‘Azure TRE’. Use this link to return to the Landing Page from any location within the TRE application.</li>
+<li>A notifications bell - an icon which can be used for quick access to any notifications you may have</li>
+<li>An account link - you can use this link to logout of the TRE</li>
+</ol>
+</section>
+<section id="the-navigation-side-panel" class="level3">
+<h3 class="anchored" data-anchor-id="the-navigation-side-panel">The Navigation Side-Panel</h3>
+<p><img src="assets/side-panel.png" class="img-fluid"></p>
+<p>The Navigation Side-Panel provides context-sensitive navigation within the TRE application.</p>
+</section>
+<section id="the-workspace-pane" class="level3">
+<h3 class="anchored" data-anchor-id="the-workspace-pane">The Workspace Pane</h3>
+<p><img src="assets/workspace-pane.png" class="img-fluid"></p>
+<p>The ‘Workspaces’ Pane contains Card(s) for the Workspaces that you have been granted access to in the TRE.</p>
+<p>Each Card displays:</p>
+<ol type="1">
+<li>The Workspace Name</li>
+<li>Description for the Workspace</li>
+<li>An information button</li>
+<li>A Cost-Notifier button: displays the accumulated costs for the workspace</li>
+</ol>
+<p>Clicking the Workspace Name or a blank space on a Workspace Card will connect you to the Workspace.</p>
+</section>
+</section>
+<section id="using-a-workspace" class="level2">
+<h2 class="anchored" data-anchor-id="using-a-workspace">Using a Workspace</h2>
+<p>Once connected to a workspace, you’ll be able to see the services installed in the Workspace and also the Shared Services available to all Workspaces.</p>
+<p><img src="assets/workspace-services.png" class="img-fluid"></p>
+<p>The ‘Create New’ button can be used to add services to the Workspace. Only TRE Administrators or Workspace Owners can add Services to a Workspace.</p>
+<p>However, certain Workspace Services provide User Resources which enable all workspace users to add these resources to the Workspace. Specifically, the Virtual Machines Service provides a Virtual Machine User Resource. Once the Workspace Owner has added a Virtual Machines Service to the Workspace, users can connect to the service and add Virtual Machines for their personal use.</p>
+<p>From the Workspace Overview page, you can find important information about your workspace by clicking the details tab. One key piece of information here is the ‘Workspace id’. This is a four-character code, that is appended to the names of the resources deployed in your workspace. Workspace ID can be useful to know when you are connecting to resources such as <a href="#azure-machine-learning-services-amls">AMLS</a></p>
+<section id="access-a-virtual-machine" class="level3">
+<h3 class="anchored" data-anchor-id="access-a-virtual-machine">Access a Virtual Machine</h3>
+<p>Look for the Virtual Machines or Virtual Desktops Service in the Services section of your workspace:</p>
+<p><img src="assets/vm-service.png" class="img-fluid"></p>
+<p>Avoid the ‘connect’ button and instead click on the title of the Virtual Machines Service Card. This will take you to a page showing all the Virtual Machines that you have access to:</p>
+<p><img src="assets/vm-resources.png" class="img-fluid"></p>
+<p>The Virtual Machines in your Workspace allow you to interact with the private resources in the Workspace and with the Shared Services common to all workspaces. When you connect to a VM that you have created, you will be automatically logged-in with a user account with administrator rights. So, on a Linux VM, you will be able to run privileged commands via <code>sudo</code>.</p>
+<p>Detailed instructions for using a VM can be found in the <a href="../anatomy/vm.html">Accessing Virtual Machines</a> document</p>
+</section>
+<section id="azure-machine-learning-services-amls" class="level3">
+<h3 class="anchored" data-anchor-id="azure-machine-learning-services-amls">Azure Machine Learning Services (AMLS)</h3>
+<p>The Azure Machine Learning Services in your workspace are provisioned in a private virtual network - there is no direct access to the service over the internet. Because the Virtual Machines are deployed to the same private network as AMLS, you can connect to AMLS from within a Virtual Machine.</p>
+<p>You’ll need to know the URL to use for connecting. Click on the Azure Machine Learning service in your workspace then select the details tab. Towards the bottom left of this page you will see the value for the ‘internal connection url’ which you can use to access the AMLS service from your Virtual Machine.</p>
+<p><img src="assets/amls-url.png" class="img-fluid"></p>
+<p>An alternative to copy and pasting this URL, involves using your Workspace ID (which you can find in the via Workspace &gt; Overview &gt; Details). Having logged-on to your workspace VM, navigate to ‘https://ml.azure.com’ and sign-in using the same credentials that you use to access the TRE. Then navigate to ‘Workspaces’ and select the workspace corresponding to your TRE Workspace ID (the resource group for the workspace contains the workspace id as its last four characters):</p>
+<p><img src="assets/aml-workspace.png" class="img-fluid"></p>
+</section>
+</section>
+<section id="shared-services" class="level2">
+<h2 class="anchored" data-anchor-id="shared-services">Shared Services</h2>
+<p>Shared Services provide access to resources that you would otherwise need to access over the internet. Shared Services include:</p>
+<ol type="1">
+<li><a href="#gitea">Gitea</a></li>
+<li><a href="#nexus">Nexus</a></li>
+<li>Firewall</li>
+</ol>
+<p>The Shared Services are available for use by all workspaces, but their configuration can only be changed by the TRE administrators</p>
+<section id="gitea" class="level3">
+<h3 class="anchored" data-anchor-id="gitea">Gitea</h3>
+<p>Gitea is used in the TRE to mirror code repositories from the internet. You can browse the repositories available in Gitea from your Workspace VM using the URL <code>https://gitea-[TRE-ID].azurewebsites.net</code>. <em>(Check with your TRE administrator for the correct URL)</em></p>
+<p>Contact your TRE administrator if you need to add a git repository to the Gitea service.</p>
+<p>Gitea is also available as a Workspace service, this is useful if you wish to mirror a private repository, without making this accessible from other Workspaces.</p>
+<p>Whilst Gitea is used to mirror repositories from the internet, for security reasons, the server does not allow you to push changes to internet sources.</p>
+</section>
+<section id="nexus" class="level3">
+<h3 class="anchored" data-anchor-id="nexus">Nexus</h3>
+<p>Nexus is used in the TRE to provide a package mirror for popular software tools. Installation tools on your VMs are configured to pull from the Nexus server rather than directly from the internet.</p>
+<p>You can explore the available repositories mirrored by the Nexus server from your VM using <code>https://nexus-[TRE-ID].[LOCATION].cloudapp.azure.com</code>. <em>(Check with your TRE administrator for the correct URL)</em></p>
+<p>Click on the ‘Browse’ link to see the full list of repositories that are in the Nexus mirror.</p>
+<p><img src="assets/nexus-browse.png" class="img-fluid"></p>
+<p>If you need to configure an application to use a nexus repo, you can click the ‘copy’ button in the URL column for the mirror that you are interested in. Then you can set your application to use this mirror.</p>
+<p>For instance, if you want to configure python to use the pypi mirror on the Nexus server you could type:</p>
+<pre><code>pip config --user set global.index https://nexus-[TRE-ID].[LOCATION].cloudapp.azure.com/repository/pypi/pypi
+pip config --user set global.index-url https://nexus-[TRE-ID].[LOCATION].cloudapp.azure.com/pypi/simple
+pip config --user set global.trusted-host nexus-[TRE-ID].[LOCATION].cloudapp.azure.com</code></pre>
+<p>For Python, you may find that this has already been setup on your VM. You can check this by running:</p>
+<pre><code>pip config list</code></pre>
+<p>Similarly, on a Linux VM, the VM will be configured to use the apt repositories from Nexus. If you run <code>sudo apt update</code>, you will see that apt will only search for updates from the Nexus server.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -603,6 +703,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../personas/steward/steward.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Overview</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../anatomy/vm.html" class="pagination-link">
+        <span class="nav-page-text">Virtual Machines</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -612,5 +724,5 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

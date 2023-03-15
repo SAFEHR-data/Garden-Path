@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Ahmed Al-Hindawi, Tom Frost">
+<meta name="dcterms.date" content="2023-03-04">
 
-<title>FlowEHR Hitch-Hiking - The Hitch-hiker’s guide to FlowEHR</title>
+<title>FlowEHR Hitch-Hiking - Virtual Machines</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,27 +22,92 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../vignettes/vignettes.html" rel="next">
+<link href="../anatomy/tre.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -63,7 +130,7 @@ ul.task-list li input[type="checkbox"] {
 <style>html{ scroll-behavior: smooth; }</style>
 
 
-<link rel="stylesheet" href="scss/styles.css">
+<link rel="stylesheet" href="../scss/styles.css">
 </head>
 
 <body class="nav-sidebar docked nav-fixed fullcontent">
@@ -73,8 +140,8 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./images/logo-dark.png" alt="" class="navbar-logo">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../images/logo-dark.png" alt="" class="navbar-logo">
     </a>
   </div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -83,7 +150,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page">
+    <a class="nav-link" href="../index.html">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
@@ -91,7 +158,7 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">FlowEHR.io</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html">
+    <a class="nav-link" href="../about.html">
  <span class="menu-text">About</span></a>
   </li>  
 </ul>
@@ -111,7 +178,7 @@ ul.task-list li input[type="checkbox"] {
     </nav>
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">The Hitch-hiker’s guide to FlowEHR</h1>
+      <h1 class="quarto-secondary-nav-title">Virtual Machines</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -134,37 +201,37 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./quickstart/10_prerequisites.html" class="sidebar-item-text sidebar-link">Prerequisites</a>
+  <a href="../quickstart/10_prerequisites.html" class="sidebar-item-text sidebar-link">Prerequisites</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./quickstart/20_setup.html" class="sidebar-item-text sidebar-link">Set-up</a>
+  <a href="../quickstart/20_setup.html" class="sidebar-item-text sidebar-link">Set-up</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./quickstart/30_connecting.html" class="sidebar-item-text sidebar-link">Connecting to data</a>
+  <a href="../quickstart/30_connecting.html" class="sidebar-item-text sidebar-link">Connecting to data</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./quickstart/40_features.html" class="sidebar-item-text sidebar-link">Feature building</a>
+  <a href="../quickstart/40_features.html" class="sidebar-item-text sidebar-link">Feature building</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./quickstart/50_modelling.html" class="sidebar-item-text sidebar-link">Modelling</a>
+  <a href="../quickstart/50_modelling.html" class="sidebar-item-text sidebar-link">Modelling</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./quickstart/60_deployment.html" class="sidebar-item-text sidebar-link">Application deployment</a>
+  <a href="../quickstart/60_deployment.html" class="sidebar-item-text sidebar-link">Application deployment</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./quickstart/70_stewardship.html" class="sidebar-item-text sidebar-link">Stewardship</a>
+  <a href="../quickstart/70_stewardship.html" class="sidebar-item-text sidebar-link">Stewardship</a>
   </div>
 </li>
       </ul>
@@ -179,7 +246,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./personas/personas.html" class="sidebar-item-text sidebar-link">Personas</a>
+  <a href="../personas/personas.html" class="sidebar-item-text sidebar-link">Personas</a>
   </div>
 </li>
       </ul>
@@ -194,12 +261,12 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./personas/datascientist/datascientist.html" class="sidebar-item-text sidebar-link">Overview</a>
+  <a href="../personas/datascientist/datascientist.html" class="sidebar-item-text sidebar-link">Overview</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./personas/datascientist/onboarding.html" class="sidebar-item-text sidebar-link">Onboarding</a>
+  <a href="../personas/datascientist/onboarding.html" class="sidebar-item-text sidebar-link">Onboarding</a>
   </div>
 </li>
       </ul>
@@ -214,7 +281,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./personas/developer/developer.html" class="sidebar-item-text sidebar-link">Overview</a>
+  <a href="../personas/developer/developer.html" class="sidebar-item-text sidebar-link">Overview</a>
   </div>
 </li>
       </ul>
@@ -229,7 +296,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./personas/administrator/administrator.html" class="sidebar-item-text sidebar-link">Overview</a>
+  <a href="../personas/administrator/administrator.html" class="sidebar-item-text sidebar-link">Overview</a>
   </div>
 </li>
       </ul>
@@ -244,7 +311,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./personas/steward/steward.html" class="sidebar-item-text sidebar-link">Overview</a>
+  <a href="../personas/steward/steward.html" class="sidebar-item-text sidebar-link">Overview</a>
   </div>
 </li>
       </ul>
@@ -259,12 +326,12 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./anatomy/tre.html" class="sidebar-item-text sidebar-link">Trusted Research Environment</a>
+  <a href="../anatomy/tre.html" class="sidebar-item-text sidebar-link">Trusted Research Environment</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./anatomy/vm.html" class="sidebar-item-text sidebar-link">Virtual Machines</a>
+  <a href="../anatomy/vm.html" class="sidebar-item-text sidebar-link active">Virtual Machines</a>
   </div>
 </li>
       </ul>
@@ -279,12 +346,12 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./vignettes/vignettes.html" class="sidebar-item-text sidebar-link">Vignettes</a>
+  <a href="../vignettes/vignettes.html" class="sidebar-item-text sidebar-link">Vignettes</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./faq/faq.html" class="sidebar-item-text sidebar-link">FAQ</a>
+  <a href="../faq/faq.html" class="sidebar-item-text sidebar-link">FAQ</a>
   </div>
 </li>
       </ul>
@@ -299,14 +366,26 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">The Hitch-hiker’s guide to FlowEHR</h1>
+<h1 class="title d-none d-lg-block">Virtual Machines</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Ahmed Al-Hindawi, Tom Frost </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">March 4, 2023</p>
+    </div>
+  </div>
   
     
   </div>
@@ -314,28 +393,123 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>FlowEHR is a development and deployment platform for digital research and innovation for healthcare providers. It provides technical controls to protect privacy but an smooth pathway for deployment of data driven products to the clinic or the bedside. Whilst it is a platform to bridge the AI chasm for health, we anticipate health data researchers, application developers, and clinical analysts to accompany us on our journey.</p>
-<p>Our aim is …</p>
+<p>As a user of FlowEHR you will need to create a virtual machine (VM) within an Azure Workspace in order to access FlowEHR assets within a secure Trusted Research Environment (TRE). The following instructions describe the process of VM creation and access, as well as some initial setup to access a Jupyter notebook once inside the VM.</p>
+<p>This documentation relies heavily upon the official <a href="https://microsoft.github.io/AzureTRE/latest/tre-templates/shared-services/nexus/">AzureTRE docs</a> which should be consulted before performing the below steps.</p>
+<section id="creating-a-new-vm" class="level2">
+<h2 class="anchored" data-anchor-id="creating-a-new-vm">Creating a new VM</h2>
+<ol type="1">
+<li>Visit the FlowEHR Azure TRE landing page URL (please request from a member of the team)</li>
+<li>Select an appropriate Workspace from the list provided</li>
+<li>Under <code>Workspace Services</code>, select the <code>VMs</code> option</li>
+<li>Under <code>Resources</code>, you will see any previously created VMs. If there are none, select <code>Create New</code> in the upper right</li>
+<li>Select <code>Linux Machine &gt; Create</code> (only option available as of 05/12/2022)</li>
+<li>Choose an approriate name and description for the VM and select the desired image.
 <ul>
-<li>to protect patient privacy</li>
-<li>to enable collaboration between different users</li>
-<li>to make illuminate the risks of data and algorithms applied to healthcare</li>
-<li>to work at the pace of the decision maker</li>
-</ul>
-<p>These are principles are sometimes framed as barries but only by full engaging with each of them will it be possible to use data to improve the quality and safety of health care. When combined we believe this will <em>enable</em> the deployment of digital tools to solve operational and clinical problems.</p>
-<p>Our original use case was the safe &amp; effective development &amp; deployment of real-time translational Machine Learning interventions into clinical and operational settings inside a busy NHS hospital.</p>
-<section id="next-steps" class="level2">
-<h2 class="anchored" data-anchor-id="next-steps">Next steps</h2>
-<p>We would recommend using the <a href="./quickstart/quickstart.html">QuickStart guide</a> to follow and ‘end-to-end’ walkthrough of an application from concept to implementation. This will begin with deploying the FlowEHR infrastructure for personal use with synthetic data, and end with inspecting the performance of an algorithm in the (simulated) wild.</p>
-<p>Specific users may wish to dive directly into documentation relevant to their role. This includes</p>
+<li>For linux VMs, there are two Ubuntu 18.04 images available. The <code>Data Science</code> variant may have a more relevant selection of packages installed.</li>
+</ul></li>
+<li>Select an approriate VM size from the dropdown menu. If you’re not sure of your requirements, opt for the <code>2 CPU | 8GB RAM</code> option. You can scale this up later if needed.</li>
+<li>Check the box marked <code>Shared storage</code> to enable access to workspace shared storage.</li>
+<li>Hit <code>Submit</code>. Your VM will start provisioning and you may need to wait a few minutes.</li>
+</ol>
+</section>
+<section id="stopping-a-running-vm" class="level2">
+<h2 class="anchored" data-anchor-id="stopping-a-running-vm">Stopping a running VM</h2>
+<ol type="1">
+<li>Select the three dots at the upper right of the VM entry under <code>Resources</code></li>
+<li>Select <code>Action &gt; Stop</code></li>
+<li>The VM will be stopped momentarily</li>
+</ol>
+</section>
+<section id="starting-a-stopped-vm" class="level2">
+<h2 class="anchored" data-anchor-id="starting-a-stopped-vm">Starting a stopped VM</h2>
+<ol type="1">
+<li>Select the three dots at the upper right of the VM entry under <code>Resources</code></li>
+<li>Select <code>Action &gt; Start</code></li>
+</ol>
+</section>
+<section id="connecting-to-a-created-vm" class="level2">
+<h2 class="anchored" data-anchor-id="connecting-to-a-created-vm">Connecting to a created VM</h2>
+<ol type="1">
+<li>Visit the FlowEHR Azure TRE landing page URL</li>
+<li>Select an appropriate Workspace from the list provided</li>
+<li>Under <code>Workspace Services</code>, select the <code>VMs</code> option</li>
+<li>Under <code>Resources</code>, you will see any previously created VMs</li>
+<li>Select <code>Connect</code> under the VM you wish to connect to. This launches a separate browser window or tab.</li>
+</ol>
+</section>
+<section id="deleting-a-vm" class="level2">
+<h2 class="anchored" data-anchor-id="deleting-a-vm">Deleting a VM</h2>
+<ol type="1">
+<li>Select the three dots at the upper right of the VM entry under <code>Resources</code></li>
+<li>Select <code>Action &gt; Stop</code></li>
+<li>When the VM has been deallocated, repeat step 1. and select <code>Delete</code></li>
+</ol>
+</section>
+<section id="installing-software-within-the-vm" class="level2">
+<h2 class="anchored" data-anchor-id="installing-software-within-the-vm">Installing software within the VM</h2>
+<p>As the VM is located within a TRE, most outbound internet access is restricted.</p>
+<section id="github" class="level3">
+<h3 class="anchored" data-anchor-id="github">GitHub</h3>
+<p>Access to repositories hosted on <a href="https://github.com/">GitHub</a> is restricted. Repositories can be mirrored on an ad-hoc basis to a TRE-accessible <a href="https://gitea.io">Gitea</a> instance, where this documentation can also be found.</p>
+<p>You should be supplied with the URL for the Gitea instance during your onboarding. If you have not received the Gitea URL, please request it from member of the team.</p>
+</section>
+<section id="apt-packages" class="level3">
+<h3 class="anchored" data-anchor-id="apt-packages">APT packages</h3>
+<p>The VM has access to software packages via a <a href="https://microsoft.github.io/AzureTRE/latest/tre-templates/shared-services/nexus/">Nexus</a> mirror</p>
+</section>
+<section id="python-packages-via-conda-and-pypi" class="level3">
+<h3 class="anchored" data-anchor-id="python-packages-via-conda-and-pypi">Python packages via Conda and PyPI</h3>
+<p>The Nexus mirror provides mirrored access to packages available via conda forge and PyPI via the standard <code>pip install</code> and <code>conda install</code> command line interfaces.</p>
+</section>
+</section>
+<section id="example-running-a-jupyter-notebook-from-this-documentation-within-a-virtual-environment" class="level2">
+<h2 class="anchored" data-anchor-id="example-running-a-jupyter-notebook-from-this-documentation-within-a-virtual-environment">Example: Running a Jupyter notebook from this documentation within a virtual environment</h2>
+<p>Within a TRE VM:</p>
 <ul>
-<li>the <a href="./personas/datascientist/datascientist.html">data scientist</a> for those providing analytical insights or building models against live data</li>
-<li>the <a href="./personas/developer/developer.html">application developer</a> for those building and deploying applications</li>
-<li>the <a href="./personas/administrator/administrator.html">platform maintainer</a> for those responsible for installing and mananaging the platform</li>
-<li>the <a href="./personas/steward/steward.html">algorithm steward</a> for those using the platform to monitor, audit and observe data driven applications in use</li>
+<li>Visit the Gitea URL provided alongside this documentation</li>
+<li>Select ‘Explore’ from the top left</li>
+<li>Select the ‘End-User-Docs’ repository</li>
+<li>Copy the HTTPS link to the repository</li>
 </ul>
+<p>The following code</p>
+<ul>
+<li>Clones this documentation repo</li>
+<li>Creates a virtual environment</li>
+<li>Activates the environment</li>
+<li>Installs <code>jupyterlab</code> and <code>ipykernel</code> within the virtual environment<br>
+</li>
+<li>Makes the virtual environment available as a kernel within a Jupyter Lab environment</li>
+<li>Launches Jupyter Lab</li>
+</ul>
+<p>Open a terminal within the VM and create a virtual environment with Conda</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">-n</span> my_virtual_environment python=3.10</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate my_virtual_environment</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You may be prompted by <code>conda</code> to initialise your shell. Run</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> init bash</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>and restart your terminal. Run the following commands in the restarted terminal to clone this documentation repo and install dependencies</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone <span class="va">${gitea</span><span class="op">-</span>repository-url<span class="va">}</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> End-User-Docs/docs/notebooks</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">-n</span> my_virtual_environment python=3.10</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate my_virtual_environment</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install jupyterlab ipykernel</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install <span class="at">-r</span> requirements.txt</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> ipykernel install <span class="at">--user</span> <span class="at">--name</span><span class="op">=</span>my_env</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>A Jupyter Lab environment can then be launched by running</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">jupyter</span> lab</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Within this environment, navigate to the example notebooks provided. When running the notebooks, ensure the python kernel is set to the name defined by the earlier <code>python -m ipykernel install</code> command.</p>
+</section>
+<section id="accessing-ehr-and-dicom-data-within-the-tre" class="level2">
+<h2 class="anchored" data-anchor-id="accessing-ehr-and-dicom-data-within-the-tre">Accessing EHR and DICOM data within the TRE</h2>
+<p>This documentation is accompanied by Jupyter notebook files which provide detailed examples of accessing and viewing EHR and DICOM data from within a Jupyter Lab environment within a TRE VM.</p>
+<p>Before launching the notebooks and after following the steps in the <a href="#example-running-a-jupyter-notebook-from-this-documentation-within-a-virtual-environment">above example</a>, install required dependencies within your created virtual environment with</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install <span class="at">-r</span> requirements.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="a-note-on-the-data-accessible-from-the-tre" class="level3">
+<h3 class="anchored" data-anchor-id="a-note-on-the-data-accessible-from-the-tre">A note on the data accessible from the TRE</h3>
+<p>Data provided has gone through an anonymisation step and will not entirely look like the original data due to the removal of PII and consequent structural changes that may appear as a result, such as line break removals.</p>
+<p>As such, structural elements of reports such as line breaks or sentence lengths should <strong>not</strong> be used to generate features as inputs to machine learning models.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -603,6 +777,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../anatomy/tre.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Trusted Research Environment</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../vignettes/vignettes.html" class="pagination-link">
+        <span class="nav-page-text">Vignettes</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -612,5 +798,5 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

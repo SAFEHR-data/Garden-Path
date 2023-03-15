@@ -1,10 +1,15 @@
 [
   {
-    "listing": "/notebooks/vignettes.html",
+    "listing": "/vignettes/vignettes.html",
     "items": [
-      "/notebooks/data_lake_access.html",
-      "/notebooks/dicom_access.html",
-      "/notebooks/contributing.html"
+      "/vignettes/data_lake_access.html",
+      "/vignettes/dicom_access.html"
+    ]
+  },
+  {
+    "listing": "/faq/faq.html",
+    "items": [
+      "/faq/contributing.html"
     ]
   }
 ]
