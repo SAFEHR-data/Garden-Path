@@ -1,0 +1,28 @@
+---
+title: "How do I contribute to the documentation"
+categories: faq
+author: Steve Harris
+---
+
+We welcome new contributions, edits to existing material, and ad hoc supporting material. The latter category could include example notebooks or vignettes showing how something works, or a quick note. 
+
+- Notebooks and vignettes can just be saved in `./docs/notebooks/`. Please ensure the first cell in the notebook contains the YAML [metadata](https://quarto.org/docs/tools/jupyter-lab.html#yaml-front-matter) for the author, title, and categories.
+- Quick notes in the style FAQ answers, or 'today I learned' notes can be saved into `./docs/faq/`
+
+Both will be automatically indexed when the site is deployed. The documentation is deployed using [Quarto](https://quarto.org), and the documentation is built from the `./docs/` directory. Please fork or clone [](https://github.com/UCLH-Foundry/FlowEHR-Hitchhiker-Guide).
+
+
+You will need to have 
+
+- installed basic python and jupyter extensions necessary including those for jupyter
+- installed [quarto](https://quarto.org/docs/get-started/)
+- installed the [VSCode extension](https://quarto.org/docs/get-started/hello/vscode.html)
+
+Workflow
+
+```sh
+cd docs
+quarto preview
+```
+
+Then create your content and review before making a pull request.  Don't forget that changes to config (e.g. `_quarto.yml` may need you to rerun `quarto render` to ensure the whole site is correctly rebuilt) When you push to either *dev* or *main* branches, then a GitHub Action (see `.github/workflows/publish.yml`) will be triggered that should publish the current documentation to https://hylode.github.io/HyUi/.

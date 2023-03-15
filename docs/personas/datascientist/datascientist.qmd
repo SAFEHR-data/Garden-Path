@@ -1,0 +1,6 @@
+You will wrangle data, and build models.
+
+You might come from a background of
+- NHS analytics
+- Data science
+- Machine learning for health

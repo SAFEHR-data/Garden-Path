@@ -1,4 +1,9 @@
+# IDEs and text editros
+*.code-workspace
+
+# OS specific stuff
 .DS_Store
 
+# Quarto specific stuff
 /.quarto/
 /_site/

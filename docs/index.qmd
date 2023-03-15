@@ -1,5 +1,29 @@
 ---
-title: "Hitch-hiker's guide to FlowEHR"
+title: "The Hitch-hiker's guide to FlowEHR"
 ---
 
-End user documentation for FlowEHR
+FlowEHR is a development and deployment platform for digital research and innovation for healthcare providers. It provides technical controls to protect privacy but an smooth pathway for deployment of data driven products to the clinic or the bedside. Whilst it is a platform to bridge the AI chasm for health, we anticipate health data researchers, application developers, and clinical analysts to accompany us on our journey.
+
+Our aim is ...
+
+- to protect patient privacy
+- to enable collaboration between different users
+- to make illuminate the risks of data and algorithms applied to healthcare
+- to work at the pace of the decision maker
+
+These are principles are sometimes framed as barries but only by full engaging with each of them will it be possible to use data to improve the quality and safety of health care. When combined we believe this will _enable_ the deployment of digital tools to solve operational and clinical problems.
+
+Our original use case was the safe & effective development & deployment of real-time translational Machine Learning interventions into clinical and operational settings inside a busy NHS hospital.
+
+## Next steps
+
+We would recommend using the [QuickStart guide](quickstart/quickstart.qmd) to follow and 'end-to-end' walkthrough of an application from concept to implementation. This will begin with deploying the FlowEHR infrastructure for personal use with synthetic data, and end with inspecting the performance of an algorithm in the (simulated) wild.
+
+Specific users may wish to dive directly into documentation relevant to their role. This includes
+
+- the [data scientist](personas/datascientist/datascientist.qmd) for those providing analytical insights or building models against live data
+- the [application developer](personas/developer/developer.qmd) for those building and deploying applications
+- the [platform maintainer](personas/administrator//administrator.qmd) for those responsible for installing and mananaging the platform
+- the [algorithm steward](personas/steward//steward.qmd) for those using the platform to monitor, audit and observe data driven applications in use 
+
+

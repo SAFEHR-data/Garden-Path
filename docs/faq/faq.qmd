@@ -1,0 +1,16 @@
+---
+title: "FAQ"
+listing:
+  id: faq-listings
+  contents: 
+    - "*.qmd"
+    - "*.md"
+  sort: "date desc"
+  type: table
+  categories: true
+---
+
+Please browse our FAQs, and short 'today I learned' posts.
+
+::: {#faq-listings}
+:::

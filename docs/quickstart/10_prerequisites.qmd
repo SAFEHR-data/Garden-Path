@@ -1,0 +1,9 @@
+---
+title: Prerequisites for FlowEHR
+---
+
+The skills you need
+
+The permissions you need
+
+The resources you need

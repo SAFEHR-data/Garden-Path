@@ -1,0 +1,5 @@
+---
+title: Set-up
+---
+
+How to set-up FlowEHR on Azure
