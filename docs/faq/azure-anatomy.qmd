@@ -1,0 +1,18 @@
+---
+title: What's the difference between Azure, a landing zone, a TRE, and a workspace? And do I need to care?
+---
+
+Hopefully you don't need to care but these terms come up so it's helpful to know what they mean. The list below starts from the general and moves to the specific.
+
+Azure
+: Azure is a cloud computing platform and service offered by Microsoft that provides a range of cloud services, including computing, storage, networking, and analytics. It enables businesses and individuals to build, deploy, and manage applications and services through Microsoft-managed data centers.
+
+Trusted Research Environment (TRE) hosted on Azure
+: A [TRE hosted on Azure](https://microsoft.github.io/AzureTRE/v0.10.0/) is a secure, privacy-preserving environment that allows researchers to access and analyze sensitive data without compromising the data's confidentiality. It is built on Azure infrastructure, leveraging its security, compliance, and scalability features, to create a controlled environment for data access, analysis, and sharing.
+
+Workspace within a TRE
+: A workspace within a TRE is a dedicated, isolated area where researchers can access, store, and analyze data securely. It provides a collaborative space with controlled access and tools needed for data processing, analysis, and visualization while ensuring that the data remains protected and compliant with privacy regulations.
+
+
+Azure Machine Learning (AML): 
+AML is a cloud-based service within the Azure ecosystem that provides tools and services to build, train, and deploy machine learning models. It offers a collaborative environment for data scientists and developers, allowing them to leverage pre-built algorithms, manage data, and use compute resources efficiently. AML streamlines the end-to-end machine learning lifecycle, making it easier to develop, experiment, and operationalize AI solutions at scale.

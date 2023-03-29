@@ -1,0 +1,25 @@
+---
+title: Connections and Authentication
+---
+
+You will need to make the following connections.
+
+- to the source database (if your are building features)
+- to the Feature Store
+- to Azure Machine Learning
+- to synthetic data (if you are working outside the TRE perhaps as an application developer)
+- to the application database (CosmosDB)
+
+## Connecting to the source data
+
+## Connecting to the Feature Store
+
+## Connecting Azure Machine Learning
+
+## Accessing Synthetic Data
+
+1. We have built a tool ([Satellite](https://github.com/UCLH-Foundry/Satellite)) that streams structually correct but semantically meaningless data for the purposes of development.
+2. We have collaborated with colleagues at the Alan Turing Institute, and have used their [SQLSynthGen](https://github.com/alan-turing-institute/sqlsynthgen) tool to create a replica of data.
+
+## Connecting to CosmosDB
+

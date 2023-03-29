@@ -1,0 +1,16 @@
+---
+title: What is algorithm stewardship?
+---
+
+## Further reading
+
+### Model monitoring
+
+- [Model monitoring in production](https://neptune.ai/blog/how-to-monitor-your-models-in-production-guide) blogpost via neptune.ai
+
+### Data quality testing
+
+- [Data Quality Testing](https://lakefs.io/blog/data-quality-testing/) blogpost via lakeFS
+
+
+

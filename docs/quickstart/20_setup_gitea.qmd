@@ -1,0 +1,31 @@
+---
+title: Gitea set-up
+---
+
+You will need a username and password for the TRE hosted Gitea instance.
+Now go to https://gitea-uclhtreprod.azurewebsites.net/ from a browser in the TRE.
+
+![](assets/setup_gitea_1.png)
+
+Log on
+
+![](assets/setup_gitea_2.png)
+
+You'll also want to run 
+
+```sh
+git config --global user.name
+git config --global user.email 
+```
+
+with your Github identity, so that you're commits are written with your real github handle
+
+![](assets/setup_gitea_3.png)
+
+And to save you having to re-enter your username and password on every interaction with Gitea then
+
+```sh
+git config --global credential.helper store
+```
+
+via [SO](https://stackoverflow.com/a/35942890/992999)

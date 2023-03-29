@@ -1,0 +1,10 @@
+---
+title: Azure Machine Learning
+---
+
+See also 
+
+- [Azure Anatomy FAQ](../faq/azure-anatomy.qmd)
+- [Azure Machine Learning docs](https://learn.microsoft.com/en-us/azure/machine-learning/?view=azureml-api-2)
+
+Azure Machine Learning (AML) is a cloud-based service within the Azure ecosystem that provides tools and services to build, train, and deploy machine learning models. It offers a collaborative environment for data scientists and developers, allowing them to leverage pre-built algorithms, manage data, and use compute resources efficiently. AML streamlines the end-to-end machine learning lifecycle, making it easier to develop, experiment, and operationalize AI solutions at scale.
