@@ -1,0 +1,16 @@
+---
+title: Feature building
+author: Steve Harris
+---
+
+We will cover
+
+- feature building
+- feature browsing
+- feature exploration
+- input data testing
+- feature testing
+
+
+See
+

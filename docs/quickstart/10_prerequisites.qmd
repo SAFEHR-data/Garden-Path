@@ -4,6 +4,12 @@ title: Prerequisites for FlowEHR
 
 The skills you need
 
+- Familiarity with **Python** programming for data science tasks. Much of the design of the platform is orientated to support those with strong SQL skills, or those with strong R skills, but for now you will find that the examples and the work are biased toward Python.
+
 The permissions you need
 
+- We assume that you are working in a _direct care_ role and therefore have rights to access identifiable data.
+
 The resources you need
+
+- Some time and some patience!
