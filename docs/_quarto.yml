@@ -64,6 +64,8 @@ website:
         contents:
           - href: personas/administrator/administrator.qmd
             text: Overview
+          - href: personas/administrator/configuration.qmd
+            text: Configuration
       - section: The Steward
         contents:
           - href: personas/steward/steward.qmd
@@ -85,7 +87,7 @@ website:
   repo-url: https://github.com/UCLH-Foundry/Garden-Path
   repo-actions: [edit, issue]
   repo-subdir: docs
-        
+
 format:
   html:
     theme:

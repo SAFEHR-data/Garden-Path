@@ -85,9 +85,9 @@ Once created, you need to the install the app to the organisation. [Follow these
 
 After installation, stay on the same page and check the URL. It should look like this:
 
-> https://github.com/organizations/UCLH-Foundry/settings/installations/123456789
+> https://github.com/organizations/UCLH-FlowEHR-TestBed/settings/installations/35581991
 
-At the end of the URL after `installations/`, you'll see a number. Record this down - it is your `GitHub App Installation Id`. (Believe it or not this is the easiest way to find it!)
+At the end of the URL after `installations/`, you'll see a number (`35581991` in the example above). Record this down - it is your `GitHub App Installation Id`. (Believe it or not this is the easiest way to find it!)
 
 ![](./assets/find-installation-id.png){fig-alt="Find your Installation Id"}
 
@@ -119,3 +119,5 @@ For other developers who want to use this same app instead of setting up their o
 
 For use in CI, copy the contents of the PEM file, and paste it into a new GitHub secret called `GH_APP_CERT`. The CI/CD pipeline will read this into a file to use during deployments.
 :::
+
+That's it for now! We'll need all this when we come to deploying apps (which we'll cover in the [deployment](./60_deployment.qmd) section).
