@@ -1,0 +1,29 @@
+---
+title: "Author & deploy a FlowEHR App"
+---
+
+You're now ready to deploy your first FlowEHR App!
+
+## Configure FlowEHR apps
+
+Similar to the behaviour of the root FlowEHR config, if the `$ENVIRONMENT` env var is set (typically by CI), FlowEHR will look for the apps configured in a file in the `/apps` directory called `apps.{ENVIRONMENT}.yaml`. If unset, it will look for `apps.local.yaml`.
+
+These config files consist of a map of `app_id` and the config values for that app. It will also look for a matching `app_id` in the `apps.yaml` shared config file, and will merge properties of the two, with environment-specific properties taking precedence. This means you can define common values of an app (like the `owners` and `contributors`) that are common across environments, and only override relevant settings per environment (i.e. `num_of_approvers`).
+
+> Note: FlowEHR will only deploy apps defined in the environment file matching the currently selected environment. If a file doesn't exist for your current environment (i.e. if you're working locally and don't have an `apps.local.yaml`) or is empty, even if there are apps configured in the shared `apps.yaml`, FlowEHR will treat this as there being no apps to deploy. This ensures no apps are deployed accidentally to environment they shouldn't be without it being explicitly set for that environment.
+
+For local deployments, create your config as follows:
+
+1. In this directory (`/apps`), copy the `apps.sample.yaml` to a new `apps.local.yaml` file:
+
+```bash
+cp apps.sample.yaml apps.local.yaml
+```
+
+2. Then amend the settings as required. Ensure that each key of the apps file is unique - this will be the ID for the app used across its resources.
+
+For CI deployments, it's the same process, just make sure the `apps.{ENVIRONMENT}.yaml` matches the environment name you're deploying.
+
+### Deploy apps
+
+After you've configured your apps, run `make apps` from the root of this repository to deploy the Azure infrastructure and GitHub artifacts for the configured app(s). Then, you can find your newly-created repositories in the GitHub organization you specified.

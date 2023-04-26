@@ -7,7 +7,7 @@ execute:
   freeze: auto
 
 website:
-  title: "FlowEHR Hitch-Hiking"
+  title: "FlowEHR Garden Path"
   description: "End user documentation for FlowEHR"
   navbar:
     logo: images/logo-dark.png
@@ -22,7 +22,7 @@ website:
         text: About
     right:
       - icon: github
-        href: https://github.com/UCLH-Foundry/FlowEHR-Hitchhiker-Guide
+        href: https://github.com/UCLH-Foundry/Garden-Path
         aria-label: GitHub
   page-navigation: true
   page-footer: |
@@ -74,13 +74,15 @@ website:
             text: Trusted Research Environment
           - href: anatomy/vm.qmd
             text: Virtual Machines
+          - href: anatomy/apps.qmd
+            text: FlowEHR Apps
       - section: "User Contributions"
         contents:
           - href: vignettes/vignettes.qmd
             text: Vignettes
           - href: faq/faq.qmd
             text: FAQ
-  repo-url: https://github.com/UCLH-Foundry/FlowEHR-Hitchhiker-Guide
+  repo-url: https://github.com/UCLH-Foundry/Garden-Path
   repo-actions: [edit, issue]
   repo-subdir: docs
         
@@ -95,4 +97,5 @@ format:
     link-external-newwindow: true
     smooth-scroll: true
     highlight-style: gruvbox
+    number-sections: true
 
