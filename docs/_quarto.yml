@@ -60,6 +60,8 @@ website:
         contents:
           - href: personas/developer/developer.qmd
             text: Overview
+          - href: personas/developer/building-an-app.qmd
+            text: Building an App
       - section: The Administrator
         contents:
           - href: personas/administrator/administrator.qmd
