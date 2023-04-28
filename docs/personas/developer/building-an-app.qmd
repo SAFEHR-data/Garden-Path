@@ -1,0 +1,52 @@
+---
+title: 'Building a FlowEHR App'
+---
+
+If you want to build an app that works safely with live patient data and/or ML Model predictions, share it securely with clinicians to inform their decision-making, and you don't want to worry about managing any infrastructure and deployment logic, then you're in the right place.
+
+> You can read more about the anatomy of FlowEHR apps [here](../../anatomy/apps.qmd).
+
+
+## Getting started
+
+
+### Prerequisites
+
+Speak to your friendly FlowEHR admin...
+
+### Choosing a template
+
+Finding a seedling
+Cloning the repo and making some changes​
+Serve-local to run + debug locally​
+
+
+## Connecting to synthetic data
+
+### Local connectivity to Feature Store
+
+### Local connectivity to State Store
+
+
+## Calling model endpoints
+
+
+## App monitoring instrumentation
+
+
+## Deploying your app to a dev environment
+
+### PR to deployment branch
+
+PR to app-dev branch. My work is deployed in dev.​
+PR to staging / approval – my dashboard now runs in a prod environment with access to live data. I can see it [here].​
+
+### Viewing the hosted site
+
+### Viewing logs and metrics
+
+
+## Deploying to staging & prod environments
+
+Now I’m ready + others approve => It can go to prod here.​
+I can share the link, and a clinician can securely log in via AAD

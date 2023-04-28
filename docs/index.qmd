@@ -1,5 +1,5 @@
 ---
-title: "The Hitch-hiker's guide to FlowEHR"
+title: "FlowEHR Documentation"
 ---
 
 FlowEHR is a development and deployment platform for digital research and innovation for healthcare providers. It provides technical controls to protect privacy but an smooth pathway for deployment of data driven products to the clinic or the bedside. Whilst it is a platform to bridge the AI chasm for health, we anticipate health data researchers, application developers, and clinical analysts to accompany us on our journey.
