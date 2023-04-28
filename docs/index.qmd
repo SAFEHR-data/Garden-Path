@@ -1,5 +1,0 @@
----
-title: "Hitch-hiker's guide to FlowEHR"
----
-
-End user documentation for FlowEHR

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>FlowEHR Garden Path - FAQ</title>
+<title>FlowEHR Garden Path - Building a FlowEHR App</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,27 +23,26 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="../vignettes/vignettes.html" rel="prev">
-<script src="../site_libs/quarto-listing/list.min.js"></script>
-<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../personas/administrator/administrator.html" rel="next">
+<link href="../../personas/developer/developer.html" rel="prev">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -63,52 +62,21 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-faq-listings .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-author',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-faq-listings'] = new List('listing-faq-listings', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 <style>html{ scroll-behavior: smooth; }</style>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="../scss/styles.css">
+<link rel="stylesheet" href="../../scss/styles.css">
 </head>
 
-<body class="nav-sidebar docked nav-fixed">
+<body class="nav-sidebar docked nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../images/logo-dark.png" alt="" class="navbar-logo">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../images/logo-dark.png" alt="" class="navbar-logo">
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -118,7 +86,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html" rel="" target="">
+    <a class="nav-link" href="../../index.html" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
@@ -126,7 +94,7 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">FlowEHR.io</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../about.html" rel="" target="">
+    <a class="nav-link" href="../../about.html" rel="" target="">
  <span class="menu-text">About</span></a>
   </li>  
 </ul>
@@ -148,7 +116,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../vignettes/vignettes.html">User Contributions</a></li><li class="breadcrumb-item"><a href="../faq/faq.html">FAQ</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../personas/developer/developer.html">The Developer</a></li><li class="breadcrumb-item"><a href="../../personas/developer/building-an-app.html">Building an App</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -171,43 +139,43 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../quickstart/10_prerequisites.html" class="sidebar-item-text sidebar-link">
+  <a href="../../quickstart/10_prerequisites.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Prerequisites</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../quickstart/20_setup.html" class="sidebar-item-text sidebar-link">
+  <a href="../../quickstart/20_setup.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Set-up</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../quickstart/30_connecting.html" class="sidebar-item-text sidebar-link">
+  <a href="../../quickstart/30_connecting.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Connecting to data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../quickstart/40_features.html" class="sidebar-item-text sidebar-link">
+  <a href="../../quickstart/40_features.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Feature building</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../quickstart/50_modelling.html" class="sidebar-item-text sidebar-link">
+  <a href="../../quickstart/50_modelling.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Modelling</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../quickstart/60_deployment.html" class="sidebar-item-text sidebar-link">
+  <a href="../../quickstart/60_deployment.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Application deployment</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../quickstart/70_stewardship.html" class="sidebar-item-text sidebar-link">
+  <a href="../../quickstart/70_stewardship.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Stewardship</span></a>
   </div>
 </li>
@@ -224,7 +192,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../personas/personas.html" class="sidebar-item-text sidebar-link">
+  <a href="../../personas/personas.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Personas</span></a>
   </div>
 </li>
@@ -241,13 +209,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../personas/datascientist/datascientist.html" class="sidebar-item-text sidebar-link">
+  <a href="../../personas/datascientist/datascientist.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../personas/datascientist/onboarding.html" class="sidebar-item-text sidebar-link">
+  <a href="../../personas/datascientist/onboarding.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Onboarding</span></a>
   </div>
 </li>
@@ -264,13 +232,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../personas/developer/developer.html" class="sidebar-item-text sidebar-link">
+  <a href="../../personas/developer/developer.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../personas/developer/building-an-app.html" class="sidebar-item-text sidebar-link">
+  <a href="../../personas/developer/building-an-app.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Building an App</span></a>
   </div>
 </li>
@@ -287,13 +255,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../personas/administrator/administrator.html" class="sidebar-item-text sidebar-link">
+  <a href="../../personas/administrator/administrator.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../personas/administrator/configuration.html" class="sidebar-item-text sidebar-link">
+  <a href="../../personas/administrator/configuration.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Configuration</span></a>
   </div>
 </li>
@@ -310,7 +278,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../personas/steward/steward.html" class="sidebar-item-text sidebar-link">
+  <a href="../../personas/steward/steward.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
@@ -327,19 +295,19 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../anatomy/tre.html" class="sidebar-item-text sidebar-link">
+  <a href="../../anatomy/tre.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Trusted Research Environment</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../anatomy/vm.html" class="sidebar-item-text sidebar-link">
+  <a href="../../anatomy/vm.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Virtual Machines</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../anatomy/apps.html" class="sidebar-item-text sidebar-link">
+  <a href="../../anatomy/apps.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">FlowEHR Apps</span></a>
   </div>
 </li>
@@ -356,13 +324,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../vignettes/vignettes.html" class="sidebar-item-text sidebar-link">
+  <a href="../../vignettes/vignettes.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Vignettes</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../faq/faq.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../faq/faq.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">FAQ</span></a>
   </div>
 </li>
@@ -373,15 +341,13 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(1)</span></div><div class="category" data-category="faq">faq <span class="quarto-category-count">(1)</span></div></div></div>
+    
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">FAQ</h1>
+<h1 class="title">Building a FlowEHR App</h1>
 </div>
 
 
@@ -396,58 +362,55 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>Please browse our FAQs, and short ‘today I learned’ posts.</p>
-<div id="listing-faq-listings" class="quarto-listing quarto-listing-container-table">
-<div class="listing-actions-group">
-   <div class="input-group input-group-sm quarto-listing-sort">
-     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
-     <select id="listing-faq-listings-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-faq-listings'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
-       <option value="" disabled="" selected="" hidden="">Order By</option>
-       <option value="index" data-direction="asc">Default</option>
-         <option value="listing-title-sort" data-direction="asc">
-          Title
-        </option>
-         <option value="listing-author" data-direction="asc">
-          Author
-        </option>
-     </select>
-  </div>
-    <div class="input-group input-group-sm quarto-listing-filter">
-      <span class="input-group-text"><i class="bi bi-search"></i></span>
-      <input type="text" class="search form-control" placeholder="Filter">
-    </div>
-</div>
-
-<table class="quarto-listing-table table">
-<thead>
-<tr>
-<th>
-<a class="sort" data-sort="listing-title-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Title</a>
-</th>
-<th>
-<a class="sort" data-sort="listing-author" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Author</a>
-</th>
-</tr>
-</thead>
-<tbody class="list">
-<tr data-index="0" data-categories="faq" data-listing-file-modified-sort="1682528912065" data-listing-reading-time-sort="1" data-listing-title-sort="How do I contribute to the documentation" data-listing-filename-sort="contributing.qmd">
-<td>
-<a href="../faq/contributing.html" class="title listing-title">How do I contribute to the documentation</a>
-</td>
-<td>
-<span class="listing-author">Steve Harris</span>
-</td>
-</tr>
-</tbody>
-
-</table>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div>
+<p>If you want to build an app that works safely with live patient data and/or ML Model predictions, share it securely with clinicians to inform their decision-making, and you don’t want to worry about managing any infrastructure and deployment logic, then you’re in the right place.</p>
+<blockquote class="blockquote">
+<p>You can read more about the anatomy of FlowEHR apps <a href="../../anatomy/apps.html">here</a>.</p>
+</blockquote>
+<section id="getting-started" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="getting-started"><span class="header-section-number">1</span> Getting started</h2>
+<section id="prerequisites" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="prerequisites"><span class="header-section-number">1.1</span> Prerequisites</h3>
+<p>Speak to your friendly FlowEHR admin…</p>
+</section>
+<section id="choosing-a-template" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="choosing-a-template"><span class="header-section-number">1.2</span> Choosing a template</h3>
+<p>Finding a seedling Cloning the repo and making some changes​ Serve-local to run + debug locally​</p>
+</section>
+</section>
+<section id="connecting-to-synthetic-data" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="connecting-to-synthetic-data"><span class="header-section-number">2</span> Connecting to synthetic data</h2>
+<section id="local-connectivity-to-feature-store" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="local-connectivity-to-feature-store"><span class="header-section-number">2.1</span> Local connectivity to Feature Store</h3>
+</section>
+<section id="local-connectivity-to-state-store" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="local-connectivity-to-state-store"><span class="header-section-number">2.2</span> Local connectivity to State Store</h3>
+</section>
+</section>
+<section id="calling-model-endpoints" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="calling-model-endpoints"><span class="header-section-number">3</span> Calling model endpoints</h2>
+</section>
+<section id="app-monitoring-instrumentation" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="app-monitoring-instrumentation"><span class="header-section-number">4</span> App monitoring instrumentation</h2>
+</section>
+<section id="deploying-your-app-to-a-dev-environment" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="deploying-your-app-to-a-dev-environment"><span class="header-section-number">5</span> Deploying your app to a dev environment</h2>
+<section id="pr-to-deployment-branch" class="level3" data-number="5.1">
+<h3 data-number="5.1" class="anchored" data-anchor-id="pr-to-deployment-branch"><span class="header-section-number">5.1</span> PR to deployment branch</h3>
+<p>PR to app-dev branch. My work is deployed in dev.​ PR to staging / approval – my dashboard now runs in a prod environment with access to live data. I can see it [here].​</p>
+</section>
+<section id="viewing-the-hosted-site" class="level3" data-number="5.2">
+<h3 data-number="5.2" class="anchored" data-anchor-id="viewing-the-hosted-site"><span class="header-section-number">5.2</span> Viewing the hosted site</h3>
+</section>
+<section id="viewing-logs-and-metrics" class="level3" data-number="5.3">
+<h3 data-number="5.3" class="anchored" data-anchor-id="viewing-logs-and-metrics"><span class="header-section-number">5.3</span> Viewing logs and metrics</h3>
+</section>
+</section>
+<section id="deploying-to-staging-prod-environments" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="deploying-to-staging-prod-environments"><span class="header-section-number">6</span> Deploying to staging &amp; prod environments</h2>
+<p>Now I’m ready + others approve =&gt; It can go to prod here.​ I can share the link, and a clinician can securely log in via AAD</p>
 
 
-
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -797,7 +760,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
+      var filterRegex = new RegExp("https:\/\/github\.com\/UCLH-Foundry\/Garden-Path");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href);
     }
@@ -816,11 +779,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../vignettes/vignettes.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Vignettes</span>
+      <a href="../../personas/developer/developer.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Overview</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="../../personas/administrator/administrator.html" class="pagination-link">
+        <span class="nav-page-text">Overview</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->
@@ -829,7 +795,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-left">
       &nbsp;
     </div>   
-    <div class="nav-footer-center">Built for the NHS | 2022-2023<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/UCLH-Foundry/Garden-Path/edit/main/docs/faq/faq.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/UCLH-Foundry/Garden-Path/issues/new" class="toc-action">Report an issue</a></p></div></div></div>
+    <div class="nav-footer-center">Built for the NHS | 2022-2023<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/UCLH-Foundry/Garden-Path/edit/main/docs/personas/developer/building-an-app.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/UCLH-Foundry/Garden-Path/issues/new" class="toc-action">Report an issue</a></p></div></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
@@ -838,5 +804,5 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

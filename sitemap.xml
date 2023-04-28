@@ -1,95 +1,107 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://github.com/UCLH-Foundry/Garden-Path/anatomy/tre.html</loc>
-    <lastmod>2023-03-15T09:52:05.774Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/UCLH-Foundry/Garden-Path/anatomy/vm.html</loc>
-    <lastmod>2023-03-15T09:52:08.035Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/UCLH-Foundry/Garden-Path/quickstart/30_connecting.html</loc>
-    <lastmod>2023-03-15T09:52:08.475Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/UCLH-Foundry/Garden-Path/quickstart/70_stewardship.html</loc>
-    <lastmod>2023-03-15T09:52:08.883Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/UCLH-Foundry/Garden-Path/quickstart/60_deployment.html</loc>
-    <lastmod>2023-03-15T09:52:09.291Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/UCLH-Foundry/Garden-Path/quickstart/50_modelling.html</loc>
-    <lastmod>2023-03-15T09:52:09.699Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/UCLH-Foundry/Garden-Path/quickstart/40_features.html</loc>
-    <lastmod>2023-03-15T09:52:10.103Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/UCLH-Foundry/Garden-Path/quickstart/10_prerequisites.html</loc>
-    <lastmod>2023-03-15T09:52:10.507Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/UCLH-Foundry/Garden-Path/quickstart/quickstart.html</loc>
-    <lastmod>2023-03-15T09:52:10.903Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/UCLH-Foundry/Garden-Path/quickstart/20_setup.html</loc>
-    <lastmod>2023-03-15T09:52:11.319Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/UCLH-Foundry/Garden-Path/vignettes/data_lake_access.html</loc>
-    <lastmod>2023-03-15T09:52:11.843Z</lastmod>
-  </url>
-  <url>
     <loc>https://github.com/UCLH-Foundry/Garden-Path/vignettes/dicom_access.html</loc>
-    <lastmod>2023-03-15T09:52:12.379Z</lastmod>
+    <lastmod>2023-04-28T10:26:25.572Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/UCLH-Foundry/Garden-Path/vignettes/vignettes.html</loc>
-    <lastmod>2023-03-15T09:52:12.819Z</lastmod>
+    <lastmod>2023-04-28T10:26:28.808Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/UCLH-Foundry/Garden-Path/about.html</loc>
-    <lastmod>2023-03-15T09:52:13.231Z</lastmod>
+    <loc>https://github.com/UCLH-Foundry/Garden-Path/vignettes/data_lake_access.html</loc>
+    <lastmod>2023-04-28T10:26:29.292Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/UCLH-Foundry/Garden-Path/anatomy/vm.html</loc>
+    <lastmod>2023-04-28T10:26:29.852Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/UCLH-Foundry/Garden-Path/anatomy/tre.html</loc>
+    <lastmod>2023-04-28T10:26:30.460Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/UCLH-Foundry/Garden-Path/anatomy/apps.html</loc>
+    <lastmod>2023-04-28T10:26:30.804Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/UCLH-Foundry/Garden-Path/quickstart/50_modelling.html</loc>
+    <lastmod>2023-04-28T10:26:31.132Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/UCLH-Foundry/Garden-Path/quickstart/70_stewardship.html</loc>
+    <lastmod>2023-04-28T10:26:31.472Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/UCLH-Foundry/Garden-Path/quickstart/quickstart.html</loc>
+    <lastmod>2023-04-28T10:26:31.808Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/UCLH-Foundry/Garden-Path/quickstart/40_features.html</loc>
+    <lastmod>2023-04-28T10:26:32.136Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/UCLH-Foundry/Garden-Path/quickstart/20_setup.html</loc>
+    <lastmod>2023-04-28T10:26:32.672Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/UCLH-Foundry/Garden-Path/quickstart/30_connecting.html</loc>
+    <lastmod>2023-04-28T10:26:32.996Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/UCLH-Foundry/Garden-Path/quickstart/10_prerequisites.html</loc>
+    <lastmod>2023-04-28T10:26:33.324Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/UCLH-Foundry/Garden-Path/quickstart/60_deployment.html</loc>
+    <lastmod>2023-04-28T10:26:33.868Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/UCLH-Foundry/Garden-Path/personas/administrator/configuration.html</loc>
+    <lastmod>2023-04-28T10:26:34.236Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/UCLH-Foundry/Garden-Path/personas/administrator/administrator.html</loc>
-    <lastmod>2023-03-15T09:52:13.651Z</lastmod>
+    <lastmod>2023-04-28T10:26:34.560Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/UCLH-Foundry/Garden-Path/personas/steward/steward.html</loc>
-    <lastmod>2023-03-15T09:52:14.075Z</lastmod>
+    <lastmod>2023-04-28T10:26:34.888Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/UCLH-Foundry/Garden-Path/personas/personas.html</loc>
-    <lastmod>2023-03-15T09:52:14.499Z</lastmod>
+    <lastmod>2023-04-28T10:26:35.248Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/UCLH-Foundry/Garden-Path/personas/developer/developer.html</loc>
-    <lastmod>2023-03-15T09:52:14.923Z</lastmod>
+    <lastmod>2023-04-28T10:26:35.568Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/UCLH-Foundry/Garden-Path/personas/datascientist/onboarding.html</loc>
-    <lastmod>2023-03-15T09:52:15.443Z</lastmod>
+    <loc>https://github.com/UCLH-Foundry/Garden-Path/personas/developer/building-an-app.html</loc>
+    <lastmod>2023-04-28T10:26:35.968Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/UCLH-Foundry/Garden-Path/personas/datascientist/datascientist.html</loc>
-    <lastmod>2023-03-15T09:52:15.867Z</lastmod>
+    <lastmod>2023-04-28T10:26:36.292Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/UCLH-Foundry/Garden-Path/faq/faq.html</loc>
-    <lastmod>2023-03-15T09:52:16.319Z</lastmod>
+    <loc>https://github.com/UCLH-Foundry/Garden-Path/personas/datascientist/onboarding.html</loc>
+    <lastmod>2023-04-28T10:26:36.872Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/UCLH-Foundry/Garden-Path/faq/contributing.html</loc>
-    <lastmod>2023-03-15T09:52:17.007Z</lastmod>
+    <lastmod>2023-04-28T10:26:37.488Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/UCLH-Foundry/Garden-Path/faq/faq.html</loc>
+    <lastmod>2023-04-28T10:26:37.860Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/UCLH-Foundry/Garden-Path/about.html</loc>
+    <lastmod>2023-04-28T10:26:38.184Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/UCLH-Foundry/Garden-Path/index.html</loc>
-    <lastmod>2023-03-15T09:52:17.451Z</lastmod>
+    <lastmod>2023-04-28T10:26:38.576Z</lastmod>
   </url>
 </urlset>
