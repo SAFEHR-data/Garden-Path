@@ -34,7 +34,7 @@ website:
         contents:
           - href: quickstart/10_prerequisites.qmd
             text: Prerequisites
-          - href: quickstart/20_setup.qmd
+          - href: quickstart/20_setup_overview.qmd
             text: Set-up
           - href: quickstart/30_connecting.qmd
             text: Connecting to data

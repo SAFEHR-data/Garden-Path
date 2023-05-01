@@ -1,0 +1,49 @@
+---
+title: Set-up overview
+author: Steve Harris
+date: 2023-03-29
+date-modified: 2023-04-26
+---
+
+You are likely to need the following tools and services
+
+Tools
+
+[Azure Data Studio](./20_setup_ads.qmd)
+[VS Code](./20_setup_vscode.qmd)
+
+Services
+
+[Virtual Machine](./20_setup_vm.qmd)
+[Gitea](./20_setup_gitea.qmd)
+[Azure Machine Learning](./20_setup_aml.qmd)
+[FlowEHR feature store](../anatomy/feature_store.qmd)
+
+
+
+How to set-up FlowEHR on Azure
+See the [onboarding for the data scientist](../personas/datascientist/onboarding.qmd) docs for more details
+
+- You will be working from your laptop, and interacting through a browser (e.g. Edge, Chrome etc.)
+- Ask your FlowEHR administrator for access to the Azure TRE landing zone. They will provide you with a link to the landing page, and add your NHS.net credentials to the list of approved users.
+  - Login using your NHS.net email. You will need to have 2-factor authentication enabled
+  - Set-up a virtual machine from one of the provided templates. Details  in the Azure TRE [docs](https://microsoft.github.io/AzureTRE/v0.9.0/using-tre/tre-for-research/using-vms/)
+- Inbound and outbound traffic to the TRE is strictly controlled so you will find the following services to enable you to work
+    - a [mirror](https://microsoft.github.io/AzureTRE/v0.9.0/tre-templates/shared-services/nexus/) of Python (via Conda, and PyPi), R and other package managers provided by [Nexus](https://help.sonatype.com/repomanager3/)
+    - an [internal Git server](https://microsoft.github.io/AzureTRE/v0.9.0/tre-templates/shared-services/gitea/) provided by [Gitea](https://docs.gitea.io/en-us/)
+    - an [airlock](https://microsoft.github.io/AzureTRE/v0.9.0/tre-templates/shared-services/airlock-notifier/) for moving items into and out from the TRE. Local polices will enforce controls to protect data, and the environment.
+
+You should find yourself with a suite of open source tools designed for modern data science tasks
+- Jupyter
+- RStudio
+- Integrated Development Environments (e.g. PyCharm) and text editors (e.g. VS Code)
+- A database GUI
+  
+
+See also
+
+- [Trusted Research Environments](../anatomy/tre.qmd)
+- [Virtual Machines](../anatomy/vm.qmd) and in particular
+  - [Running Jupyter](../anatomy/vm.qmd#example-running-a-jupyter-notebook-from-this-documentation-within-a-virtual-environment)
+
+
