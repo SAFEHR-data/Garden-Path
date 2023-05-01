@@ -1,0 +1,100 @@
+---
+title: Version Control (Gitea)
+date: 2023-04-22
+---
+
+We use [Gitea](https://gitea.io/en-us/) for version control, and collaboration within the TRE. Think of this as a secure and private GitHub accessible to all users within the TRE, but unable to reach the outside world without special permissions.
+
+The Gitea [docs](https://docs.gitea.io/en-us/) explain
+
+> Gitea is a painless self-hosted all-in-one software development service, it includes Git hosting, code review, team collaboration, package registry and CI/CD. It is similar to GitHub, Bitbucket and GitLab ...
+
+## Gitea Deployment Models and Features
+
+The Gitea service in the TRE allows deployment at two levels:
+
+1. Gitea as a TRE Shared Service
+    - provides a Gitea instance that is accessible from any TRE Workspace
+    - supports pull-mirrors: code held on Git Repositories external to the TRE can be mirrored in the Gitea TRE Shared Service
+    - supports push-mirrors: code held on the Gitea TRE Shared Service can be mirrored to Git Repositories external to the TRE
+    - push or pull mirrors can be configured by any user with an account on the Gitea TRE Shared Service
+    - by default, only one account (giteaadmin) is configured with access to the Gitea TRE Shared Service
+    - Workspace users are unable to create accounts on the server
+2. Gitea as an individual Workspace Service
+    - provides a Gitea instance only accessible from the individual TRE Workspace
+    - no support for creation of pull-mirrors
+    - no support for creation of push-mirrors
+    - allows Workspace users to create accounts on the server using OpenID
+    - users with an account can create repositories that are accessible to other users in the same Workspace
+
+Push-mirrors expose the TRE Workspaces to accidental exfiltration of data from a TRE Workspace to the Internet. Since
+push-mirrors can only be created on the Gitea TRE Shared Service, Workspace users will not be provided with accounts on 
+this service. 
+
+Pull-mirrors can be created for Public or Private repositories on the Gitea TRE Shared Service. 
+Mirrors for Private repositories need an Access Token to
+retrieve the Private repository from the internet Git server. Gitea mirrors of private, external repositories can be either
+Public or Private. If public, then all users from all Workspaces will be able to read the repository. If the
+repository needs to be kept private to a specific Workspace or Workspace user, then a Gitea resticted account can be
+configured on the Gitea TRE Shared Service. This restricted account can be shared with the intended audience,
+granting them read-access to the Private repository only. *Restricted accounts are unable to see public
+respositories on the Gitea server, unless they have been explicitly granted permissions to do so.*
+
+Pull-mirrors can be created as a snapshot of the current state of an external repository or can be configured
+to synchronise with the external repository on a schedule.
+
+## Gitea Service Requirements
+
+The Gitea services in the TRE should support the following requirements:
+
+1. Access to read and write code and share this with colleagues using the same TRE Workspace
+2. Access to publish code, subject to approval, outside of the TRE Workspaces
+3. Access to read code that is currently held outside of the TRE
+4. Ability to read code held in a private, external repository and keep the code visibility private
+5. When pushing code to a repository, appropriate controls are applied to prevent
+inadvertently publishing sensitive data beyond the confines of the Workspace private network
+6. Prevent users from adding push mirrors to their repositories
+
+
+## Recommendations
+
+1. A Gitea TRE Shared Service should be deployed to provide read-only access across Workspaces to approved Git Repositories held outside of the TRE
+2. Pull-mirrors on the Gitea TRE Shared Service should only be configurable by the TRE administrators (via the giteaadmin account)
+3. Pull-mirrors should be organised into Organisations, to indicate the Workspace that originally requested the mirror to be created
+4. Where a private pull-mirror is required, a restricted user can be provisioned to allow the intended audience to read from
+the private mirror only. The restricted user account should also have the following settings:
+    - visibility: private
+    - max number of repositories: 0
+    - disable sign-in: No
+    - is administrator: No
+    - may create organisations: No
+    - full name: name of Workspace owner
+    - email address: email address of Workspace owner
+5. No additional logon accounts will be configured for the Gitea TRE Shared Service, except where [Push Mirrors](#gitea-push-mirrors) have been approved
+6. Gitea Workspace Services should be deployed to each Workspace to enable Workspace users to collaborate within the Workspace using read-write repositories
+7. When Workspace users wish to move code from a Workspace repository, they will need to complete an approvals process. At the moment this process would involve:
+    - downloading the repository code to a Workspace VM
+    - completing an 'airlock' review process to move the downloaded code to a device outside the TRE
+
+## Gitea Push Mirrors
+
+In exceptional circumstances, Push-Mirrors can be configured on the Gitea TRE Shared Service. Push-Mirrors
+add the risk of sensitive information leaving the TRE Workspace. For this reason, access to Push-Mirrors will
+be closely controlled. The following controls will be applied to mitigate the risk of data exfiltration:
+
+1. Push-Mirrors will be created on the Gitea TRE Shared Service
+2. Only the Gitea admin account will have permission to create a Push-Mirror 
+3. Push-Mirrors will be created within an Organisation
+4. The Organisation name will reference the TRE Workspace name 
+5. Users from the Workspace will be provided with restricted logons to the Gitea TRE Shared Service. The restricted logons will have the following settings:
+    - max number of repositories: 0
+    - disable sign-in: No
+    - is administrator: No
+    - may create organisations: No
+    - full name: name of Workspace owner
+    - email address: email address of Workspace owner
+6. Restricted accounts will be granted write access to their Organisation repositories by membership of the Organisation's writer group
+7. Push settings will be set as:
+    - scheduled for Private repositories held in approved Github Organisations
+    - on-demand for all other repositories
+8. On-demand push will only be executable by the giteaadmin and will require authorisation from Organisation owners

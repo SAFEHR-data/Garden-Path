@@ -1,6 +1,8 @@
 ---
 title: Virtual Machines
-author: Ahmed Al-Hindawi, Tom Frost
+author: 
+    - Ahmed Al-Hindawi
+    - Tom Frost
 date: 2023-03-04
 ---
 
@@ -89,57 +91,6 @@ The Nexus mirror provides mirrored access to packages available via
 conda forge and PyPI via the standard `pip install` and `conda install`
 command line interfaces.
 
-## Example: Running a Jupyter notebook from this documentation within a virtual environment
-
-Within a TRE VM:
-
-- Visit the Gitea URL provided alongside this documentation
-- Select 'Explore' from the top left
-- Select the 'End-User-Docs' repository
-- Copy the HTTPS link to the repository
-
-The following code
-
-- Clones this documentation repo
-- Creates a virtual environment
-- Activates the environment
-- Installs `jupyterlab` and `ipykernel` within the virtual environment  
-- Makes the virtual environment available as a kernel within a Jupyter
-  Lab environment
-- Launches Jupyter Lab
-
-Open a terminal within the VM and create a virtual environment with Conda
-
-``` bash
-conda create -n my_virtual_environment python=3.10
-conda activate my_virtual_environment
-```
-
-You may be prompted by `conda` to initialise your shell. Run
-
-```bash
-conda init bash
-```
-
-and restart your terminal. Run the following commands in the restarted terminal to clone this documentation repo and install dependencies
-
-``` bash
-git clone ${gitea-repository-url}
-cd End-User-Docs/docs/notebooks
-conda create -n my_virtual_environment python=3.10
-conda activate my_virtual_environment
-conda install jupyterlab ipykernel
-pip install -r requirements.txt
-python -m ipykernel install --user --name=my_env
-```
-
-A Jupyter Lab environment can then be launched by running
-
-```bash
-jupyter lab
-```
-
-Within this environment, navigate to the example notebooks provided. When running the notebooks, ensure the python kernel is set to the name defined by the earlier `python -m ipykernel install` command.
 
 ## Accessing EHR and DICOM data within the TRE
 

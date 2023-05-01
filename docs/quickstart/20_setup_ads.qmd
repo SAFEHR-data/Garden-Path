@@ -1,0 +1,18 @@
+---
+title: Azure Data Studio
+---
+
+1. Open Azure Data Studio
+2. Click “Create a connection”
+3. Connection type = Microsoft SQL Server
+4. Server link = [sql-server-features-uclh-flowehr-ml-dev.database.windows.net](http://sql-server-features-uclh-flowehr-ml-dev.database.windows.net/)
+5. Authentication type = Azure Active Directory
+6. You’ll be taken to a browser page - authenticate with MFA
+7. Azure AD tenant is UCLH Secure Data Environment
+8. Database = sql-db-features
+9. Give it a name e.g., “FeatureStore”
+
+![](assets/setup_ads_1.png)
+![](assets/setup_ads_2.png)
+
+[Docs](https://learn.microsoft.com/en-us/sql/azure-data-studio/what-is-azure-data-studio?view=sql-server-ver15)

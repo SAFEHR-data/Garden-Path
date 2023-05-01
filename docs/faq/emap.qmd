@@ -1,0 +1,5 @@
+---
+title: What is EMAP?
+---
+
+See https://github.com/inform-health-informatics/emap_documentation and in particular the [technical overview](https://github.com/inform-health-informatics/emap_documentation/blob/main/technical_overview/Technical_overview_of_EMAP.md)

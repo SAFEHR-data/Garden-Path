@@ -1,0 +1,123 @@
+---
+title: Set-up & deployment
+---
+
+This guide will take you through the basic set up and deployment for FlowEHR in your environment.
+
+## Forking the repo
+
+## Core configuration
+
+::: {.panel-tabset}
+### Locally
+
+Local instructions
+
+### CI/CD
+
+CI/CD instructions
+:::
+
+## Infrastructure deployment
+
+::: {.panel-tabset}
+### Locally
+
+Local instructions
+
+### CI/CD
+
+CI/CD instructions
+:::
+
+
+## Setting up App & Model Serving
+
+Now we have our core infrastructure deployed, we can proceed to set up the app serving layer so it's ready to deploy and host our [FlowEHR Apps](../anatomy/apps.qmd).
+
+
+### Configure a GitHub App
+
+For FlowEHR to create and manage repositories in GitHub for hosting FlowEHR App code, it requires a [GitHub App](https://docs.github.com/en/apps/creating-github-apps/creating-github-apps/about-apps) to authenticate.
+
+We recommend creating a new [GitHub Organization](https://docs.github.com/en/organizations/collaborating-with-groups-in-organizations/about-organizations) for containing all of the FlowEHR App repositories that will be created and managed by your FlowEHR instance - just so you're not providing unnecessary management access to any other repositories you might have in your main org.
+
+
+#### Create GH app
+
+Once you have the organisation you wish to use at the ready, follow [these instructions](https://docs.github.com/en/apps/creating-github-apps/creating-github-apps/creating-a-github-app) to create a new GitHub App within the organisation you wish to host your new FlowEHR apps, with the following properties (leave everything else blank/default):
+
+```yaml
+Name: {YOUR_ORG}-FlowEHR # or something similar (needs to be globally unique)
+Homepage URL: https://flowehr.io
+Webhook: uncheck
+Permissions:
+    Repository Permissions:
+        - Actions: Read-only
+        - Administration: Read and write
+        - Contents: Read and write
+        - Environments: Read and write
+        - Metadata: Read-only
+        - Secrets: Read and write
+        - Variables: Read and write
+        - Workflows: Read and write
+    Organization Permissions:
+        - Administration: Read and write
+        - Members: Read and write
+Where can this GitHub App be installed?: Only on this account
+```
+
+![](./assets/github-app-permissions.png){fig-alt="Configure GitHub App permissions"}
+
+When happy, click `Create GitHub App`. After creation, in your app's settings page, note down the `App Id`.
+
+
+#### Generate Private Key
+
+In the app settings page, scroll down to near the bottom and find the `Private Keys` section. Click `Generate a private key`. This will download a PEM cert file to your machine. We'll need this later.
+
+![](./assets/create-private-key.png){fig-alt="Create a private key"}
+
+
+#### Install GH app
+
+Once created, you need to the install the app to the organisation. [Follow these instructions](https://docs.github.com/en/apps/maintaining-github-apps/installing-github-apps), selecting your organization and choosing `All repositories`.
+
+After installation, stay on the same page and check the URL. It should look like this:
+
+> https://github.com/organizations/UCLH-FlowEHR-TestBed/settings/installations/35581991
+
+At the end of the URL after `installations/`, you'll see a number (`35581991` in the example above). Record this down - it is your `GitHub App Installation Id`. (Believe it or not this is the easiest way to find it!)
+
+![](./assets/find-installation-id.png){fig-alt="Find your Installation Id"}
+
+
+#### Update config
+
+Depending on whether you're configuring this for a local dev deployment, or for CI (or both if you'd like local developers and your testing environments to share a single Organization for test apps) - update the relevant `config.yaml` or `config.{ENVIRONMENT}.yaml` with the GitHub app details in the `serve` block:
+
+```yaml
+serve:
+    github_owner: name of the GitHub Organisation you created/wish to use for deploying apps into
+    github_app_id: your GitHub App's "App Id" from earlier
+    github_app_installation_id: your GitHub App's "Installation Id" from earlier
+```
+
+
+#### Store the cert
+
+::: {.panel-tabset}
+### Locally
+
+For developing locally, simply find the PEM file you downloaded earlier, rename it to `github.pem` and drag it into this repo under the `/apps` directory. It will be picked up by Terraform during deployment, and is gitignored so won't be checked in accidentally.
+
+:::{.callout-note}
+For other developers who want to use this same app instead of setting up their own, direct them to create and download their own private key from the GitHub App's settings page as you did in a previous step.
+:::
+
+### CI/CD
+
+For use in CI, copy the contents of the PEM file, and paste it into a new GitHub secret called `GH_APP_CERT`. The CI/CD pipeline will read this into a file to use during deployments.
+:::
+
+That's it for now! We'll need all this when we come to deploying apps (which we'll cover in the [deployment](./60_deployment.qmd) section).

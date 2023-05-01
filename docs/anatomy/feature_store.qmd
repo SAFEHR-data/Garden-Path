@@ -1,0 +1,45 @@
+---
+title: The FlowEHR feature store
+---
+
+## Overview
+
+A feature store is a centralized repository designed to manage, store, and serve features for machine learning (ML) models. Features are the transformed and engineered attributes derived from raw data that are used as inputs for ML models. Feature stores play a critical role in the machine learning workflow by providing a consistent and reusable way to store and share these features across multiple models and teams.
+
+The main components of a feature store typically include:
+
+1. Feature Engineering: This involves transforming raw data into useful features that can be used as input for ML models. Feature engineering may include operations like aggregation, normalization, and encoding.
+
+2. Feature Storage: A feature store provides a scalable and efficient storage system to store both historical and real-time features, allowing for the retrieval of feature data in a consistent manner for training and serving purposes.
+
+3. Feature Serving: Feature stores enable serving features for both model training and inference. They provide low-latency access to feature data for real-time model predictions and batch access for training purposes.
+
+4. Feature Sharing and Discovery: A feature store allows data scientists and ML engineers to share and reuse features across multiple models and teams. This promotes collaboration and reduces redundant work in feature engineering.
+
+5. Feature Monitoring and Management: Feature stores help monitor and manage feature quality, such as tracking feature statistics, detecting data drift, and ensuring data consistency.
+
+By centralizing the management of features, a feature store simplifies the ML workflow, promotes collaboration, reduces redundancy, and ensures consistency across models. Additionally, it helps maintain the quality and reliability of the features used in ML models, leading to more accurate and reliable predictions.
+
+## Our implementation
+
+We store all features in a Microsoft SQL database, and for now have focused on the design of the feature generation pipeline. We have not (yet) implemented separate approaches for realtime time serving (for predictions) and batch serving (for training). As our data volumes and user base grow, we will review this decision.
+
+We chose MSSQL to ensure access to the database for the widest possible community within the NHS.
+
+The feature pipeline is managed by the [Data Forge](https://github.com/UCLH-Foundry/FlowEHR-Data-Forge) repository.
+
+The key components of this include:
+
+A pipeline configuration
+: This defines which features are built, and specifies specific configuration. See [pipeline.json](https://github.com/UCLH-Foundry/FlowEHR-Data-Forge/blob/main/patients/pipeline.json)
+
+A pipeline trigger
+: This defines the schedule at which features are updated. See [trigger.json](https://github.com/UCLH-Foundry/FlowEHR-Data-Forge/blob/main/patients/trigger.json).
+
+A per feature entry point
+: See [bloodpressure.py](https://github.com/UCLH-Foundry/FlowEHR-Data-Forge/blob/main/patients/src/patients/entrypoints/bloodpressure.py) that generates a feature for both the latest, and the average blood pressure (where the 24 hour aggregation window is defined in `pipeline.json`). The are regenerated hourly as per the `trigger.json` configuration.
+
+A per feature 'job'
+: See [bloodpressure/job.py](https://github.com/UCLH-Foundry/FlowEHR-Data-Forge/blob/main/patients/src/patients/features/bloodpressure/job.py) that fetches the source data, splits the text representation `120/70` into integers for systolic and diastolic pressures, 
+
+Each feature is keyed on an identifier for the hospital visit, and the `horizon_datetime` is the timestamp derived from the trigger against which all these features are anchored. 

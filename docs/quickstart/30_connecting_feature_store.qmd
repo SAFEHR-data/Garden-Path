@@ -1,0 +1,141 @@
+---
+title: Connecting to the Feature Store
+---
+
+Within the TRE, use the `az` command line tools:
+The following will create an interactive login workflow in the browser in the TRE.
+
+```sh
+az login --use-device-code
+```
+![](./assets/connect_az_login_1.png)
+
+This might (the first time) provide you with a short alphanumeric token on the command line (e.g. `ABC123`), and then ask you to authenticate _externally_ (outside the TRE) at `https://microsoft.com/devicelogin`. Here you enter the token, and then follow the standard 2FA authentication workflow using your UCLH SDE credentials (e.g. NHS email address, NHS email password, and the 2FA).
+
+Subsequently, the following should suffice
+```sh
+az login
+```
+
+And you can create tokens etc. as per
+
+```sh
+az account get-access-token --resource=https://database.windows.net/ --query accessToken > token
+```
+
+
+Working from a Python script, then the following will avoid the interactivity needed above.
+First you'll need to be able to grab the token.
+
+```python
+from azure.identity import AzureCliCredential
+import sqlalchemy
+import pyodbc
+
+import struct
+
+
+def get_db_aad_token() -> bytes:
+    """
+    Uses AzureCli login state to get a token for the database scope
+
+    Kindly leveraged from this SO answer: https://stackoverflow.com/a/67692382
+    """
+    credential = AzureCliCredential()
+    databaseToken = credential.get_token("https://database.windows.net/")
+
+    tokenb = bytes(databaseToken[0], "UTF-16 LE")
+    tokenstruct = struct.pack("=i", len(tokenb)) + tokenb
+
+    return tokenstruct
+```
+
+Using pyodbc
+
+```python
+def pyodbc_connection(
+    server: str,
+    database: str,
+    token: bytes,
+    driver: str = "ODBC Driver 18 for SQL Server",
+) -> pyodbc.Connection:
+    """
+    ODBC connection for running queries against the MSSQL feature store.
+
+    Documentation: https://github.com/mkleehammer/pyodbc/wiki
+    """
+    driver = f"Driver={{{driver}}}"
+    server = f";SERVER={server}"
+    database = f";DATABASE={database}"
+
+    connection_string = driver + server + database
+
+    SQL_COPT_SS_ACCESS_TOKEN = 1256
+    conn = pyodbc.connect(
+        connection_string, attrs_before={SQL_COPT_SS_ACCESS_TOKEN: token}
+    )
+
+    return conn
+```
+
+Using SQLAlchemy
+
+```python
+def sqlalchemy_connection(
+    server: str,
+    database: str,
+    token: bytes,
+    driver: str = "ODBC Driver 18 for SQL Server",
+) -> sqlalchemy.Connection:
+    """
+    SQLAlchemy connection for running queries against the MSSQL feature store.
+    """
+    driver = f"Driver={{{driver}}}"
+    server = f";SERVER={server}"
+    database = f";DATABASE={database}"
+
+    connString = driver + server + database
+
+    SQL_COPT_SS_ACCESS_TOKEN = 1256
+    engine = sqlalchemy.create_engine(
+        f"mssql+pyodbc:///?odbc_connect={connString}",
+        connect_args={"attrs_before": {SQL_COPT_SS_ACCESS_TOKEN: token}},
+    )
+
+    return engine.connect()
+```
+
+Putting it all together,
+
+```python
+import pandas as pd
+
+# input params
+srv = "sql-server-features-uclh-flowehr-app-dev.database.windows.net"
+db = "sql-db-features"
+
+# Either work equally
+connection = sqlalchemy_connection(srv, db, get_db_aad_token())
+connection = pyodbc_connection(srv, db, get_db_aad_token())
+
+query = """SELECT [csn]
+    ,[date_of_birth]
+    ,[horizon_datetime]
+    FROM [dbo].[date_of_birth_v1]"""
+
+df = pd.read_sql(query, connection)
+
+print(df.info())
+```
+
+
+## Notes
+
+### Authenticate via the Azure CLI
+
+The [docs](https://pypi.org/project/azure-identity/) provided for the Azure-Identity package are helpful:
+
+> DefaultAzureCredential and AzureCliCredential can authenticate as the user signed in to the Azure CLI. To sign in to the Azure CLI, run az login. On a system with a default web browser, the Azure CLI will launch the browser to authenticate a user.
+
+> When no default browser is available, az login will use the device code authentication flow. This can also be selected manually by running az login --use-device-code.
+

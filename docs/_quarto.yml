@@ -34,8 +34,21 @@ website:
         contents:
           - href: quickstart/10_prerequisites.qmd
             text: Prerequisites
-          - href: quickstart/20_setup.qmd
+          - href: quickstart/20_setup_overview.qmd
             text: Set-up
+            contents:
+              - href: quickstart/20_setup_conda.qmd
+                text: Conda environments
+              - href: quickstart/20_setup_ads.qmd
+                text: Azure Data Studio
+              - href: quickstart/20_setup_gitea.qmd
+                text: Gitea
+              - href: quickstart/20_setup_vm.qmd
+                text: Virtual Machines
+              - href: quickstart/20_setup_vscode.qmd
+                text: Visual Studio Code
+              - href: quickstart/20_setup_flowehr_locally.qmd
+                text: FlowEHR locally
           - href: quickstart/30_connecting.qmd
             text: Connecting to data
           - href: quickstart/40_features.qmd

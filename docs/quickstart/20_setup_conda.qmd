@@ -1,0 +1,38 @@
+---
+title: Setting up conda
+---
+
+You need to use the pre-configured conda channels, which means that a `environment.yaml` file with the following will _not_ work.
+
+```yaml
+name: los_predictor_v1
+channels:
+  - defaults  # <--- default channel not available
+dependencies:
+  - python=3.10.10
+  - pandas
+    pip:
+    - matplotlib
+```
+
+So comment out the line channels section!
+
+
+Open a terminal window
+```sh
+conda env create -f environment.yaml
+
+
+```
+
+
+### Notes
+
+- Conda has been configured to use a local mirror of `conda` and `conda-forge` in a framework called Nexus. This means that you will have access to most, but not all, packages and some of them will be outdated. 
+- There are some conda environments that have already been made with pytorch/tensorflow/automl. Ideally those should be used in the first instance and packages can be added to that.
+- If you wish to create your own environment, ensure that you have activated your base conda environment using `conda activate` prior to creating any other conda environments
+- If you do wish to install other conda-like installers (e.g. `mamba`), ensure that the base conda environment has been activated so that the configuration files for `Nexus` has migrated into the mamba configuration. 
+	- You'll probably have more success with `conda-forge` as your default channel as `Nexus` mirrors that more successfully. To do this, run: `conda config --add channels conda-forge`
+- On first use, jump into a terminal and `conda init`
+
+ 

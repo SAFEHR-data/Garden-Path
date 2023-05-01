@@ -1,0 +1,30 @@
+---
+title: Please summarise the approach to Information Security?
+tags: 
+  - information security
+---
+
+We benchmark ourselves against [Center for Internet Security (CIS) Benchmarks](https://www.cisecurity.org/cis-benchmarks)
+
+![](assets/ncsc10steps_infographic.png)
+
+The [Center for Internet Security (CIS) Benchmarks](https://www.cisecurity.org/cis-benchmarks) are a set of best practices and configuration guidelines developed to help organizations improve the security of their systems and networks. These benchmarks are developed through a collaborative process involving cybersecurity experts, industry professionals, and government representatives. They provide a comprehensive approach to hardening systems and reducing vulnerabilities by addressing various aspects of security, including configuration, user access control, and patch management.
+
+The CIS Benchmarks cover a wide range of technologies, such as operating systems, network devices, cloud environments, and applications. Some examples include:
+
+- Microsoft Windows
+- Linux distributions (e.g., Red Hat, Ubuntu, CentOS)
+- macOS
+- Network devices (e.g., Cisco, Juniper, Fortinet)
+- Cloud platforms (e.g., Amazon Web Services, Microsoft Azure, Google Cloud Platform)
+- Databases (e.g., Oracle, Microsoft SQL Server, MySQL)
+- Web servers (e.g., Apache, Nginx, Microsoft IIS)
+- Virtualization platforms (e.g., VMware, Microsoft Hyper-V)
+
+CIS Benchmarks help organizations by:
+
+- Establishing a baseline for security configuration: The benchmarks provide a clear starting point for organizations to assess their current security posture and make improvements as needed.
+- Facilitating compliance: Many regulatory standards, such as the Payment Card Industry Data Security Standard (PCI DSS), the Health Insurance Portability and Accountability Act (HIPAA), and the General Data Protection Regulation (GDPR), require organizations to implement secure configurations. The CIS Benchmarks can help organizations meet these requirements.
+- Enhancing system performance: By following the benchmarks, organizations can optimize their systems and reduce potential performance issues caused by misconfigurations.
+- Reducing attack surfaces: Properly securing systems can help organizations minimize the risk of data breaches and other cyber threats.
+- CIS Benchmarks are available for free, and organizations can choose to implement them fully or partially, depending on their unique needs and requirements.
