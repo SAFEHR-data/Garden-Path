@@ -7,10 +7,11 @@ date-modified: 2023-04-26
 
 You are likely to need the following tools and services
 
-Tools
+## Tools
 
 [Azure Data Studio](./20_setup_ads.qmd)
 [VS Code](./20_setup_vscode.qmd)
+[Conda](./20_setup_conda.qmd)
 
 Services
 
