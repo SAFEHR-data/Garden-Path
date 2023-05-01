@@ -9,7 +9,13 @@
   {
     "listing": "/faq/faq.html",
     "items": [
-      "/faq/contributing.html"
+      "/faq/azure-anatomy.html",
+      "/faq/contributing.html",
+      "/faq/cosmosdb.html",
+      "/faq/emap.html",
+      "/faq/information-security.html",
+      "/faq/jupyter.html",
+      "/faq/what-is-algorithm-stewardship.html"
     ]
   }
 ]

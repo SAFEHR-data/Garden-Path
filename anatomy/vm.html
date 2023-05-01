@@ -6,7 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Ahmed Al-Hindawi, Tom Frost">
+<meta name="author" content="Ahmed Al-Hindawi">
+<meta name="author" content="Tom Frost">
 <meta name="dcterms.date" content="2023-03-04">
 
 <title>FlowEHR Garden Path - Virtual Machines</title>
@@ -179,12 +180,53 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Prerequisites</span></a>
   </div>
 </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../quickstart/20_setup_overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Set-up</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../quickstart/20_setup.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Set-up</span></a>
+  <a href="../quickstart/20_setup_conda.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Conda environments</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quickstart/20_setup_ads.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Azure Data Studio</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quickstart/20_setup_gitea.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Gitea</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quickstart/20_setup_vm.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Virtual Machines</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quickstart/20_setup_vscode.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Visual Studio Code</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quickstart/20_setup_flowehr_locally.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">FlowEHR locally</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../quickstart/30_connecting.html" class="sidebar-item-text sidebar-link">
@@ -391,9 +433,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="quarto-title-meta">
 
     <div>
-    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-heading">Authors</div>
     <div class="quarto-title-meta-contents">
-             <p>Ahmed Al-Hindawi, Tom Frost </p>
+             <p>Ahmed Al-Hindawi </p>
+             <p>Tom Frost </p>
           </div>
   </div>
     
@@ -479,49 +522,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>The Nexus mirror provides mirrored access to packages available via conda forge and PyPI via the standard <code>pip install</code> and <code>conda install</code> command line interfaces.</p>
 </section>
 </section>
-<section id="example-running-a-jupyter-notebook-from-this-documentation-within-a-virtual-environment" class="level2" data-number="7">
-<h2 data-number="7" class="anchored" data-anchor-id="example-running-a-jupyter-notebook-from-this-documentation-within-a-virtual-environment"><span class="header-section-number">7</span> Example: Running a Jupyter notebook from this documentation within a virtual environment</h2>
-<p>Within a TRE VM:</p>
-<ul>
-<li>Visit the Gitea URL provided alongside this documentation</li>
-<li>Select ‘Explore’ from the top left</li>
-<li>Select the ‘End-User-Docs’ repository</li>
-<li>Copy the HTTPS link to the repository</li>
-</ul>
-<p>The following code</p>
-<ul>
-<li>Clones this documentation repo</li>
-<li>Creates a virtual environment</li>
-<li>Activates the environment</li>
-<li>Installs <code>jupyterlab</code> and <code>ipykernel</code> within the virtual environment<br>
-</li>
-<li>Makes the virtual environment available as a kernel within a Jupyter Lab environment</li>
-<li>Launches Jupyter Lab</li>
-</ul>
-<p>Open a terminal within the VM and create a virtual environment with Conda</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">-n</span> my_virtual_environment python=3.10</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate my_virtual_environment</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>You may be prompted by <code>conda</code> to initialise your shell. Run</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> init bash</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>and restart your terminal. Run the following commands in the restarted terminal to clone this documentation repo and install dependencies</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone <span class="va">${gitea</span><span class="op">-</span>repository-url<span class="va">}</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> End-User-Docs/docs/notebooks</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">-n</span> my_virtual_environment python=3.10</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate my_virtual_environment</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install jupyterlab ipykernel</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install <span class="at">-r</span> requirements.txt</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> ipykernel install <span class="at">--user</span> <span class="at">--name</span><span class="op">=</span>my_env</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>A Jupyter Lab environment can then be launched by running</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">jupyter</span> lab</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Within this environment, navigate to the example notebooks provided. When running the notebooks, ensure the python kernel is set to the name defined by the earlier <code>python -m ipykernel install</code> command.</p>
-</section>
-<section id="accessing-ehr-and-dicom-data-within-the-tre" class="level2" data-number="8">
-<h2 data-number="8" class="anchored" data-anchor-id="accessing-ehr-and-dicom-data-within-the-tre"><span class="header-section-number">8</span> Accessing EHR and DICOM data within the TRE</h2>
+<section id="accessing-ehr-and-dicom-data-within-the-tre" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="accessing-ehr-and-dicom-data-within-the-tre"><span class="header-section-number">7</span> Accessing EHR and DICOM data within the TRE</h2>
 <p>This documentation is accompanied by Jupyter notebook files which provide detailed examples of accessing and viewing EHR and DICOM data from within a Jupyter Lab environment within a TRE VM.</p>
 <p>Before launching the notebooks and after following the steps in the <a href="#example-running-a-jupyter-notebook-from-this-documentation-within-a-virtual-environment">above example</a>, install required dependencies within your created virtual environment with</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install <span class="at">-r</span> requirements.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<section id="a-note-on-the-data-accessible-from-the-tre" class="level3" data-number="8.1">
-<h3 data-number="8.1" class="anchored" data-anchor-id="a-note-on-the-data-accessible-from-the-tre"><span class="header-section-number">8.1</span> A note on the data accessible from the TRE</h3>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install <span class="at">-r</span> requirements.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="a-note-on-the-data-accessible-from-the-tre" class="level3" data-number="7.1">
+<h3 data-number="7.1" class="anchored" data-anchor-id="a-note-on-the-data-accessible-from-the-tre"><span class="header-section-number">7.1</span> A note on the data accessible from the TRE</h3>
 <p>Data provided has gone through an anonymisation step and will not entirely look like the original data due to the removal of PII and consequent structural changes that may appear as a result, such as line break removals.</p>
 <p>As such, structural elements of reports such as line breaks or sentence lengths should <strong>not</strong> be used to generate features as inputs to machine learning models.</p>
 

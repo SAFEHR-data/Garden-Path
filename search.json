@@ -119,18 +119,32 @@
     "text": "6 Installing software within the VM\nAs the VM is located within a TRE, most outbound internet access is restricted.\n\n6.1 GitHub\nAccess to repositories hosted on GitHub is restricted. Repositories can be mirrored on an ad-hoc basis to a TRE-accessible Gitea instance, where this documentation can also be found.\nYou should be supplied with the URL for the Gitea instance during your onboarding. If you have not received the Gitea URL, please request it from member of the team.\n\n\n6.2 APT packages\nThe VM has access to software packages via a Nexus mirror\n\n\n6.3 Python packages via Conda and PyPI\nThe Nexus mirror provides mirrored access to packages available via conda forge and PyPI via the standard pip install and conda install command line interfaces."
   },
   {
-    "objectID": "anatomy/vm.html#example-running-a-jupyter-notebook-from-this-documentation-within-a-virtual-environment",
-    "href": "anatomy/vm.html#example-running-a-jupyter-notebook-from-this-documentation-within-a-virtual-environment",
-    "title": "Virtual Machines",
-    "section": "7 Example: Running a Jupyter notebook from this documentation within a virtual environment",
-    "text": "7 Example: Running a Jupyter notebook from this documentation within a virtual environment\nWithin a TRE VM:\n\nVisit the Gitea URL provided alongside this documentation\nSelect ‘Explore’ from the top left\nSelect the ‘End-User-Docs’ repository\nCopy the HTTPS link to the repository\n\nThe following code\n\nClones this documentation repo\nCreates a virtual environment\nActivates the environment\nInstalls jupyterlab and ipykernel within the virtual environment\n\nMakes the virtual environment available as a kernel within a Jupyter Lab environment\nLaunches Jupyter Lab\n\nOpen a terminal within the VM and create a virtual environment with Conda\nconda create -n my_virtual_environment python=3.10\nconda activate my_virtual_environment\nYou may be prompted by conda to initialise your shell. Run\nconda init bash\nand restart your terminal. Run the following commands in the restarted terminal to clone this documentation repo and install dependencies\ngit clone ${gitea-repository-url}\ncd End-User-Docs/docs/notebooks\nconda create -n my_virtual_environment python=3.10\nconda activate my_virtual_environment\nconda install jupyterlab ipykernel\npip install -r requirements.txt\npython -m ipykernel install --user --name=my_env\nA Jupyter Lab environment can then be launched by running\njupyter lab\nWithin this environment, navigate to the example notebooks provided. When running the notebooks, ensure the python kernel is set to the name defined by the earlier python -m ipykernel install command."
-  },
-  {
     "objectID": "anatomy/vm.html#accessing-ehr-and-dicom-data-within-the-tre",
     "href": "anatomy/vm.html#accessing-ehr-and-dicom-data-within-the-tre",
     "title": "Virtual Machines",
-    "section": "8 Accessing EHR and DICOM data within the TRE",
-    "text": "8 Accessing EHR and DICOM data within the TRE\nThis documentation is accompanied by Jupyter notebook files which provide detailed examples of accessing and viewing EHR and DICOM data from within a Jupyter Lab environment within a TRE VM.\nBefore launching the notebooks and after following the steps in the above example, install required dependencies within your created virtual environment with\npip install -r requirements.txt\n\n8.1 A note on the data accessible from the TRE\nData provided has gone through an anonymisation step and will not entirely look like the original data due to the removal of PII and consequent structural changes that may appear as a result, such as line break removals.\nAs such, structural elements of reports such as line breaks or sentence lengths should not be used to generate features as inputs to machine learning models."
+    "section": "7 Accessing EHR and DICOM data within the TRE",
+    "text": "7 Accessing EHR and DICOM data within the TRE\nThis documentation is accompanied by Jupyter notebook files which provide detailed examples of accessing and viewing EHR and DICOM data from within a Jupyter Lab environment within a TRE VM.\nBefore launching the notebooks and after following the steps in the above example, install required dependencies within your created virtual environment with\npip install -r requirements.txt\n\n7.1 A note on the data accessible from the TRE\nData provided has gone through an anonymisation step and will not entirely look like the original data due to the removal of PII and consequent structural changes that may appear as a result, such as line break removals.\nAs such, structural elements of reports such as line breaks or sentence lengths should not be used to generate features as inputs to machine learning models."
+  },
+  {
+    "objectID": "anatomy/feature_store.html",
+    "href": "anatomy/feature_store.html",
+    "title": "The FlowEHR feature store",
+    "section": "",
+    "text": "A feature store is a centralized repository designed to manage, store, and serve features for machine learning (ML) models. Features are the transformed and engineered attributes derived from raw data that are used as inputs for ML models. Feature stores play a critical role in the machine learning workflow by providing a consistent and reusable way to store and share these features across multiple models and teams.\nThe main components of a feature store typically include:\n\nFeature Engineering: This involves transforming raw data into useful features that can be used as input for ML models. Feature engineering may include operations like aggregation, normalization, and encoding.\nFeature Storage: A feature store provides a scalable and efficient storage system to store both historical and real-time features, allowing for the retrieval of feature data in a consistent manner for training and serving purposes.\nFeature Serving: Feature stores enable serving features for both model training and inference. They provide low-latency access to feature data for real-time model predictions and batch access for training purposes.\nFeature Sharing and Discovery: A feature store allows data scientists and ML engineers to share and reuse features across multiple models and teams. This promotes collaboration and reduces redundant work in feature engineering.\nFeature Monitoring and Management: Feature stores help monitor and manage feature quality, such as tracking feature statistics, detecting data drift, and ensuring data consistency.\n\nBy centralizing the management of features, a feature store simplifies the ML workflow, promotes collaboration, reduces redundancy, and ensures consistency across models. Additionally, it helps maintain the quality and reliability of the features used in ML models, leading to more accurate and reliable predictions."
+  },
+  {
+    "objectID": "anatomy/feature_store.html#overview",
+    "href": "anatomy/feature_store.html#overview",
+    "title": "The FlowEHR feature store",
+    "section": "",
+    "text": "A feature store is a centralized repository designed to manage, store, and serve features for machine learning (ML) models. Features are the transformed and engineered attributes derived from raw data that are used as inputs for ML models. Feature stores play a critical role in the machine learning workflow by providing a consistent and reusable way to store and share these features across multiple models and teams.\nThe main components of a feature store typically include:\n\nFeature Engineering: This involves transforming raw data into useful features that can be used as input for ML models. Feature engineering may include operations like aggregation, normalization, and encoding.\nFeature Storage: A feature store provides a scalable and efficient storage system to store both historical and real-time features, allowing for the retrieval of feature data in a consistent manner for training and serving purposes.\nFeature Serving: Feature stores enable serving features for both model training and inference. They provide low-latency access to feature data for real-time model predictions and batch access for training purposes.\nFeature Sharing and Discovery: A feature store allows data scientists and ML engineers to share and reuse features across multiple models and teams. This promotes collaboration and reduces redundant work in feature engineering.\nFeature Monitoring and Management: Feature stores help monitor and manage feature quality, such as tracking feature statistics, detecting data drift, and ensuring data consistency.\n\nBy centralizing the management of features, a feature store simplifies the ML workflow, promotes collaboration, reduces redundancy, and ensures consistency across models. Additionally, it helps maintain the quality and reliability of the features used in ML models, leading to more accurate and reliable predictions."
+  },
+  {
+    "objectID": "anatomy/feature_store.html#our-implementation",
+    "href": "anatomy/feature_store.html#our-implementation",
+    "title": "The FlowEHR feature store",
+    "section": "2 Our implementation",
+    "text": "2 Our implementation\nWe store all features in a Microsoft SQL database, and for now have focused on the design of the feature generation pipeline. We have not (yet) implemented separate approaches for realtime time serving (for predictions) and batch serving (for training). As our data volumes and user base grow, we will review this decision.\nWe chose MSSQL to ensure access to the database for the widest possible community within the NHS.\nThe feature pipeline is managed by the Data Forge repository.\nThe key components of this include:\n\nA pipeline configuration\n\nThis defines which features are built, and specifies specific configuration. See pipeline.json\n\nA pipeline trigger\n\nThis defines the schedule at which features are updated. See trigger.json.\n\nA per feature entry point\n\nSee bloodpressure.py that generates a feature for both the latest, and the average blood pressure (where the 24 hour aggregation window is defined in pipeline.json). The are regenerated hourly as per the trigger.json configuration.\n\nA per feature ‘job’\n\nSee bloodpressure/job.py that fetches the source data, splits the text representation 120/70 into integers for systolic and diastolic pressures,\n\n\nEach feature is keyed on an identifier for the hospital visit, and the horizon_datetime is the timestamp derived from the trigger against which all these features are anchored."
   },
   {
     "objectID": "anatomy/tre.html",
@@ -168,6 +182,69 @@
     "text": "4 Shared Services\nShared Services provide access to resources that you would otherwise need to access over the internet. Shared Services include:\n\nGitea\nNexus\nFirewall\n\nThe Shared Services are available for use by all workspaces, but their configuration can only be changed by the TRE administrators\n\n4.1 Gitea\nGitea is used in the TRE to mirror code repositories from the internet. You can browse the repositories available in Gitea from your Workspace VM using the URL https://gitea-[TRE-ID].azurewebsites.net. (Check with your TRE administrator for the correct URL)\nContact your TRE administrator if you need to add a git repository to the Gitea service.\nGitea is also available as a Workspace service, this is useful if you wish to mirror a private repository, without making this accessible from other Workspaces.\nWhilst Gitea is used to mirror repositories from the internet, for security reasons, the server does not allow you to push changes to internet sources.\n\n\n4.2 Nexus\nNexus is used in the TRE to provide a package mirror for popular software tools. Installation tools on your VMs are configured to pull from the Nexus server rather than directly from the internet.\nYou can explore the available repositories mirrored by the Nexus server from your VM using https://nexus-[TRE-ID].[LOCATION].cloudapp.azure.com. (Check with your TRE administrator for the correct URL)\nClick on the ‘Browse’ link to see the full list of repositories that are in the Nexus mirror.\n\nIf you need to configure an application to use a nexus repo, you can click the ‘copy’ button in the URL column for the mirror that you are interested in. Then you can set your application to use this mirror.\nFor instance, if you want to configure python to use the pypi mirror on the Nexus server you could type:\npip config --user set global.index https://nexus-[TRE-ID].[LOCATION].cloudapp.azure.com/repository/pypi/pypi\npip config --user set global.index-url https://nexus-[TRE-ID].[LOCATION].cloudapp.azure.com/pypi/simple\npip config --user set global.trusted-host nexus-[TRE-ID].[LOCATION].cloudapp.azure.com\nFor Python, you may find that this has already been setup on your VM. You can check this by running:\npip config list\nSimilarly, on a Linux VM, the VM will be configured to use the apt repositories from Nexus. If you run sudo apt update, you will see that apt will only search for updates from the Nexus server."
   },
   {
+    "objectID": "anatomy/aml.html",
+    "href": "anatomy/aml.html",
+    "title": "Azure Machine Learning",
+    "section": "",
+    "text": "See also\n\nAzure Anatomy FAQ\nAzure Machine Learning docs\n\nAzure Machine Learning (AML) is a cloud-based service within the Azure ecosystem that provides tools and services to build, train, and deploy machine learning models. It offers a collaborative environment for data scientists and developers, allowing them to leverage pre-built algorithms, manage data, and use compute resources efficiently. AML streamlines the end-to-end machine learning lifecycle, making it easier to develop, experiment, and operationalize AI solutions at scale."
+  },
+  {
+    "objectID": "anatomy/monitoring.html",
+    "href": "anatomy/monitoring.html",
+    "title": "1 Model Performance and Data Drift Monitoring",
+    "section": "",
+    "text": "Monitoring models in production is crucial to detecting model performance degradation early on and ensuring that the model’s predictions remain reliable over time. Two ways to achieve this are data drift detection and model performance monitoring.\nData drift detection is an unsupervised task that involves comparing a sample of the data the model was trained on to new data batches that are sent to the model for inferencing. This comparison helps to identify changes in the distribution of inputs, which may lead to a decline in the model’s performance.\nOn the other hand, model performance monitoring is a supervised task that involves comparing the model’s output to the ground truth. This task is useful in identifying changes in the model’s behavior when the ground truth is available.\nIt is important to note that maintaining a data drift detector even when the ground truth is available has two benefits. Firstly, it can detect changes earlier than relying solely on the ground truth. Secondly, it helps to understand the cause of model degradation even when the ground truth is available.\n\n\n\nIn the provided template, we assume the model will be using tabular data with ontinuous and categorical variables.\n\n\n\nThe solution requires that Azure ML and Azure Devops instances will be available in the production environment.\n\n\n\nWhen a model is ready to be pushed to production, it will be the data scientists’ responsibility to provide the code required for monitoring, by altering the provided monitoring template (see the Monitoring Template section of this document for more details).\n\n\n\nThe monitoring workflow is depicted in the image below. The document assumes that all the required data is stored in Cosmos DB and readily available for use.\n\n\n\n‘flowchart’\n\n\n\n\nThe monitoring tool uses four data sources in order to run the pipelines: * GroundTruth: contains the actual labels of the inferred data. This data will only be available after providing the model’s predictions, and will be used to evaluate the performance of teh model. * InferredData: contains the predictions made by the ML model * UnlabledData: contains the new data that needs to be inferred by the model * TrainingSample: a sample of the training set (copied from the TRE)\n\n\n\nThe Azure Pipelines will trigger the AML pipelines when new data becomes availabe, or on a predefined schedule. The Azure pipeline receives all the environment variables required to run Azure ML (such as subscription ID, client ID etc.)\n\n\n\nIn Azure ML, we will have two pipelines - one for model performance monitoing and another one for drift detection.\n\n\nInputs: model predictions and their corresponding ground truths (when they become available) The script will compute the model’s performance by comparing the predictions that were made by the model to the ground truth.\n\n\n\nInputs: A sample of the training data, a set of new data Output: For each feature, the script will determine whether a data drift occurred or not.\nIn this example, we used the alibi-detect open source library to compute the data drift, but the data scientist can decide on the best monitoring tools based on the use case [^1] [^1]: For images, we could also use Torchdrift or theDeepchecks open source library\nIf we would also like to support label drift, in addition to the training set, we will also need to save the predictions the model made on the training data so that we can compare the distribution of the predictions.\nThe pipelines record the selected metrics and graphs using MLFlow and also send metrics to Azure Monitor\n\n\n\n\nIn Azure Monitor, we will define queries and use them to set alerts and create dashboards. The alerts can be linked to email accounts (or to a Teams channel) of the data scientist responsible for the model. When an alert is triggered, the data scientist can view the monitoring dashboard to get some more information about what has trigerred it.\n\n\n\n\nThe monitoring template is meant to help the data scientist create the artifacts required to run the monitoring workflow. To setup the workflow, the data scientist will need to follow the following steps:\n\n\nIn the data_drift and model_performance folders, edit the source code (e.g data_drift/data_drift_src/data_drift.py) to define the monitoring functions. * For data drift, the template supports running Kolmogorov-Smirnov algorithm for all continuous variables and Chi-squared tests for all categorical variables. ### Step 2: Configure the data paths and compute Change the config.json file to point to the location of the data sources and to select the compute name (the assumption is that a compute has already been created in AML) ### Step 3: Create a client application In order for Azure Pipelines to trigger AML, you will need to create a client application in Azure and add a client secret. ### Step 4: Configure Azure DevOps * Start a new Azure DevOps project, connect it to the template repo , and create a new piplie using the azure-pipelines.yml yaml file (see this link for more details). * Link Azure DevOps to Azure KeyVault and define the following environment variables: * Azure_Client_ID: the ID of the client appliaction * AZURE_CLIENT_SECRET: the secret of the client application * AZURE_LOG_HANDLER_CONNECTION_STRING: connection string used to log metrics to Azure Moniring (see here for more details) * AzureML_Workspace_name: the name of the AML workspace where the experiments will be ran * Resource_Group: the name of teh resource group * Subscription_ID: the user’s subscription ID * Tenant_ID: the tenant ID ### Step 5: Run the pipeline When the run completes, the artifacts will be stored in the AML run.\nThe logs that were saved to Azure Monitor are stored in the traces table. They can be queried using Kusto Query Language (KQL)\nFor example, run the following query to detect if a drift has occurred:\ntraces\n| where message == 'data_drift_total'\n| project toreal(customDimensions.is_drift)\nThese queries can be used to create alerts and add tiles to Azure dashboards\n\n\n\n\n\nHow to read data from Cosmos DB to Azure blob storage? what should the query look like?\nWhen to trigger the pipelined -\n\nwhenever there is a change in Cosmos DB datasets\nat pre-defined intervals"
+  },
+  {
+    "objectID": "anatomy/monitoring.html#introduction",
+    "href": "anatomy/monitoring.html#introduction",
+    "title": "1 Model Performance and Data Drift Monitoring",
+    "section": "",
+    "text": "Monitoring models in production is crucial to detecting model performance degradation early on and ensuring that the model’s predictions remain reliable over time. Two ways to achieve this are data drift detection and model performance monitoring.\nData drift detection is an unsupervised task that involves comparing a sample of the data the model was trained on to new data batches that are sent to the model for inferencing. This comparison helps to identify changes in the distribution of inputs, which may lead to a decline in the model’s performance.\nOn the other hand, model performance monitoring is a supervised task that involves comparing the model’s output to the ground truth. This task is useful in identifying changes in the model’s behavior when the ground truth is available.\nIt is important to note that maintaining a data drift detector even when the ground truth is available has two benefits. Firstly, it can detect changes earlier than relying solely on the ground truth. Secondly, it helps to understand the cause of model degradation even when the ground truth is available."
+  },
+  {
+    "objectID": "anatomy/monitoring.html#the-use-case",
+    "href": "anatomy/monitoring.html#the-use-case",
+    "title": "1 Model Performance and Data Drift Monitoring",
+    "section": "",
+    "text": "In the provided template, we assume the model will be using tabular data with ontinuous and categorical variables."
+  },
+  {
+    "objectID": "anatomy/monitoring.html#requirements",
+    "href": "anatomy/monitoring.html#requirements",
+    "title": "1 Model Performance and Data Drift Monitoring",
+    "section": "",
+    "text": "The solution requires that Azure ML and Azure Devops instances will be available in the production environment."
+  },
+  {
+    "objectID": "anatomy/monitoring.html#before-deploying-a-model",
+    "href": "anatomy/monitoring.html#before-deploying-a-model",
+    "title": "1 Model Performance and Data Drift Monitoring",
+    "section": "",
+    "text": "When a model is ready to be pushed to production, it will be the data scientists’ responsibility to provide the code required for monitoring, by altering the provided monitoring template (see the Monitoring Template section of this document for more details)."
+  },
+  {
+    "objectID": "anatomy/monitoring.html#monitoring-design",
+    "href": "anatomy/monitoring.html#monitoring-design",
+    "title": "1 Model Performance and Data Drift Monitoring",
+    "section": "",
+    "text": "The monitoring workflow is depicted in the image below. The document assumes that all the required data is stored in Cosmos DB and readily available for use.\n\n\n\n‘flowchart’\n\n\n\n\nThe monitoring tool uses four data sources in order to run the pipelines: * GroundTruth: contains the actual labels of the inferred data. This data will only be available after providing the model’s predictions, and will be used to evaluate the performance of teh model. * InferredData: contains the predictions made by the ML model * UnlabledData: contains the new data that needs to be inferred by the model * TrainingSample: a sample of the training set (copied from the TRE)\n\n\n\nThe Azure Pipelines will trigger the AML pipelines when new data becomes availabe, or on a predefined schedule. The Azure pipeline receives all the environment variables required to run Azure ML (such as subscription ID, client ID etc.)\n\n\n\nIn Azure ML, we will have two pipelines - one for model performance monitoing and another one for drift detection.\n\n\nInputs: model predictions and their corresponding ground truths (when they become available) The script will compute the model’s performance by comparing the predictions that were made by the model to the ground truth.\n\n\n\nInputs: A sample of the training data, a set of new data Output: For each feature, the script will determine whether a data drift occurred or not.\nIn this example, we used the alibi-detect open source library to compute the data drift, but the data scientist can decide on the best monitoring tools based on the use case [^1] [^1]: For images, we could also use Torchdrift or theDeepchecks open source library\nIf we would also like to support label drift, in addition to the training set, we will also need to save the predictions the model made on the training data so that we can compare the distribution of the predictions.\nThe pipelines record the selected metrics and graphs using MLFlow and also send metrics to Azure Monitor\n\n\n\n\nIn Azure Monitor, we will define queries and use them to set alerts and create dashboards. The alerts can be linked to email accounts (or to a Teams channel) of the data scientist responsible for the model. When an alert is triggered, the data scientist can view the monitoring dashboard to get some more information about what has trigerred it."
+  },
+  {
+    "objectID": "anatomy/monitoring.html#monitoring-template",
+    "href": "anatomy/monitoring.html#monitoring-template",
+    "title": "1 Model Performance and Data Drift Monitoring",
+    "section": "",
+    "text": "The monitoring template is meant to help the data scientist create the artifacts required to run the monitoring workflow. To setup the workflow, the data scientist will need to follow the following steps:\n\n\nIn the data_drift and model_performance folders, edit the source code (e.g data_drift/data_drift_src/data_drift.py) to define the monitoring functions. * For data drift, the template supports running Kolmogorov-Smirnov algorithm for all continuous variables and Chi-squared tests for all categorical variables. ### Step 2: Configure the data paths and compute Change the config.json file to point to the location of the data sources and to select the compute name (the assumption is that a compute has already been created in AML) ### Step 3: Create a client application In order for Azure Pipelines to trigger AML, you will need to create a client application in Azure and add a client secret. ### Step 4: Configure Azure DevOps * Start a new Azure DevOps project, connect it to the template repo , and create a new piplie using the azure-pipelines.yml yaml file (see this link for more details). * Link Azure DevOps to Azure KeyVault and define the following environment variables: * Azure_Client_ID: the ID of the client appliaction * AZURE_CLIENT_SECRET: the secret of the client application * AZURE_LOG_HANDLER_CONNECTION_STRING: connection string used to log metrics to Azure Moniring (see here for more details) * AzureML_Workspace_name: the name of the AML workspace where the experiments will be ran * Resource_Group: the name of teh resource group * Subscription_ID: the user’s subscription ID * Tenant_ID: the tenant ID ### Step 5: Run the pipeline When the run completes, the artifacts will be stored in the AML run.\nThe logs that were saved to Azure Monitor are stored in the traces table. They can be queried using Kusto Query Language (KQL)\nFor example, run the following query to detect if a drift has occurred:\ntraces\n| where message == 'data_drift_total'\n| project toreal(customDimensions.is_drift)\nThese queries can be used to create alerts and add tiles to Azure dashboards"
+  },
+  {
+    "objectID": "anatomy/monitoring.html#tbd",
+    "href": "anatomy/monitoring.html#tbd",
+    "title": "1 Model Performance and Data Drift Monitoring",
+    "section": "",
+    "text": "How to read data from Cosmos DB to Azure blob storage? what should the query look like?\nWhen to trigger the pipelined -\n\nwhenever there is a change in Cosmos DB datasets\nat pre-defined intervals"
+  },
+  {
     "objectID": "anatomy/apps.html",
     "href": "anatomy/apps.html",
     "title": "FlowEHR Apps",
@@ -175,46 +252,172 @@
     "text": "What are FlowEHR Apps?"
   },
   {
-    "objectID": "quickstart/20_setup.html",
-    "href": "quickstart/20_setup.html",
-    "title": "Set-up & deployment",
+    "objectID": "anatomy/gitea.html",
+    "href": "anatomy/gitea.html",
+    "title": "Version Control (Gitea)",
     "section": "",
-    "text": "This guide will take you through the basic set up and deployment for FlowEHR in your environment."
+    "text": "We use Gitea for version control, and collaboration within the TRE. Think of this as a secure and private GitHub accessible to all users within the TRE, but unable to reach the outside world without special permissions.\nThe Gitea docs explain"
   },
   {
-    "objectID": "quickstart/20_setup.html#forking-the-repo",
-    "href": "quickstart/20_setup.html#forking-the-repo",
-    "title": "Set-up & deployment",
-    "section": "1 Forking the repo",
-    "text": "1 Forking the repo"
+    "objectID": "anatomy/gitea.html#gitea-deployment-models-and-features",
+    "href": "anatomy/gitea.html#gitea-deployment-models-and-features",
+    "title": "Version Control (Gitea)",
+    "section": "1 Gitea Deployment Models and Features",
+    "text": "1 Gitea Deployment Models and Features\nThe Gitea service in the TRE allows deployment at two levels:\n\nGitea as a TRE Shared Service\n\nprovides a Gitea instance that is accessible from any TRE Workspace\nsupports pull-mirrors: code held on Git Repositories external to the TRE can be mirrored in the Gitea TRE Shared Service\nsupports push-mirrors: code held on the Gitea TRE Shared Service can be mirrored to Git Repositories external to the TRE\npush or pull mirrors can be configured by any user with an account on the Gitea TRE Shared Service\nby default, only one account (giteaadmin) is configured with access to the Gitea TRE Shared Service\nWorkspace users are unable to create accounts on the server\n\nGitea as an individual Workspace Service\n\nprovides a Gitea instance only accessible from the individual TRE Workspace\nno support for creation of pull-mirrors\nno support for creation of push-mirrors\nallows Workspace users to create accounts on the server using OpenID\nusers with an account can create repositories that are accessible to other users in the same Workspace\n\n\nPush-mirrors expose the TRE Workspaces to accidental exfiltration of data from a TRE Workspace to the Internet. Since push-mirrors can only be created on the Gitea TRE Shared Service, Workspace users will not be provided with accounts on this service.\nPull-mirrors can be created for Public or Private repositories on the Gitea TRE Shared Service. Mirrors for Private repositories need an Access Token to retrieve the Private repository from the internet Git server. Gitea mirrors of private, external repositories can be either Public or Private. If public, then all users from all Workspaces will be able to read the repository. If the repository needs to be kept private to a specific Workspace or Workspace user, then a Gitea resticted account can be configured on the Gitea TRE Shared Service. This restricted account can be shared with the intended audience, granting them read-access to the Private repository only. Restricted accounts are unable to see public respositories on the Gitea server, unless they have been explicitly granted permissions to do so.\nPull-mirrors can be created as a snapshot of the current state of an external repository or can be configured to synchronise with the external repository on a schedule."
   },
   {
-    "objectID": "quickstart/20_setup.html#core-configuration",
-    "href": "quickstart/20_setup.html#core-configuration",
-    "title": "Set-up & deployment",
-    "section": "2 Core configuration",
-    "text": "2 Core configuration\n\nLocallyCI/CD\n\n\nLocal instructions\n\n\nCI/CD instructions"
+    "objectID": "anatomy/gitea.html#gitea-service-requirements",
+    "href": "anatomy/gitea.html#gitea-service-requirements",
+    "title": "Version Control (Gitea)",
+    "section": "2 Gitea Service Requirements",
+    "text": "2 Gitea Service Requirements\nThe Gitea services in the TRE should support the following requirements:\n\nAccess to read and write code and share this with colleagues using the same TRE Workspace\nAccess to publish code, subject to approval, outside of the TRE Workspaces\nAccess to read code that is currently held outside of the TRE\nAbility to read code held in a private, external repository and keep the code visibility private\nWhen pushing code to a repository, appropriate controls are applied to prevent inadvertently publishing sensitive data beyond the confines of the Workspace private network\nPrevent users from adding push mirrors to their repositories"
   },
   {
-    "objectID": "quickstart/20_setup.html#infrastructure-deployment",
-    "href": "quickstart/20_setup.html#infrastructure-deployment",
-    "title": "Set-up & deployment",
-    "section": "3 Infrastructure deployment",
-    "text": "3 Infrastructure deployment\n\nLocallyCI/CD\n\n\nLocal instructions\n\n\nCI/CD instructions"
+    "objectID": "anatomy/gitea.html#recommendations",
+    "href": "anatomy/gitea.html#recommendations",
+    "title": "Version Control (Gitea)",
+    "section": "3 Recommendations",
+    "text": "3 Recommendations\n\nA Gitea TRE Shared Service should be deployed to provide read-only access across Workspaces to approved Git Repositories held outside of the TRE\nPull-mirrors on the Gitea TRE Shared Service should only be configurable by the TRE administrators (via the giteaadmin account)\nPull-mirrors should be organised into Organisations, to indicate the Workspace that originally requested the mirror to be created\nWhere a private pull-mirror is required, a restricted user can be provisioned to allow the intended audience to read from the private mirror only. The restricted user account should also have the following settings:\n\nvisibility: private\nmax number of repositories: 0\ndisable sign-in: No\nis administrator: No\nmay create organisations: No\nfull name: name of Workspace owner\nemail address: email address of Workspace owner\n\nNo additional logon accounts will be configured for the Gitea TRE Shared Service, except where Push Mirrors have been approved\nGitea Workspace Services should be deployed to each Workspace to enable Workspace users to collaborate within the Workspace using read-write repositories\nWhen Workspace users wish to move code from a Workspace repository, they will need to complete an approvals process. At the moment this process would involve:\n\ndownloading the repository code to a Workspace VM\ncompleting an ‘airlock’ review process to move the downloaded code to a device outside the TRE"
   },
   {
-    "objectID": "quickstart/20_setup.html#setting-up-app-model-serving",
-    "href": "quickstart/20_setup.html#setting-up-app-model-serving",
-    "title": "Set-up & deployment",
-    "section": "4 Setting up App & Model Serving",
-    "text": "4 Setting up App & Model Serving\nNow we have our core infrastructure deployed, we can proceed to set up the app serving layer so it’s ready to deploy and host our FlowEHR Apps.\n\n4.1 Configure a GitHub App\nFor FlowEHR to create and manage repositories in GitHub for hosting FlowEHR App code, it requires a GitHub App to authenticate.\nWe recommend creating a new GitHub Organization for containing all of the FlowEHR App repositories that will be created and managed by your FlowEHR instance - just so you’re not providing unnecessary management access to any other repositories you might have in your main org.\n\n4.1.1 Create GH app\nOnce you have the organisation you wish to use at the ready, follow these instructions to create a new GitHub App within the organisation you wish to host your new FlowEHR apps, with the following properties (leave everything else blank/default):\nName: {YOUR_ORG}-FlowEHR # or something similar (needs to be globally unique)\nHomepage URL: https://flowehr.io\nWebhook: uncheck\nPermissions:\n    Repository Permissions:\n        - Actions: Read-only\n        - Administration: Read and write\n        - Contents: Read and write\n        - Environments: Read and write\n        - Metadata: Read-only\n        - Secrets: Read and write\n        - Variables: Read and write\n        - Workflows: Read and write\n    Organization Permissions:\n        - Administration: Read and write\n        - Members: Read and write\nWhere can this GitHub App be installed?: Only on this account\n\nWhen happy, click Create GitHub App. After creation, in your app’s settings page, note down the App Id.\n\n\n4.1.2 Generate Private Key\nIn the app settings page, scroll down to near the bottom and find the Private Keys section. Click Generate a private key. This will download a PEM cert file to your machine. We’ll need this later.\n\n\n\n4.1.3 Install GH app\nOnce created, you need to the install the app to the organisation. Follow these instructions, selecting your organization and choosing All repositories.\nAfter installation, stay on the same page and check the URL. It should look like this:\n\nhttps://github.com/organizations/UCLH-FlowEHR-TestBed/settings/installations/35581991\n\nAt the end of the URL after installations/, you’ll see a number (35581991 in the example above). Record this down - it is your GitHub App Installation Id. (Believe it or not this is the easiest way to find it!)\n\n\n\n4.1.4 Update config\nDepending on whether you’re configuring this for a local dev deployment, or for CI (or both if you’d like local developers and your testing environments to share a single Organization for test apps) - update the relevant config.yaml or config.{ENVIRONMENT}.yaml with the GitHub app details in the serve block:\nserve:\n    github_owner: name of the GitHub Organisation you created/wish to use for deploying apps into\n    github_app_id: your GitHub App's \"App Id\" from earlier\n    github_app_installation_id: your GitHub App's \"Installation Id\" from earlier\n\n\n4.1.5 Store the cert\n\nLocallyCI/CD\n\n\nFor developing locally, simply find the PEM file you downloaded earlier, rename it to github.pem and drag it into this repo under the /apps directory. It will be picked up by Terraform during deployment, and is gitignored so won’t be checked in accidentally.\n\n\n\n\n\n\nNote\n\n\n\nFor other developers who want to use this same app instead of setting up their own, direct them to create and download their own private key from the GitHub App’s settings page as you did in a previous step.\n\n\n\n\nFor use in CI, copy the contents of the PEM file, and paste it into a new GitHub secret called GH_APP_CERT. The CI/CD pipeline will read this into a file to use during deployments.\n\n\n\nThat’s it for now! We’ll need all this when we come to deploying apps (which we’ll cover in the deployment section)."
+    "objectID": "anatomy/gitea.html#gitea-push-mirrors",
+    "href": "anatomy/gitea.html#gitea-push-mirrors",
+    "title": "Version Control (Gitea)",
+    "section": "4 Gitea Push Mirrors",
+    "text": "4 Gitea Push Mirrors\nIn exceptional circumstances, Push-Mirrors can be configured on the Gitea TRE Shared Service. Push-Mirrors add the risk of sensitive information leaving the TRE Workspace. For this reason, access to Push-Mirrors will be closely controlled. The following controls will be applied to mitigate the risk of data exfiltration:\n\nPush-Mirrors will be created on the Gitea TRE Shared Service\nOnly the Gitea admin account will have permission to create a Push-Mirror\nPush-Mirrors will be created within an Organisation\nThe Organisation name will reference the TRE Workspace name\nUsers from the Workspace will be provided with restricted logons to the Gitea TRE Shared Service. The restricted logons will have the following settings:\n\nmax number of repositories: 0\ndisable sign-in: No\nis administrator: No\nmay create organisations: No\nfull name: name of Workspace owner\nemail address: email address of Workspace owner\n\nRestricted accounts will be granted write access to their Organisation repositories by membership of the Organisation’s writer group\nPush settings will be set as:\n\nscheduled for Private repositories held in approved Github Organisations\non-demand for all other repositories\n\nOn-demand push will only be executable by the giteaadmin and will require authorisation from Organisation owners"
+  },
+  {
+    "objectID": "quickstart/20_setup_ads.html",
+    "href": "quickstart/20_setup_ads.html",
+    "title": "Azure Data Studio",
+    "section": "",
+    "text": "Open Azure Data Studio\nClick “Create a connection”\nConnection type = Microsoft SQL Server\nServer link = sql-server-features-uclh-flowehr-ml-dev.database.windows.net\nAuthentication type = Azure Active Directory\nYou’ll be taken to a browser page - authenticate with MFA\nAzure AD tenant is UCLH Secure Data Environment\nDatabase = sql-db-features\nGive it a name e.g., “FeatureStore”\n\n \nDocs"
+  },
+  {
+    "objectID": "quickstart/70_stewardship.html",
+    "href": "quickstart/70_stewardship.html",
+    "title": "Stewardship",
+    "section": "",
+    "text": "Models should not be deployed without a monitoring strategy. To this end, we provide a template that addresses data drift and model drift. These steps are in addition to the data testing that is built into the feature engineering pipeline."
+  },
+  {
+    "objectID": "quickstart/70_stewardship.html#key-terms",
+    "href": "quickstart/70_stewardship.html#key-terms",
+    "title": "Stewardship",
+    "section": "1 Key terms",
+    "text": "1 Key terms\n\nGround Truth: the true answer\nPredicted or Inferred value or label: the model or the machines best guess\nTraining data: a sufficient sample of the training data set used compare against the new (unseen) data\nUnseen data: data that has arrived after the model has been trained and deployed. The data in production."
+  },
+  {
+    "objectID": "quickstart/70_stewardship.html#walk-through",
+    "href": "quickstart/70_stewardship.html#walk-through",
+    "title": "Stewardship",
+    "section": "2 Walk through",
+    "text": "2 Walk through\n\nClone the ‘model seedling’ template"
+  },
+  {
+    "objectID": "quickstart/20_setup_gitea.html",
+    "href": "quickstart/20_setup_gitea.html",
+    "title": "Gitea set-up",
+    "section": "",
+    "text": "You will need a username and password for the TRE hosted Gitea instance. Now go to https://gitea-uclhtreprod.azurewebsites.net/ from a browser in the TRE.\n\nLog on\n\nYou’ll also want to run\ngit config --global user.name\ngit config --global user.email \nwith your Github identity, so that you’re commits are written with your real github handle\n\nAnd to save you having to re-enter your username and password on every interaction with Gitea then\ngit config --global credential.helper store\nvia SO"
+  },
+  {
+    "objectID": "quickstart/40_features.html",
+    "href": "quickstart/40_features.html",
+    "title": "Feature building",
+    "section": "",
+    "text": "We will cover\n\nfeature building\nfeature browsing\nfeature exploration\ninput data testing\nfeature testing\n\nSee"
+  },
+  {
+    "objectID": "quickstart/20_setup_vscode.html",
+    "href": "quickstart/20_setup_vscode.html",
+    "title": "Setting up VS Code",
+    "section": "",
+    "text": "Open VS Code\nOpen a terminal window"
+  },
+  {
+    "objectID": "quickstart/30_connecting.html",
+    "href": "quickstart/30_connecting.html",
+    "title": "Connections and Authentication",
+    "section": "",
+    "text": "You will need to make the following connections."
+  },
+  {
+    "objectID": "quickstart/30_connecting.html#connecting-to-the-source-data",
+    "href": "quickstart/30_connecting.html#connecting-to-the-source-data",
+    "title": "Connections and Authentication",
+    "section": "1 Connecting to the source data",
+    "text": "1 Connecting to the source data"
+  },
+  {
+    "objectID": "quickstart/30_connecting.html#connecting-to-the-feature-store",
+    "href": "quickstart/30_connecting.html#connecting-to-the-feature-store",
+    "title": "Connections and Authentication",
+    "section": "2 Connecting to the Feature Store",
+    "text": "2 Connecting to the Feature Store"
+  },
+  {
+    "objectID": "quickstart/30_connecting.html#connecting-azure-machine-learning",
+    "href": "quickstart/30_connecting.html#connecting-azure-machine-learning",
+    "title": "Connections and Authentication",
+    "section": "3 Connecting Azure Machine Learning",
+    "text": "3 Connecting Azure Machine Learning"
+  },
+  {
+    "objectID": "quickstart/30_connecting.html#accessing-synthetic-data",
+    "href": "quickstart/30_connecting.html#accessing-synthetic-data",
+    "title": "Connections and Authentication",
+    "section": "4 Accessing Synthetic Data",
+    "text": "4 Accessing Synthetic Data\n\nWe have built a tool (Satellite) that streams structually correct but semantically meaningless data for the purposes of development.\nWe have collaborated with colleagues at the Alan Turing Institute, and have used their SQLSynthGen tool to create a replica of data."
+  },
+  {
+    "objectID": "quickstart/30_connecting.html#connecting-to-cosmosdb",
+    "href": "quickstart/30_connecting.html#connecting-to-cosmosdb",
+    "title": "Connections and Authentication",
+    "section": "5 Connecting to CosmosDB",
+    "text": "5 Connecting to CosmosDB"
+  },
+  {
+    "objectID": "quickstart/20_setup_conda.html",
+    "href": "quickstart/20_setup_conda.html",
+    "title": "Setting up conda",
+    "section": "",
+    "text": "You need to use the pre-configured conda channels, which means that a environment.yaml file with the following will not work.\nname: los_predictor_v1\nchannels:\n  - defaults  # &lt;--- default channel not available\ndependencies:\n  - python=3.10.10\n  - pandas\n    pip:\n    - matplotlib\nSo comment out the line channels section!\nOpen a terminal window\nconda env create -f environment.yaml\n\n\n0.1 Notes\n\nConda has been configured to use a local mirror of conda and conda-forge in a framework called Nexus. This means that you will have access to most, but not all, packages and some of them will be outdated.\nThere are some conda environments that have already been made with pytorch/tensorflow/automl. Ideally those should be used in the first instance and packages can be added to that.\nIf you wish to create your own environment, ensure that you have activated your base conda environment using conda activate prior to creating any other conda environments\nIf you do wish to install other conda-like installers (e.g. mamba), ensure that the base conda environment has been activated so that the configuration files for Nexus has migrated into the mamba configuration.\n\nYou’ll probably have more success with conda-forge as your default channel as Nexus mirrors that more successfully. To do this, run: conda config --add channels conda-forge\n\nOn first use, jump into a terminal and conda init"
   },
   {
     "objectID": "quickstart/10_prerequisites.html",
     "href": "quickstart/10_prerequisites.html",
     "title": "Prerequisites for FlowEHR",
     "section": "",
-    "text": "The skills you need\nThe permissions you need\nThe resources you need"
+    "text": "Familiarity with Python programming for data science tasks. Much of the design of the platform is orientated to support those with strong SQL skills, or those with strong R skills, but for now you will find that the examples and the work are biased toward Python."
+  },
+  {
+    "objectID": "quickstart/10_prerequisites.html#the-skills-you-need",
+    "href": "quickstart/10_prerequisites.html#the-skills-you-need",
+    "title": "Prerequisites for FlowEHR",
+    "section": "",
+    "text": "Familiarity with Python programming for data science tasks. Much of the design of the platform is orientated to support those with strong SQL skills, or those with strong R skills, but for now you will find that the examples and the work are biased toward Python."
+  },
+  {
+    "objectID": "quickstart/10_prerequisites.html#the-permissions-you-need",
+    "href": "quickstart/10_prerequisites.html#the-permissions-you-need",
+    "title": "Prerequisites for FlowEHR",
+    "section": "2 The permissions you need",
+    "text": "2 The permissions you need\n\nWe assume that you are working in a direct care role and therefore have rights to access identifiable data."
+  },
+  {
+    "objectID": "quickstart/10_prerequisites.html#the-resources-you-need",
+    "href": "quickstart/10_prerequisites.html#the-resources-you-need",
+    "title": "Prerequisites for FlowEHR",
+    "section": "3 The resources you need",
+    "text": "3 The resources you need\n\nSome time and some patience!"
+  },
+  {
+    "objectID": "quickstart/10_prerequisites.html#recommendations",
+    "href": "quickstart/10_prerequisites.html#recommendations",
+    "title": "Prerequisites for FlowEHR",
+    "section": "4 Recommendations",
+    "text": "4 Recommendations\nWe’re not telling you to do the following, but these are the sort of things you might want to consider if you hit problems.\n\nTry using Microsoft Edge as your browser for working with the TRE. It just seems to work better with this tooling.\nPay attention to the two-factor authentication. You’re likely to end up with more than one. At the minumum, you’ll have one for NHS.net and you’ll need one for the TRE (e.g. https://uclhtredev.uksouth.cloudapp.azure.com/)\n\nIt’s going to get confusing at times. There’s a lot of new terminology. Please check-out the ."
   },
   {
     "objectID": "quickstart/60_deployment.html",
@@ -257,6 +460,69 @@
     "title": "Author & deploy a FlowEHR App",
     "section": "5 Next steps",
     "text": "5 Next steps\nCongratulations! You’ve deployed your first app to FlowEHR. You can find more information on building apps, accessing data and using the state store by visiting the developer’s guide."
+  },
+  {
+    "objectID": "quickstart/20_setup_flowehr_locally.html",
+    "href": "quickstart/20_setup_flowehr_locally.html",
+    "title": "Set-up & deployment",
+    "section": "",
+    "text": "This guide will take you through the basic set up and deployment for FlowEHR in your environment."
+  },
+  {
+    "objectID": "quickstart/20_setup_flowehr_locally.html#forking-the-repo",
+    "href": "quickstart/20_setup_flowehr_locally.html#forking-the-repo",
+    "title": "Set-up & deployment",
+    "section": "1 Forking the repo",
+    "text": "1 Forking the repo"
+  },
+  {
+    "objectID": "quickstart/20_setup_flowehr_locally.html#core-configuration",
+    "href": "quickstart/20_setup_flowehr_locally.html#core-configuration",
+    "title": "Set-up & deployment",
+    "section": "2 Core configuration",
+    "text": "2 Core configuration\n\nLocallyCI/CD\n\n\nLocal instructions\n\n\nCI/CD instructions"
+  },
+  {
+    "objectID": "quickstart/20_setup_flowehr_locally.html#infrastructure-deployment",
+    "href": "quickstart/20_setup_flowehr_locally.html#infrastructure-deployment",
+    "title": "Set-up & deployment",
+    "section": "3 Infrastructure deployment",
+    "text": "3 Infrastructure deployment\n\nLocallyCI/CD\n\n\nLocal instructions\n\n\nCI/CD instructions"
+  },
+  {
+    "objectID": "quickstart/20_setup_flowehr_locally.html#setting-up-app-model-serving",
+    "href": "quickstart/20_setup_flowehr_locally.html#setting-up-app-model-serving",
+    "title": "Set-up & deployment",
+    "section": "4 Setting up App & Model Serving",
+    "text": "4 Setting up App & Model Serving\nNow we have our core infrastructure deployed, we can proceed to set up the app serving layer so it’s ready to deploy and host our FlowEHR Apps.\n\n4.1 Configure a GitHub App\nFor FlowEHR to create and manage repositories in GitHub for hosting FlowEHR App code, it requires a GitHub App to authenticate.\nWe recommend creating a new GitHub Organization for containing all of the FlowEHR App repositories that will be created and managed by your FlowEHR instance - just so you’re not providing unnecessary management access to any other repositories you might have in your main org.\n\n4.1.1 Create GH app\nOnce you have the organisation you wish to use at the ready, follow these instructions to create a new GitHub App within the organisation you wish to host your new FlowEHR apps, with the following properties (leave everything else blank/default):\nName: {YOUR_ORG}-FlowEHR # or something similar (needs to be globally unique)\nHomepage URL: https://flowehr.io\nWebhook: uncheck\nPermissions:\n    Repository Permissions:\n        - Actions: Read-only\n        - Administration: Read and write\n        - Contents: Read and write\n        - Environments: Read and write\n        - Metadata: Read-only\n        - Secrets: Read and write\n        - Variables: Read and write\n        - Workflows: Read and write\n    Organization Permissions:\n        - Administration: Read and write\n        - Members: Read and write\nWhere can this GitHub App be installed?: Only on this account\n\nWhen happy, click Create GitHub App. After creation, in your app’s settings page, note down the App Id.\n\n\n4.1.2 Generate Private Key\nIn the app settings page, scroll down to near the bottom and find the Private Keys section. Click Generate a private key. This will download a PEM cert file to your machine. We’ll need this later.\n\n\n\n4.1.3 Install GH app\nOnce created, you need to the install the app to the organisation. Follow these instructions, selecting your organization and choosing All repositories.\nAfter installation, stay on the same page and check the URL. It should look like this:\n\nhttps://github.com/organizations/UCLH-FlowEHR-TestBed/settings/installations/35581991\n\nAt the end of the URL after installations/, you’ll see a number (35581991 in the example above). Record this down - it is your GitHub App Installation Id. (Believe it or not this is the easiest way to find it!)\n\n\n\n4.1.4 Update config\nDepending on whether you’re configuring this for a local dev deployment, or for CI (or both if you’d like local developers and your testing environments to share a single Organization for test apps) - update the relevant config.yaml or config.{ENVIRONMENT}.yaml with the GitHub app details in the serve block:\nserve:\n    github_owner: name of the GitHub Organisation you created/wish to use for deploying apps into\n    github_app_id: your GitHub App's \"App Id\" from earlier\n    github_app_installation_id: your GitHub App's \"Installation Id\" from earlier\n\n\n4.1.5 Store the cert\n\nLocallyCI/CD\n\n\nFor developing locally, simply find the PEM file you downloaded earlier, rename it to github.pem and drag it into this repo under the /apps directory. It will be picked up by Terraform during deployment, and is gitignored so won’t be checked in accidentally.\n\n\n\n\n\n\nNote\n\n\n\nFor other developers who want to use this same app instead of setting up their own, direct them to create and download their own private key from the GitHub App’s settings page as you did in a previous step.\n\n\n\n\nFor use in CI, copy the contents of the PEM file, and paste it into a new GitHub secret called GH_APP_CERT. The CI/CD pipeline will read this into a file to use during deployments.\n\n\n\nThat’s it for now! We’ll need all this when we come to deploying apps (which we’ll cover in the deployment section)."
+  },
+  {
+    "objectID": "quickstart/20_setup_overview.html",
+    "href": "quickstart/20_setup_overview.html",
+    "title": "Set-up overview",
+    "section": "",
+    "text": "You are likely to need the following tools and services"
+  },
+  {
+    "objectID": "quickstart/20_setup_overview.html#tools",
+    "href": "quickstart/20_setup_overview.html#tools",
+    "title": "Set-up overview",
+    "section": "1 Tools",
+    "text": "1 Tools\nAzure Data Studio VS Code Conda\nServices\nVirtual Machine Gitea Azure Machine Learning FlowEHR feature store\nHow to set-up FlowEHR on Azure See the onboarding for the data scientist docs for more details\n\nYou will be working from your laptop, and interacting through a browser (e.g. Edge, Chrome etc.)\nAsk your FlowEHR administrator for access to the Azure TRE landing zone. They will provide you with a link to the landing page, and add your NHS.net credentials to the list of approved users.\n\nLogin using your NHS.net email. You will need to have 2-factor authentication enabled\nSet-up a virtual machine from one of the provided templates. Details in the Azure TRE docs\n\nInbound and outbound traffic to the TRE is strictly controlled so you will find the following services to enable you to work\n\na mirror of Python (via Conda, and PyPi), R and other package managers provided by Nexus\nan internal Git server provided by Gitea\nan airlock for moving items into and out from the TRE. Local polices will enforce controls to protect data, and the environment.\n\n\nYou should find yourself with a suite of open source tools designed for modern data science tasks - Jupyter - RStudio - Integrated Development Environments (e.g. PyCharm) and text editors (e.g. VS Code) - A database GUI\nSee also\n\nTrusted Research Environments\nVirtual Machines and in particular\n\nRunning Jupyter"
+  },
+  {
+    "objectID": "quickstart/30_connecting_feature_store.html",
+    "href": "quickstart/30_connecting_feature_store.html",
+    "title": "Connecting to the Feature Store",
+    "section": "",
+    "text": "Within the TRE, use the az command line tools: The following will create an interactive login workflow in the browser in the TRE.\nThis might (the first time) provide you with a short alphanumeric token on the command line (e.g. ABC123), and then ask you to authenticate externally (outside the TRE) at https://microsoft.com/devicelogin. Here you enter the token, and then follow the standard 2FA authentication workflow using your UCLH SDE credentials (e.g. NHS email address, NHS email password, and the 2FA).\nSubsequently, the following should suffice\nAnd you can create tokens etc. as per\nWorking from a Python script, then the following will avoid the interactivity needed above. First you’ll need to be able to grab the token.\nUsing pyodbc\nUsing SQLAlchemy\nPutting it all together,"
+  },
+  {
+    "objectID": "quickstart/30_connecting_feature_store.html#notes",
+    "href": "quickstart/30_connecting_feature_store.html#notes",
+    "title": "Connecting to the Feature Store",
+    "section": "1 Notes",
+    "text": "1 Notes\n\n1.1 Authenticate via the Azure CLI\nThe docs provided for the Azure-Identity package are helpful:\n\nDefaultAzureCredential and AzureCliCredential can authenticate as the user signed in to the Azure CLI. To sign in to the Azure CLI, run az login. On a system with a default web browser, the Azure CLI will launch the browser to authenticate a user.\n\n\nWhen no default browser is available, az login will use the device code authentication flow. This can also be selected manually by running az login –use-device-code."
   },
   {
     "objectID": "personas/administrator/configuration.html#configuring-flowehr-apps",
@@ -406,6 +672,41 @@
     "text": "7 Assorted notes and tips\n\nshared file system at /vm-shared-storage/\nwhen logging in to Azure ML within the TRE then you need to use the MFA token from https://portal.azure.com/#home not from NHS email"
   },
   {
+    "objectID": "notes/walkthrough_v1.html",
+    "href": "notes/walkthrough_v1.html",
+    "title": "Walkthrough notes",
+    "section": "",
+    "text": "Scratch pad for planning the demo"
+  },
+  {
+    "objectID": "faq/what-is-algorithm-stewardship.html",
+    "href": "faq/what-is-algorithm-stewardship.html",
+    "title": "What is algorithm stewardship?",
+    "section": "",
+    "text": "Model monitoring in production blogpost via neptune.ai\n\n\n\n\n\nData Quality Testing blogpost via lakeFS"
+  },
+  {
+    "objectID": "faq/what-is-algorithm-stewardship.html#further-reading",
+    "href": "faq/what-is-algorithm-stewardship.html#further-reading",
+    "title": "What is algorithm stewardship?",
+    "section": "",
+    "text": "Model monitoring in production blogpost via neptune.ai\n\n\n\n\n\nData Quality Testing blogpost via lakeFS"
+  },
+  {
+    "objectID": "faq/cosmosdb.html",
+    "href": "faq/cosmosdb.html",
+    "title": "What is CosmosDB?",
+    "section": "",
+    "text": "Azure Cosmos DB is a NoSQL database service offered by Microsoft as part of the Azure cloud platform. It enables globally distributed, multi-model data storage and provides low-latency, high-throughput, and consistent performance. Key features include support for various data models and APIs, elastic scalability, high availability, and comprehensive SLAs."
+  },
+  {
+    "objectID": "faq/azure-anatomy.html",
+    "href": "faq/azure-anatomy.html",
+    "title": "What’s the difference between Azure, a landing zone, a TRE, and a workspace? And do I need to care?",
+    "section": "",
+    "text": "Hopefully you don’t need to care but these terms come up so it’s helpful to know what they mean. The list below starts from the general and moves to the specific.\n\nAzure\n\nAzure is a cloud computing platform and service offered by Microsoft that provides a range of cloud services, including computing, storage, networking, and analytics. It enables businesses and individuals to build, deploy, and manage applications and services through Microsoft-managed data centers.\n\nTrusted Research Environment (TRE) hosted on Azure\n\nA TRE hosted on Azure is a secure, privacy-preserving environment that allows researchers to access and analyze sensitive data without compromising the data’s confidentiality. It is built on Azure infrastructure, leveraging its security, compliance, and scalability features, to create a controlled environment for data access, analysis, and sharing.\n\nWorkspace within a TRE\n\nA workspace within a TRE is a dedicated, isolated area where researchers can access, store, and analyze data securely. It provides a collaborative space with controlled access and tools needed for data processing, analysis, and visualization while ensuring that the data remains protected and compliant with privacy regulations.\n\n\nAzure Machine Learning (AML): AML is a cloud-based service within the Azure ecosystem that provides tools and services to build, train, and deploy machine learning models. It offers a collaborative environment for data scientists and developers, allowing them to leverage pre-built algorithms, manage data, and use compute resources efficiently. AML streamlines the end-to-end machine learning lifecycle, making it easier to develop, experiment, and operationalize AI solutions at scale."
+  },
+  {
     "objectID": "faq/contributing.html",
     "href": "faq/contributing.html",
     "title": "How do I contribute to the documentation",
@@ -413,11 +714,32 @@
     "text": "We welcome new contributions, edits to existing material, and ad hoc supporting material. The latter category could include example notebooks or vignettes showing how something works, or a quick note.\n\nNotebooks and vignettes can just be saved in ./docs/notebooks/. Please ensure the first cell in the notebook contains the YAML metadata for the author, title, and categories.\nQuick notes in the style FAQ answers, or ‘today I learned’ notes can be saved into ./docs/faq/\n\nBoth will be automatically indexed when the site is deployed. The documentation is deployed using Quarto, and the documentation is built from the ./docs/ directory. Please fork or clone .\nYou will need to have\n\ninstalled basic python and jupyter extensions necessary including those for jupyter\ninstalled quarto\ninstalled the VSCode extension\n\nWorkflow\ncd docs\nquarto preview\nThen create your content and review before making a pull request. Don’t forget that changes to config (e.g. _quarto.yml may need you to rerun quarto render to ensure the whole site is correctly rebuilt) When you push to either dev or main branches, then a GitHub Action (see .github/workflows/publish.yml) will be triggered that should publish the current documentation to https://hylode.github.io/HyUi/."
   },
   {
+    "objectID": "faq/jupyter.html",
+    "href": "faq/jupyter.html",
+    "title": "Running a Jupyter notebook from this documentation within a virtual environment",
+    "section": "",
+    "text": "Within a TRE VM:\n\nVisit the Gitea URL provided alongside this documentation\nSelect ‘Explore’ from the top left\nSelect the ‘End-User-Docs’ repository\nCopy the HTTPS link to the repository\n\nThe following code\n\nClones this documentation repo\nCreates a virtual environment\nActivates the environment\nInstalls jupyterlab and ipykernel within the virtual environment\n\nMakes the virtual environment available as a kernel within a Jupyter Lab environment\nLaunches Jupyter Lab\n\nOpen a terminal within the VM and create a virtual environment with Conda\nconda create -n my_virtual_environment python=3.10\nconda activate my_virtual_environment\nYou may be prompted by conda to initialise your shell. Run\nconda init bash\nand restart your terminal. Run the following commands in the restarted terminal to clone this documentation repo and install dependencies\ngit clone ${gitea-repository-url}\ncd End-User-Docs/docs/notebooks\nconda create -n my_virtual_environment python=3.10\nconda activate my_virtual_environment\nconda install jupyterlab ipykernel\npip install -r requirements.txt\npython -m ipykernel install --user --name=my_env\nA Jupyter Lab environment can then be launched by running\njupyter lab\nWithin this environment, navigate to the example notebooks provided. When running the notebooks, ensure the python kernel is set to the name defined by the earlier python -m ipykernel install command."
+  },
+  {
+    "objectID": "faq/emap.html",
+    "href": "faq/emap.html",
+    "title": "What is EMAP?",
+    "section": "",
+    "text": "See https://github.com/inform-health-informatics/emap_documentation and in particular the technical overview"
+  },
+  {
+    "objectID": "faq/information-security.html",
+    "href": "faq/information-security.html",
+    "title": "Please summarise the approach to Information Security?",
+    "section": "",
+    "text": "We benchmark ourselves against Center for Internet Security (CIS) Benchmarks\n\nThe Center for Internet Security (CIS) Benchmarks are a set of best practices and configuration guidelines developed to help organizations improve the security of their systems and networks. These benchmarks are developed through a collaborative process involving cybersecurity experts, industry professionals, and government representatives. They provide a comprehensive approach to hardening systems and reducing vulnerabilities by addressing various aspects of security, including configuration, user access control, and patch management.\nThe CIS Benchmarks cover a wide range of technologies, such as operating systems, network devices, cloud environments, and applications. Some examples include:\n\nMicrosoft Windows\nLinux distributions (e.g., Red Hat, Ubuntu, CentOS)\nmacOS\nNetwork devices (e.g., Cisco, Juniper, Fortinet)\nCloud platforms (e.g., Amazon Web Services, Microsoft Azure, Google Cloud Platform)\nDatabases (e.g., Oracle, Microsoft SQL Server, MySQL)\nWeb servers (e.g., Apache, Nginx, Microsoft IIS)\nVirtualization platforms (e.g., VMware, Microsoft Hyper-V)\n\nCIS Benchmarks help organizations by:\n\nEstablishing a baseline for security configuration: The benchmarks provide a clear starting point for organizations to assess their current security posture and make improvements as needed.\nFacilitating compliance: Many regulatory standards, such as the Payment Card Industry Data Security Standard (PCI DSS), the Health Insurance Portability and Accountability Act (HIPAA), and the General Data Protection Regulation (GDPR), require organizations to implement secure configurations. The CIS Benchmarks can help organizations meet these requirements.\nEnhancing system performance: By following the benchmarks, organizations can optimize their systems and reduce potential performance issues caused by misconfigurations.\nReducing attack surfaces: Properly securing systems can help organizations minimize the risk of data breaches and other cyber threats.\nCIS Benchmarks are available for free, and organizations can choose to implement them fully or partially, depending on their unique needs and requirements."
+  },
+  {
     "objectID": "faq/faq.html",
     "href": "faq/faq.html",
     "title": "FAQ",
     "section": "",
-    "text": "Please browse our FAQs, and short ‘today I learned’ posts.\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Title\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nHow do I contribute to the documentation\n\n\nSteve Harris\n\n\n\n\n\n\nNo matching items"
+    "text": "Please browse our FAQs, and short ‘today I learned’ posts.\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Title\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nWhat’s the difference between Azure, a landing zone, a TRE, and a workspace? And do I need to care?\n\n\n\n\n\n\n\nHow do I contribute to the documentation\n\n\nSteve Harris\n\n\n\n\nWhat is CosmosDB?\n\n\n\n\n\n\n\nWhat is EMAP?\n\n\n\n\n\n\n\nPlease summarise the approach to Information Security?\n\n\n\n\n\n\n\nRunning a Jupyter notebook from this documentation within a virtual environment\n\n\n\n\n\n\n\nWhat is algorithm stewardship?\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html",

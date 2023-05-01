@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>FlowEHR Garden Path – connecting</title>
+<title>FlowEHR Garden Path - Connections and Authentication</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,7 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
 <link href="../quickstart/40_features.html" rel="next">
-<link href="../quickstart/20_setup.html" rel="prev">
+<link href="../quickstart/20_setup_flowehr_locally.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -143,12 +143,53 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Prerequisites</span></a>
   </div>
 </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../quickstart/20_setup_overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Set-up</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../quickstart/20_setup.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Set-up</span></a>
+  <a href="../quickstart/20_setup_conda.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Conda environments</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quickstart/20_setup_ads.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Azure Data Studio</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quickstart/20_setup_gitea.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Gitea</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quickstart/20_setup_vm.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Virtual Machines</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quickstart/20_setup_vscode.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Visual Studio Code</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quickstart/20_setup_flowehr_locally.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">FlowEHR locally</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../quickstart/30_connecting.html" class="sidebar-item-text sidebar-link active">
@@ -345,10 +386,52 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Connections and Authentication</h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
 
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>You will need to make the following connections.</p>
+<ul>
+<li>to the source database (if your are building features)</li>
+<li>to the Feature Store</li>
+<li>to Azure Machine Learning</li>
+<li>to synthetic data (if you are working outside the TRE perhaps as an application developer)</li>
+<li>to the application database (CosmosDB)</li>
+</ul>
+<section id="connecting-to-the-source-data" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="connecting-to-the-source-data"><span class="header-section-number">1</span> Connecting to the source data</h2>
+</section>
+<section id="connecting-to-the-feature-store" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="connecting-to-the-feature-store"><span class="header-section-number">2</span> Connecting to the Feature Store</h2>
+</section>
+<section id="connecting-azure-machine-learning" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="connecting-azure-machine-learning"><span class="header-section-number">3</span> Connecting Azure Machine Learning</h2>
+</section>
+<section id="accessing-synthetic-data" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="accessing-synthetic-data"><span class="header-section-number">4</span> Accessing Synthetic Data</h2>
+<ol type="1">
+<li>We have built a tool (<a href="https://github.com/UCLH-Foundry/Satellite">Satellite</a>) that streams structually correct but semantically meaningless data for the purposes of development.</li>
+<li>We have collaborated with colleagues at the Alan Turing Institute, and have used their <a href="https://github.com/alan-turing-institute/sqlsynthgen">SQLSynthGen</a> tool to create a replica of data.</li>
+</ol>
+</section>
+<section id="connecting-to-cosmosdb" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="connecting-to-cosmosdb"><span class="header-section-number">5</span> Connecting to CosmosDB</h2>
+
+
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -717,8 +800,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../quickstart/20_setup.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Set-up</span>
+      <a href="../quickstart/20_setup_flowehr_locally.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">FlowEHR locally</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
