@@ -1,8 +1,26 @@
 ---
-title: "Author & deploy a FlowEHR App"
+title: "Quickstart: Author & deploy a FlowEHR App"
 ---
 
 Let's deploy your first FlowEHR App!
+
+## Concepts
+Applications need to access the [Feature Store](../anatomy/feature_store.qmd), a Microsoft SQL database. 
+We will also access a [CosmosDB](../faq/cosmosdb.qmd) database account, to store the application state. 
+We will access the `app-dev` version of each of these. For further information on the different FlowEHR environments, see the [FAQ](../faq/environments.qmd)
+
+To ease rapid development, we support three ways of serving your application:
+
+1. **Local app, Local data**: for development, you can deploy your dash app locally, serving data from a local SQLite database, and storing state in a local CosmosDB emulator. This may be a good initial option for testing and development of the front-end. _This option is not compatible with ARM based devices, including Apple Silicon Macs, as the CosmosDB emulator is not compatible with ARM. It does work with Github Codespaces or on other machines._
+
+2. **Local app, Remote data**: you can serve your app locally, but access data stored in remote Azure-hosted SQL feature store, and state stored in a remote Azure-hosted CosmosDB database. You will need to log in locallly via the [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli) to access the feature and state stores, which will have been set up when your FlowEHR instance was deployed. Your application will serve (synthetic) data stored in an [Azure SQL database](https://azure.microsoft.com/en-us/products/azure-sql/database/), and can store its state in an [Azure CosmosDB](https://learn.microsoft.com/en-us/azure/cosmos-db/) database.
+
+2. **Remote app, Remote Data - CI/CD Remote Deploment**: you can automate the deployment of your application with [Github Actions](https://docs.github.com/en/actions/deployment/about-deployments/about-continuous-deployment) and [Continuous Integration](https://docs.github.com/en/actions/automating-builds-and-tests/about-continuous-integration) workflows. 
+Your containerised application will be stored in a [Container Registry](https://azure.microsoft.com/en-us/products/container-registry) 
+and served via the [App Service](https://azure.microsoft.com/en-gb/products/app-service). 
+It will be accessible via a public URL after authenticating with the Azure Active Directory.
+
+For this Quickstart guide, we will first focus on the setting up **Remote app, Remote Data - CI/CD remote deployment**. Once this is set up, you can then use the other options for local development and testing. Further information on on building your application can be found in the [Dash Seedling](https://github.com/UCLH-Foundry/Dash-Seedling) readme files, and in the [developer's guide](../personas/developer/building-an-app.qmd).
 
 
 ## Pick a 🌱 Seedling
@@ -12,12 +30,11 @@ The first step is to pick a seedling. A seedling is a pre-built FlowEHR App temp
 If you have no strong preference at this point, the [Dash Seedling](https://github.com/UCLH-Foundry/Dash-Seedling) is a good place to start for building a simple dashboard.
 
 
-## Add app to FlowEHR config
+## FlowEHR Admin: Add app to FlowEHR config
 
-Next we need to configure FlowEHR and tell it to plant our app seedling. Create your config in the FlowEHR repository, in the `/apps` folder, as follows:
-
-::: {.panel-tabset}
-### Locally
+Next we need to configure FlowEHR and tell it to plant our app seedling. Create your config in the FlowEHR repository, in the `/apps` folder.
+<!-- ::: {.panel-tabset} -->
+<!-- ### Locally
 
 Copy the `apps.sample.yaml` to a new `apps.local.yaml` file:
 
@@ -25,14 +42,14 @@ Copy the `apps.sample.yaml` to a new `apps.local.yaml` file:
 cp apps.sample.yaml apps.local.yaml
 ```
 
-### CI/CD
+### CI/CD -->
 
 Copy the `apps.sample.yaml` to a new `apps.{ENVIRONMENT}.yaml` file, where `{ENVIRONMENT}` is the name of the FlowEHR environment you're deploying via CI/CD (i.e. `dev`):
 
 ```bash
 cp apps.sample.yaml apps.{ENVIRONMENT}.yaml
 ```
-:::
+<!-- ::: -->
 
 Then, amend any relevant config values or keep the defaults. Three things you might want to change are:
 
@@ -48,7 +65,7 @@ Each app listed in your config must have a unique key, and that key cannot conta
 
 You can view more information on all the configuration options in the administrator's [configuration guide](../personas/administrator/configuration.qmd), and more information on GitHub roles [here](https://docs.github.com/en/organizations/managing-user-access-to-your-organizations-repositories/repository-roles-for-an-organization).
 
-## Deploy your app infrastructure
+## FlowEHR Admin: Deploy your app infrastructure
 
 After you've configured your app, you can run `make apps` from the root of the FlowEHR repository:
 

@@ -11,7 +11,7 @@ Our aim is ...
 - to make illuminate the risks of data and algorithms applied to healthcare
 - to work at the pace of the decision maker
 
-These are principles are sometimes framed as barries but only by full engaging with each of them will it be possible to use data to improve the quality and safety of health care. When combined we believe this will _enable_ the deployment of digital tools to solve operational and clinical problems.
+These are principles are sometimes framed as barriers but only by full engaging with each of them will it be possible to use data to improve the quality and safety of health care. When combined we believe this will _enable_ the deployment of digital tools to solve operational and clinical problems.
 
 Our original use case was the safe & effective development & deployment of real-time translational Machine Learning interventions into clinical and operational settings inside a busy NHS hospital.
 
