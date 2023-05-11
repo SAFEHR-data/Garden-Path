@@ -18,8 +18,7 @@ title: Prerequisites for FlowEHR
 
 We're not _telling_ you to do the following, but these are the sort of things you might want to consider if you hit problems.
 
-- Try using Microsoft Edge as your browser for working with the TRE. It just seems to work better with this tooling.
-- Pay attention to the two-factor authentication. You're likely to end up with more than one. At the minumum, you'll have one for NHS.net and you'll need one for the TRE (e.g. https://uclhtredev.uksouth.cloudapp.azure.com/)
+- We recommend using the [Microsoft Authenticator](https://www.microsoft.com/security/mobile-authenticator-app) for your two-factor authentication. You will likely end up with multiple accounts (at a minimum, one for the trusted research environment and one for NHS.net), and for most authenticators this will mean you need you need to work out which code is for which account. With the Microsoft Authenticator you will get push notifications when trying to log in, and you can then Approve the login directly. 
+- Try using [Microsoft Edge](https://www.microsoft.com/edge) as your browser for working with the TRE. It just seems to work better with this tooling.
 
-
-It's going to get confusing at times. There's a lot of new terminology. Please check-out the [](../faq/faq.qmd).
+It's going to get confusing at times. There's a lot of new terminology. Please check-out the [FAQ](../faq/faq.qmd).

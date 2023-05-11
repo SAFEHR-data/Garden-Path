@@ -6,9 +6,10 @@ If you want to build an app that works safely with live patient data and/or ML M
 
 > You can read more about the anatomy of FlowEHR apps [here](../../anatomy/apps.qmd).
 
+> This page is currently under development. In the meantime, please check out the [quickstart to app development!](../../quickstart/60_deployment.qmd).
+
 
 ## Getting started
-
 
 ### Prerequisites
 
@@ -19,7 +20,6 @@ Speak to your friendly FlowEHR admin...
 Finding a seedling
 Cloning the repo and making some changes​
 Serve-local to run + debug locally​
-
 
 ## Connecting to synthetic data
 
@@ -49,4 +49,4 @@ PR to staging / approval – my dashboard now runs in a prod environment with ac
 ## Deploying to staging & prod environments
 
 Now I’m ready + others approve => It can go to prod here.​
-I can share the link, and a clinician can securely log in via AAD
+I can share the link, and a clinician can securely log in via AAD 

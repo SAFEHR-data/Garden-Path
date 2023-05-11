@@ -3,3 +3,6 @@ title: What is CosmosDB?
 ---
 
 Azure Cosmos DB is a NoSQL database service offered by Microsoft as part of the Azure cloud platform. It enables globally distributed, multi-model data storage and provides low-latency, high-throughput, and consistent performance. Key features include support for various data models and APIs, elastic scalability, high availability, and comprehensive SLAs. 
+
+For more information, see [Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/introduction) documentation. As FlowEHR sets up the database for you, the most important parts to understand are concepts of how data are stored and accessed. This [hierarchy of resources](https://docs.microsoft.com/azure/cosmos-db/databases-containers-items#hierarchy-of-resources) page is a good place to start. For further background, the [Python Quickstart](https://learn.microsoft.com/azure/cosmos-db/nosql/quickstart-python) explains some important classes clearly.
+

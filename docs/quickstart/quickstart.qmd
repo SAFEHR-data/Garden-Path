@@ -1,0 +1,23 @@
+---
+title: The Quickstart Guide
+---
+
+> This guide is under development and some sections are still incomplete - if you have the knowledge to contribute to the documentation we would welcome your help! Further information can be found [here](../faq/contributing.qmd).
+
+We will walk through the end-to-end process of 
+
+- setting up your machine for development,
+- connecting to the required development databases and services, 
+- building and deploying a model with mock data, 
+- building and deploying an application, 
+- and viewing the dashboards for the monitoring of data integrity, model performance, and application usage.
+
+> Please use the navigation links in the bottom left and right of the page to navigate through this guide.
+
+Specific users may wish to dive directly into documentation relevant to their role. These include:
+
+- the [data scientist](../personas/datascientist/datascientist.qmd) for those providing analytical insights or building models against live data
+- the [application developer](../personas/developer/developer.qmd) for those building and deploying applications
+- the [platform maintainer](../personas/administrator//administrator.qmd) for those responsible for installing and mananaging the platform
+- the [algorithm steward](../personas/steward//steward.qmd) for those using the platform to monitor, audit and observe data driven applications in use 
+

@@ -1,5 +1,5 @@
 ---
-title: "How do I contribute to the documentation"
+title: "How do I contribute to the documentation?"
 categories: faq
 author: Steve Harris
 ---
