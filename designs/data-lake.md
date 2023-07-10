@@ -1,8 +1,8 @@
 # Design for FlowEHR Data Lake
 
-| Author                     |
-|----------------------------|
-| James Griffin (@jjgriff93) |
+| Author                     | Issue                                              |
+|----------------------------|----------------------------------------------------|
+| James Griffin (@jjgriff93) | https://github.com/UCLH-Foundry/FlowEHR/issues/160 |
 
 
 ## Context
