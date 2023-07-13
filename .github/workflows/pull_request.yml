@@ -1,7 +1,9 @@
-name: Render pull request
+name: Render docs on PR
 
 on: 
-  pull_request
+  pull_request:
+    paths:
+      - 'docs/**'
 
 jobs:
   build-pr:
