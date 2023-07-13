@@ -26,6 +26,8 @@ In Azure terms, the Azure Data Lake Storage Gen2 service is a hierarchical file 
 - **Cost-effective**: Pay only for what you use.
 - **Optimized performance**: High throughput and low latency.
 
+As the underlying storage is file-based, the data lake can store high quantities of multi-modal data in one place: structured data (tables - CSV, Parquet etc.), unstructured data, images, videos, etc.
+
 Integrating this with FlowEHR, alongside a number of best-practices with managing a data lake, will enable adopters of the platform to get started with data engineering in a scalable and robust way.
 
 
