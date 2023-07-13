@@ -96,7 +96,7 @@ As mentioned, if the `datalake` configuration block is not present, none of this
 
 ## Considerations
 
-- What do we do with the SQL DB now or longer term? Do we deprecate it in favour of the data lake?
+- What do we do with the SQL DB longer term? Do we deprecate it in favour of the data lake?
 
 Given that the current "gold" layer in FlowEHR is the SQL DB, we should consider whether it would be superseded by ADLS. This will greatly simplify the architecture of FlowEHR; however the SQL Server currently also serves as the query layer for applications and data scientists / ML models.
 
@@ -112,3 +112,7 @@ We would need to provide another mechanism for querying and analysing data in th
 An alternative might be that the SQL DB is shifted to the right, and is considered just a feature store layer on top of gold for the time being. This might eventually be replaced by a tailor-made feature store like [AML Feature Store](https://learn.microsoft.com/en-us/azure/machine-learning/concept-what-is-managed-feature-store?view=azureml-api-2).
 
 > For our users' immediate needs, we should make SQL DB optional via config in the same way as data lake will be configured to avoid uneccessary cost and complexity if not required. We should add a feature to the backlog to prompt discussion on the future of SQL DB as part of FlowEHR and potential replacements/improvements, and address separately to the initial data lake implementation.
+
+- Where does OneLake/Microsoft Fabric fit into this?
+
+Currently in preview, [OneLake](https://learn.microsoft.com/en-us/fabric/onelake/onelake-overview) is a managed data lake service that forms part of the [Microsoft Fabric](https://learn.microsoft.com/en-us/fabric/get-started/microsoft-fabric-overview) platform. There is integration with Azure Databricks and other Azure services, and there will be a migration path to OneLake from ADLS - so in implementing an ADLS data lake into FlowEHR, this opens up this migration as a potential evolution of FlowEHR in future.
