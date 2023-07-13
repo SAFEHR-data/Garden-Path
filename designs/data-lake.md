@@ -103,7 +103,7 @@ Given that the current "gold" layer in FlowEHR is the SQL DB, we should consider
 We would need to provide another mechanism for querying and analysing data in the data lake, which could include:
 - Through the existing [Databricks workspace](https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-use-databricks-spark)
     - this would be the most seamless option but would require users and apps/models to have access to Databricks, which might not be viable (i.e. users might be accessing from a TRE)
-    - [Delta Lake](https://learn.microsoft.com/en-us/azure/databricks/delta/) could be enabled to further optimise for analytics
+    - [Delta Lake](https://learn.microsoft.com/en-us/azure/databricks/delta/) could be used to further optimise for analytics. This could be used to implement the [Data Lakehouse](https://www.oracle.com/big-data/what-is-data-lakehouse/) pattern, essentially adding a query/metadata layer to each stage of the data lake as described in the [Databricks docs](https://learn.microsoft.com/en-us/azure/databricks/lakehouse/)
 - [Azure Data Explorer](https://learn.microsoft.com/en-us/azure/data-explorer/data-lake-query-data)
     - Multiple SDKs including Python that can be used to query data but another service to add into the mix
 - [Azure Machine Learning Datastore](https://learn.microsoft.com/en-us/azure/machine-learning/how-to-datastore?view=azureml-api-2&tabs=sdk-identity-based-access,sdk-adls-identity-access,sdk-azfiles-accountkey,sdk-adlsgen1-identity-access)
@@ -111,4 +111,4 @@ We would need to provide another mechanism for querying and analysing data in th
 
 An alternative might be that the SQL DB is shifted to the right, and is considered just a feature store layer on top of gold for the time being. This might eventually be replaced by a tailor-made feature store like [AML Feature Store](https://learn.microsoft.com/en-us/azure/machine-learning/concept-what-is-managed-feature-store?view=azureml-api-2).
 
-- Do we consider going one step further and adopting the [Data Lakehouse](https://learn.microsoft.com/en-us/azure/databricks/lakehouse/) model in FlowEHR?
+> For our users' immediate needs, we should make SQL DB optional via config in the same way as data lake will be configured to avoid uneccessary cost and complexity if not required. We should add a feature to the backlog to prompt discussion on the future of SQL DB as part of FlowEHR and potential replacements/improvements, and address separately to the initial data lake implementation.
