@@ -9,7 +9,7 @@
 
 FlowEHR enables data engineers to develop pipelines that transform data from raw sources into a high-quality data store that powers analytics, machine learning and more. In a medallion structure, we would consider this a transformation from a "bronze" layer through to "gold".
 
-Currently, FlowEHR provides infrastructure for running transformations (via Databricks) and for storing features (the SQL feature store which we can also consider the "gold" layer); however, it does not provide mechanisms for storing the intermediary stages of these transformations from raw to gold, and is not opinionated on how this data is stored.
+Currently, FlowEHR provides infrastructure for running transformations (via Databricks) and for storing features (the SQL feature store which we can also consider the "gold" layer); however, it does not support multi-modal data, it does not provide mechanisms for storing the intermediary stages of these transformations from raw to gold, and is not opinionated on how this data is stored.
 
 
 ## Proposal
