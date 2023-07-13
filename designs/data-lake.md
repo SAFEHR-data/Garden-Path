@@ -30,6 +30,7 @@ As the underlying storage is file-based, the data lake can store high quantities
 
 Integrating this with FlowEHR, alongside a number of best-practices with managing a data lake, will enable adopters of the platform to get started with data engineering in a scalable and robust way.
 
+One advantage of using Data Lake and Spark is ability to use Delta tables. They can easily be [created from Databricks Runtime](https://learn.microsoft.com/en-us/azure/databricks/delta/tutorial#--create-a-table) as well as [Synapse](https://learn.microsoft.com/en-us/azure/synapse-analytics/spark/apache-spark-delta-lake-overview?pivots=programming-language-python#create-a-table) using a statement `df.write.saveAsTable("myTableName")`. Delta Tables have versioning enabled by default which allows to track all updates to the tables. They can also [track row-level changes](https://learn.microsoft.com/en-us/azure/databricks/delta/delta-change-data-feed) which can be read downstream for incremental processing. They have many other useful features such as [automatic schema validation](https://learn.microsoft.com/en-us/azure/databricks/delta/schema-validation) and are a widespread storage format for Big Data processing.
 
 ### Data Lake best practices
 
