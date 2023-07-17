@@ -38,7 +38,7 @@ To avoid "data swamps", where a data lake becomes a dumping ground for data with
 
 Zones guarantees atomicity, consistency, isolation, and durability as data passes through multiple layers of validations and transformations before being stored in a layout optimized for consumption. Each zone is essentially its own filesystem with a heirarchical folder structure. In a medallion structure, as alluded to before, a simple implementation of zones could be:
 
-- **Bronze**: Invalidated raw data, maintaining the same structure as the source(s)
+- **Bronze**: Unvalidated raw data, maintaining the same structure as the source(s)
     - Maintains the raw state of the data source
     - Is appended incrementally and grows over time
     - Can be any combination of streaming and batch transactions
