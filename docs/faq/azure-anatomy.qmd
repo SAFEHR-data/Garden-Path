@@ -1,8 +1,10 @@
 ---
-title: What's the difference between Azure, a landing zone, a TRE, and a workspace? And do I need to care?
+title: I'm confused@azure.com - can you help explain tenants, workspaces, resource groups and more?
 ---
 
 Hopefully you don't need to care but these terms come up so it's helpful to know what they mean. The list below starts from the general and moves to the specific.
+
+## Big picture
 
 Azure
 : Azure is a cloud computing platform and service offered by Microsoft that provides a range of cloud services, including computing, storage, networking, and analytics. It enables businesses and individuals to build, deploy, and manage applications and services through Microsoft-managed data centers.
@@ -13,6 +15,21 @@ Trusted Research Environment (TRE) hosted on Azure
 Workspace within a TRE
 : A workspace within a TRE is a dedicated, isolated area where researchers can access, store, and analyze data securely. It provides a collaborative space with controlled access and tools needed for data processing, analysis, and visualization while ensuring that the data remains protected and compliant with privacy regulations.
 
-
 Azure Machine Learning (AML): 
 AML is a cloud-based service within the Azure ecosystem that provides tools and services to build, train, and deploy machine learning models. It offers a collaborative environment for data scientists and developers, allowing them to leverage pre-built algorithms, manage data, and use compute resources efficiently. AML streamlines the end-to-end machine learning lifecycle, making it easier to develop, experiment, and operationalize AI solutions at scale.
+
+## Hierarchy
+
+1. Azure Account: An Azure account is associated with a user or an organization and contains information about the user or the organization, such as contact and billing details. It is the highest level in the hierarchy and serves as the entry point for managing Azure services.
+
+2. Tenant: A tenant, also known as an Azure Active Directory (Azure AD) tenant, represents an organization or a specific instance of Azure AD. It stores and manages information about users, groups, and domains within an organization. A single Azure account can have multiple tenants to support different business units or subsidiaries.
+
+3. Subscription: A subscription is a logical container associated with an Azure account and represents the billing and payment relationship. Subscriptions allow users to manage costs, set usage limits, and view usage reports for their Azure services. Multiple subscriptions can be linked to a single Azure account, enabling fine-grained control and separation of resources for different projects, departments, or environments.
+
+4. Resource Group: A resource group is a logical container for resources that are deployed within an Azure subscription. It helps users organize and manage resources based on their lifecycle and their relationship to each other. Resource groups provide a way to monitor, control access, provision, and manage billing for a collection of resources that are part of the same application or project.
+
+5. Resource: A resource is an individual instance of an Azure service, such as a virtual machine, storage account, or database. Resources can be managed individually or as part of a resource group. They are the basic building blocks for deploying and managing applications and services in Azure.
+
+6. Workspace: A workspace is a concept specific to certain Azure services, such as Azure Machine Learning, Log Analytics, or Synapse Analytics. It serves as a logical container for organizing and managing resources related to a particular service, making it easier to collaborate, share, and manage resources within a project or team. Workspaces are typically associated with a resource group.
+
+In summary, an Azure account is the top-level entity that can have multiple tenants and subscriptions. Subscriptions hold resource groups, which in turn contain resources. Workspaces are specific to certain services and can be associated with a resource group to organize and manage resources within a project or team.

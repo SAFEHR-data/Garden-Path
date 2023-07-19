@@ -1,0 +1,15 @@
+---
+title: What is the Azure app service?
+---
+
+Azure App Service is a platform-as-a-service (PaaS) offering from Microsoft Azure that allows developers to build, deploy, and manage web applications and services. It supports various programming languages and frameworks, such as .NET, Java, Node.js, Python, and PHP. 
+
+Key features include:
+
+1. Scalability: Applications can be scaled vertically or horizontally to accommodate varying workloads and resource demands.
+2. Integration: The service can be connected with other Azure services, allowing for a more cohesive application development process.
+3. Deployment slots: These enable developers to test new application versions alongside existing ones without affecting user experience.
+4. Custom domains and SSL: Configuration options are available for improved security and user trust.
+5. Continuous Integration and Deployment (CI/CD): Integration with source control and build tools, such as GitHub, Azure DevOps, and Bitbucket, helps automate deployment processes.
+6. Monitoring and diagnostics: Built-in tools assist in identifying and troubleshooting application issues.
+7. Global availability: Applications can be deployed in multiple regions to reduce latency and ensure high availability.
