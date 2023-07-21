@@ -148,7 +148,19 @@ as its last four characters):
 
 ![](assets/aml-workspace.png)
 
+Once connected to the AML Workspace, you will need to create a Compute Instance
+to access Jupyter or run a terminal shell. Whilst you can do this from within 
+the AML Workspace, you can also add a compute instance using the TRE Portal:
 
+1. Navigate to the Azure Machine Learning service in the TRE Portal and select 
+'Create New' in the 'Resources' section. 
+2. Click 'Create' on the 'Azure Machine Learning Compute Instance' item
+3. You can accept the defaults for most of the fields, although you may want
+to change the 'Name for the user resource' fields
+4. The final field requires your Azure Active Directory User Object-ID, you can
+find this by running the following commands:
+        az login --tenant <tenant name>
+        az ad user show --id <your_login_id> --query id -o tsv 
 
 ## Shared Services
 
