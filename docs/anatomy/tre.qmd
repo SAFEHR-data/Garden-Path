@@ -160,7 +160,7 @@ to change the 'Name for the user resource' fields
 4. The final field requires your Azure Active Directory User Object-ID, you can
 find this by running the following commands:
         az login --tenant <tenant name>
-        az ad user show --id <your_login_id> --query id -o tsv 
+        az ad signed-in-user show --query id -o tsv 
 
 ## Shared Services
 
