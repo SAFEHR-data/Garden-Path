@@ -159,8 +159,10 @@ the AML Workspace, you can also add a compute instance using the TRE Portal:
 to change the 'Name for the user resource' fields
 4. The final field requires your Azure Active Directory User Object-ID, you can
 find this by running the following commands:
-        az login --tenant <tenant name>
-        az ad signed-in-user show --query id -o tsv 
+```bash
+az login --tenant <tenant name>
+az ad signed-in-user show --query id -o tsv
+```
 
 ## Shared Services
 
