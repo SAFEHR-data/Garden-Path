@@ -494,7 +494,7 @@ ul.task-list li input[type="checkbox"] {
 <li>Navigate to the Azure Machine Learning service in the TRE Portal and select ‘Create New’ in the ‘Resources’ section.</li>
 <li>Click ‘Create’ on the ‘Azure Machine Learning Compute Instance’ item</li>
 <li>You can accept the defaults for most of the fields, although you may want to change the ‘Name for the user resource’ fields</li>
-<li>The final field requires your Azure Active Directory User Object-ID, you can find this by running the following commands: az login –tenant <tenant name=""> az ad user show –id <your_login_id> –query id -o tsv</your_login_id></tenant></li>
+<li>The final field requires your Azure Active Directory User Object-ID, you can find this by running the following commands: az login –tenant <tenant name=""> az ad signed-in-user show –query id -o tsv</tenant></li>
 </ol>
 </section>
 </section>
