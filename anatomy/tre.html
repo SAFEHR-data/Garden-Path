@@ -489,6 +489,13 @@ ul.task-list li input[type="checkbox"] {
 <p><img src="assets/amls-url.png" class="img-fluid"></p>
 <p>An alternative to copy and pasting this URL, involves using your Workspace ID (which you can find in the via Workspace &gt; Overview &gt; Details). Having logged-on to your workspace VM, navigate to ‘https://ml.azure.com’ and sign-in using the same credentials that you use to access the TRE. Then navigate to ‘Workspaces’ and select the workspace corresponding to your TRE Workspace ID (the resource group for the workspace contains the workspace id as its last four characters):</p>
 <p><img src="assets/aml-workspace.png" class="img-fluid"></p>
+<p>Once connected to the AML Workspace, you will need to create a Compute Instance to access Jupyter or run a terminal shell. Whilst you can do this from within the AML Workspace, you can also add a compute instance using the TRE Portal:</p>
+<ol type="1">
+<li>Navigate to the Azure Machine Learning service in the TRE Portal and select ‘Create New’ in the ‘Resources’ section.</li>
+<li>Click ‘Create’ on the ‘Azure Machine Learning Compute Instance’ item</li>
+<li>You can accept the defaults for most of the fields, although you may want to change the ‘Name for the user resource’ fields</li>
+<li>The final field requires your Azure Active Directory User Object-ID, you can find this by running the following commands: az login –tenant <tenant name=""> az ad signed-in-user show –query id -o tsv</tenant></li>
+</ol>
 </section>
 </section>
 <section id="shared-services" class="level2" data-number="4">
