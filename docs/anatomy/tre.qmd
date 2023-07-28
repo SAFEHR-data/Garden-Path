@@ -159,10 +159,8 @@ the AML Workspace, you can also add a compute instance using the TRE Portal:
 to change the 'Name for the user resource' fields
 4. The final field requires your Azure Active Directory User Object-ID, you can
 find this by running the following commands:
-```bash
-az login --tenant <tenant name>
-az ad signed-in-user show --query id -o tsv
-```
+        `az login --tenant <tenant name>`
+        `az ad signed-in-user show --query id -o tsv`
 
 ## Shared Services
 
@@ -171,7 +169,7 @@ need to access over the internet. Shared Services include:
 
 1. [Gitea](#gitea)
 2. [Nexus](#nexus)
-3. Firewall
+3. Firewallhttps://learn.microsoft.com/en-us/cli/azure/install-azure-cli
 
 The Shared Services are available for use by all workspaces, but their
 configuration can only be changed by the TRE administrators
