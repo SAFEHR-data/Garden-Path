@@ -164,6 +164,8 @@ find this by running the following commands:
 
 `az ad signed-in-user show --query id -o tsv`
 
+
+
 ## Shared Services
 
 Shared Services provide access to resources that you would otherwise
@@ -230,3 +232,13 @@ For Python, you may find that this has already been setup on your VM. You can ch
 Similarly, on a Linux VM, the VM will be configured to use the apt repositories from Nexus. 
 If you run `sudo apt update`, you will see that apt will only search for updates from the
 Nexus server.
+
+## Shared Storage
+
+When creating a VM, the default option to 'enable shared storage' is turned on. Once 
+you connect to your VM, you can access the shared storage from it's default mount point. 
+
+For a Linux VM, the shared storage is mounted at ```/fileshares/vm-shared-storage```.
+The shared storage is owned by root, so you'll need to use sudo to create/amend files
+in this folder. However all files in this directory should be read-able by everyone.
+
