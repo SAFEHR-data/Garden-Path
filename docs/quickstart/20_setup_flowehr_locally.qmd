@@ -4,7 +4,12 @@ title: Set-up & deployment
 
 This guide will take you through the basic set up and deployment for FlowEHR in your environment.
 
-## Forking the repo
+## Get the repositories
+
+Repositories:
+1. [FlowEHR-Data-Sources](https://github.com/UCLH-Foundry/FlowEHR-Data-Sources) - fork or clone this repo.
+1. [FlowEHR](https://github.com/UCLH-Foundry/FlowEHR) - this a template repo so you create your own repo from the template and customise it to your institution.
+
 
 ## Core configuration
 
