@@ -2,7 +2,7 @@
 title: Set-up & deployment
 ---
 
-This guide will take you through the basic set up and deployment for FlowEHR in your environment.
+This guide will take youß through the basic set up and deployment for FlowEHR in your environment.
 
 ## Get the repositories
 
@@ -30,30 +30,9 @@ Policies and Reading:
 - read [Book-of-FlowEHR policies](https://github.com/UCLH-Foundry/Book-of-FlowEHR/tree/the-walking-skeleton/policies)
     - in particular [resource naming](https://github.com/UCLH-Foundry/Book-of-FlowEHR/blob/the-walking-skeleton/policies/resource-naming.md) to get an idea of resource naming conventions
 
-1. [FlowEHR-Data-Sources](https://github.com/UCLH-Foundry/FlowEHR-Data-Sources):
-    - Connects to [Satellite](https://github.com/UCLH-Foundry/Satellite) (with synthetic/fake data using EMAP star schema) or real EMAP data.
-    - `make deploy` basically does a `terragrunt run-all apply` (terragrunt is a thin wrapper around Terraform that provides extra tools for keeping Terraform configurations DRY - Don't Repeat Yourself)
-    - Understand descriptions of each of the TF_VAR_... envs are in variables.tf
-    - Take note of [address-spaces](https://github.com/UCLH-Foundry/Book-of-FlowEHR/blob/the-walking-skeleton/milestones/walking-skeleton/scaffolding/address-spaces.md) when allocating address spaces - see available addresses. Will need to find address space by the using the [cidr converter](https://www.ipaddressguide.com/cidr) to list addresses within the IP range i.e. the available addresses. 
-    - Look at terraform variable `informdb_pat` - where do you get it? It's a personal access token that can clone the private repo [Inform-DB](https://github.com/inform-health-informatics/Inform-DB/) which defines the EMAP star schema.
-    [Satellite](https://github.com/UCLH-Foundry/Satellite) is a Python package for creating and populating an EMAP star schema with completely synthetic/fake data.
+1. [FlowEHR-Data-Sources local deployment](https://github.com/UCLH-Foundry/FlowEHR-Data-Sources/docs/dev_on_boarding.md)
 
-2. [UCLH-FlowEHR](https://github.com/UCLH-Foundry/UCLH-FlowEHR):
-    - Uses [FlowEHR-Data-Sources](https://github.com/UCLH-Foundry/FlowEHR-Data-Sources) and the [FlowEHR-Data-Forge](https://github.com/UCLH-Foundry/FlowEHR-Data-Forge.git) which coverts e.g. NHS data into usable patient related features using Azure Databricks
-    - set the `core_address_space` according to the [book of flowEHR address spaces](https://github.com/UCLH-Foundry/Book-of-FlowEHR/blob/the-walking-skeleton/milestones/walking-skeleton/scaffolding/address-spaces.md) - should be different from data-sources address
-    - make sure to comment out `private_dns_zones_rg` and set `accesses_real_data` to false (since we are using synthetic/fake data)
-    - Use the output from flowEHR data sources to create a data source in `data_source_connections` i.e. refer to the resource group created in the previous data sources step
-        - In the Azure portal, look at the keyvault that was created by the flowEHR data sources for the `database`, `username` (consumer username) and `password` (consumer password)
-        - If terraform hasn't provided access then find out your [ip address](https://whatismyipaddress.com/) and add it to the IP addresses allowed in the networking section
-    - For the transform section, have a single repository that points to `https://github.com/UCLH-Foundry/FlowEHR-Data-Forge.git`
-    - The `sha` can be found in the `config.yaml` file
-    - For the serve block, use the existing application in UCLH-FlowEHR-TestBed:
-  ```
-      github_owner: UCLH-FlowEHR-TestBed
-      github_app_id: 309047
-      github_app_installation_id: 35581991
-  ```
-    - for monitoring you can add your nhs email to the `alert_recipients` and updated the `_location` in the `network_watcher` name to be `_uksouth`
+2. [UCLH-FlowEHR local deployment](https://github.com/UCLH-Foundry/UCLH-FlowEHR/docs/dev_on_boarding.md):
 
 ### CI/CD
 
@@ -65,29 +44,9 @@ CI/CD instructions
 ::: {.panel-tabset}
 ### Locally
 
+1. [FlowEHR-Data-Sources local deployment](https://github.com/UCLH-Foundry/FlowEHR-Data-Sources/docs/dev_on_boarding.md)
 
-Before running the Makefiles in each repo:
-- `az login --tenant <Tenant ID>` which you can [find](https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/how-to-find-tenant) on the Azure Portal
-- `az account set --subscription <Subscription Name>`
-- `az account show` to check in correct subscription
-
-1. [FlowEHR-Data-Sources](https://github.com/UCLH-Foundry/FlowEHR-Data-Sources):
-- `make deploy` - keep note of the printing of connection details for use later 
-- One resource group is created in this step.
-- Error fixes:
-    - A common error is "ERROR: deleting subnet..." which seems to occur because a subnet already exists that is using the same address space so shouldn't be deleted. Therefore, change the address space
-
-2. [UCLH-FlowEHR](https://github.com/UCLH-Foundry/UCLH-FlowEHR):
-- `make all` - To deploy all infrastructure, and any configured pipelines and apps
-- `make infrastructure` - Alternatively, if you just want to deploy the infrastructure
-- Two resource groups are created in this step.
-- Error fixes:
-  - Re-run `make all`
-  - Manually delete resource group on Azure Portal
-    - In keyvaults - manage deleted keys and purge keyvault
-    - [ ] `make clean` should be updated (delete .tfstate terraform)
-    - Re-run `make all` fresh
-
+2. [UCLH-FlowEHR local deployment](https://github.com/UCLH-Foundry/UCLH-FlowEHR/docs/dev_on_boarding.md):
 
 ### CI/CD
 
