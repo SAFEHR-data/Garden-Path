@@ -2,7 +2,7 @@
 title: Set-up & deployment
 ---
 
-This guide will take youß through the basic set up and deployment for FlowEHR in your environment.
+This guide will take you through the basic set up and deployment for FlowEHR in your environment.
 
 ## Get the repositories
 
