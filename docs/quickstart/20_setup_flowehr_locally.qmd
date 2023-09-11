@@ -24,15 +24,6 @@ Make sure VS code dev container extension is updated.
 
 Dev subscription access:
 - On the azure portal you may not be able to access apps when you sign in via your NHS account. However, if you click on your username in the top right and go to switch directory then you can switch to your institution's subscription e.g. UCLH DIF in the directories and subscription page.
-- For local deployments, use the sub-uclhdif-sandbox subscription.
-
-Policies and Reading:
-- read [Book-of-FlowEHR policies](https://github.com/UCLH-Foundry/Book-of-FlowEHR/tree/the-walking-skeleton/policies)
-    - in particular [resource naming](https://github.com/UCLH-Foundry/Book-of-FlowEHR/blob/the-walking-skeleton/policies/resource-naming.md) to get an idea of resource naming conventions
-
-1. [FlowEHR-Data-Sources local deployment](https://github.com/UCLH-Foundry/FlowEHR-Data-Sources/docs/dev_on_boarding.md)
-
-2. [UCLH-FlowEHR local deployment](https://github.com/UCLH-Foundry/UCLH-FlowEHR/docs/dev_on_boarding.md):
 
 ### CI/CD
 
@@ -44,9 +35,6 @@ CI/CD instructions
 ::: {.panel-tabset}
 ### Locally
 
-1. [FlowEHR-Data-Sources local deployment](https://github.com/UCLH-Foundry/FlowEHR-Data-Sources/docs/dev_on_boarding.md)
-
-2. [UCLH-FlowEHR local deployment](https://github.com/UCLH-Foundry/UCLH-FlowEHR/docs/dev_on_boarding.md):
 
 ### CI/CD
 
