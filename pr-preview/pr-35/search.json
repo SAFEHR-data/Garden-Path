@@ -557,14 +557,14 @@
     "href": "quickstart/20_setup_flowehr_locally.html#core-configuration",
     "title": "Set-up & deployment",
     "section": "2 Core configuration",
-    "text": "2 Core configuration\n\nLocallyCI/CD\n\n\nMake sure VS code dev container extension is updated.\nDev subscription access: - On the azure portal you may not be able to access apps when you sign in via your NHS account. However, if you click on your username in the top right and go to switch directory then you can switch to your institution’s subscription e.g. UCLH DIF in the directories and subscription page. - For local deployments, use the sub-uclhdif-sandbox subscription.\nPolicies and Reading: - read Book-of-FlowEHR policies - in particular resource naming to get an idea of resource naming conventions\n\nFlowEHR-Data-Sources local deployment\nUCLH-FlowEHR local deployment:\n\n\n\nCI/CD instructions"
+    "text": "2 Core configuration\n\nLocallyCI/CD\n\n\nMake sure VS code dev container extension is updated.\nDev subscription access: - On the azure portal you may not be able to access apps when you sign in via your NHS account. However, if you click on your username in the top right and go to switch directory then you can switch to your institution’s subscription e.g. UCLH DIF in the directories and subscription page.\n\n\nCI/CD instructions"
   },
   {
     "objectID": "quickstart/20_setup_flowehr_locally.html#infrastructure-deployment",
     "href": "quickstart/20_setup_flowehr_locally.html#infrastructure-deployment",
     "title": "Set-up & deployment",
     "section": "3 Infrastructure deployment",
-    "text": "3 Infrastructure deployment\n\nLocallyCI/CD\n\n\n\nFlowEHR-Data-Sources local deployment\nUCLH-FlowEHR local deployment:\n\n\n\nCI/CD instructions"
+    "text": "3 Infrastructure deployment\n\nLocallyCI/CD\n\n\n\n\n\nCI/CD instructions"
   },
   {
     "objectID": "quickstart/20_setup_flowehr_locally.html#setting-up-app-model-serving",
