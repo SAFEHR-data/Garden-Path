@@ -4,7 +4,7 @@ title: Personas
 
  - **Infrastructure Engineer**: I create Azure infrastructure via Terraform code, and I am also known as the platform administrator or maintainer.
  - **Data Scientist**: I writes data transformation code, and build models. I could also be an NHS analyst where the task is similar but I am likely to use different tools (SSMS, PowerBI etc. and rely less on inference).
- - **Internal Innovators**:
+ - **Internal Innovator**:
      - **App Developer**: I use a synthetic data store to build apps + dashboards.
      - **Data Scientist**: I use a TRE to build ML models against patient data.
 - **Steward**: I monitors and manages ML models and apps. I have a background that is a convergence of the Clinical Safety Officer role, and an ML-Ops practitioner.

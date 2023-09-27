@@ -1,11 +1,12 @@
 ---
 title: Setting up VS Code
 ---
+1. Download VSCode and follow the instructions at https://code.visualstudio.com/
 
-Open VS Code
+1. Open VS Code
 
-Open a terminal window
-```sh
+1. Open a terminal window by pressing `Ctrl+Shift+` or using the menus _Terminal -> New terminal_
+    ```sh
 
 
-```
+    ```

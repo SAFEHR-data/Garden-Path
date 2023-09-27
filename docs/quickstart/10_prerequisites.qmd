@@ -22,4 +22,4 @@ We're not _telling_ you to do the following, but these are the sort of things yo
 - Pay attention to the two-factor authentication. You're likely to end up with more than one. At the minumum, you'll have one for NHS.net and you'll need one for the TRE (e.g. https://uclhtredev.uksouth.cloudapp.azure.com/)
 
 
-It's going to get confusing at times. There's a lot of new terminology. Please check-out the [](../faq/faq.qmd).
+It's going to get confusing at times. There's a lot of new terminology. Please check-out the [FAQ](../faq/faq.qmd).

@@ -17,7 +17,7 @@ Our original use case was the safe & effective development & deployment of real-
 
 ## Next steps
 
-We would recommend using the [QuickStart guide](quickstart/quickstart.qmd) to follow and 'end-to-end' walkthrough of an application from concept to implementation. This will begin with deploying the FlowEHR infrastructure for personal use with synthetic data, and end with inspecting the performance of an algorithm in the (simulated) wild.
+We would recommend using the [QuickStart guide](quickstart/10_prerequisites.qmd) to follow and 'end-to-end' walkthrough of an application from concept to implementation. This will begin with deploying the FlowEHR infrastructure for personal use with synthetic data, and end with inspecting the performance of an algorithm in the (simulated) wild.
 
 Specific users may wish to dive directly into documentation relevant to their role. This includes
 
