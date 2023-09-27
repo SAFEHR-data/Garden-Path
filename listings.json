@@ -1,12 +1,5 @@
 [
   {
-    "listing": "/vignettes/vignettes.html",
-    "items": [
-      "/vignettes/data_lake_access.html",
-      "/vignettes/dicom_access.html"
-    ]
-  },
-  {
     "listing": "/faq/faq.html",
     "items": [
       "/faq/azure-anatomy.html",
@@ -16,6 +9,13 @@
       "/faq/information-security.html",
       "/faq/jupyter.html",
       "/faq/what-is-algorithm-stewardship.html"
+    ]
+  },
+  {
+    "listing": "/vignettes/vignettes.html",
+    "items": [
+      "/vignettes/data_lake_access.html",
+      "/vignettes/dicom_access.html"
     ]
   }
 ]
