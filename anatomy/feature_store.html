@@ -106,7 +106,7 @@ ul.task-list li input[type="checkbox"] {
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/UCLH-Foundry/Garden-Path"> <i class="bi bi-github" role="img" aria-label="GitHub">
+    <a class="nav-link" href="https://github.com/SAFEHR-data/Garden-Path"> <i class="bi bi-github" role="img" aria-label="GitHub">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -428,24 +428,24 @@ ul.task-list li input[type="checkbox"] {
 <h2 data-number="2" class="anchored" data-anchor-id="our-implementation"><span class="header-section-number">2</span> Our implementation</h2>
 <p>We store all features in a Microsoft SQL database, and for now have focused on the design of the feature generation pipeline. We have not (yet) implemented separate approaches for realtime time serving (for predictions) and batch serving (for training). As our data volumes and user base grow, we will review this decision.</p>
 <p>We chose MSSQL to ensure access to the database for the widest possible community within the NHS.</p>
-<p>The feature pipeline is managed by the <a href="https://github.com/UCLH-Foundry/FlowEHR-Data-Forge">Data Forge</a> repository.</p>
+<p>The feature pipeline is managed by the <a href="https://github.com/SAFEHR-data/FlowEHR-Data-Forge">Data Forge</a> repository.</p>
 <p>The key components of this include:</p>
 <dl>
 <dt>A pipeline configuration</dt>
 <dd>
-This defines which features are built, and specifies specific configuration. See <a href="https://github.com/UCLH-Foundry/FlowEHR-Data-Forge/blob/main/patients/pipeline.json">pipeline.json</a>
+This defines which features are built, and specifies specific configuration. See <a href="https://github.com/SAFEHR-data/FlowEHR-Data-Forge/blob/main/patients/pipeline.json">pipeline.json</a>
 </dd>
 <dt>A pipeline trigger</dt>
 <dd>
-This defines the schedule at which features are updated. See <a href="https://github.com/UCLH-Foundry/FlowEHR-Data-Forge/blob/main/patients/trigger.json">trigger.json</a>.
+This defines the schedule at which features are updated. See <a href="https://github.com/SAFEHR-data/FlowEHR-Data-Forge/blob/main/patients/trigger.json">trigger.json</a>.
 </dd>
 <dt>A per feature entry point</dt>
 <dd>
-See <a href="https://github.com/UCLH-Foundry/FlowEHR-Data-Forge/blob/main/patients/src/patients/entrypoints/bloodpressure.py">bloodpressure.py</a> that generates a feature for both the latest, and the average blood pressure (where the 24 hour aggregation window is defined in <code>pipeline.json</code>). The are regenerated hourly as per the <code>trigger.json</code> configuration.
+See <a href="https://github.com/SAFEHR-data/FlowEHR-Data-Forge/blob/main/patients/src/patients/entrypoints/bloodpressure.py">bloodpressure.py</a> that generates a feature for both the latest, and the average blood pressure (where the 24 hour aggregation window is defined in <code>pipeline.json</code>). The are regenerated hourly as per the <code>trigger.json</code> configuration.
 </dd>
 <dt>A per feature ‘job’</dt>
 <dd>
-See <a href="https://github.com/UCLH-Foundry/FlowEHR-Data-Forge/blob/main/patients/src/patients/features/bloodpressure/job.py">bloodpressure/job.py</a> that fetches the source data, splits the text representation <code>120/70</code> into integers for systolic and diastolic pressures,
+See <a href="https://github.com/SAFEHR-data/FlowEHR-Data-Forge/blob/main/patients/src/patients/features/bloodpressure/job.py">bloodpressure/job.py</a> that fetches the source data, splits the text representation <code>120/70</code> into integers for systolic and diastolic pressures,
 </dd>
 </dl>
 <p>Each feature is keyed on an identifier for the hospital visit, and the <code>horizon_datetime</code> is the timestamp derived from the trigger against which all these features are anchored.</p>
@@ -1033,7 +1033,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
 <p>Built for the NHS | 2022-2023</p>
-<div class="toc-actions"><ul><li><a href="https://github.com/UCLH-Foundry/Garden-Path/edit/main/docs/anatomy/feature_store.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UCLH-Foundry/Garden-Path/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+<div class="toc-actions"><ul><li><a href="https://github.com/SAFEHR-data/Garden-Path/edit/main/docs/anatomy/feature_store.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/SAFEHR-data/Garden-Path/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
