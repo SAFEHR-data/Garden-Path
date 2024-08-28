@@ -1,1 +1,1 @@
-Sitemap: https://github.com/UCLH-Foundry/Garden-Path/sitemap.xml
+Sitemap: https://SAFEHR-data.github.io/Garden-Path/sitemap.xml
