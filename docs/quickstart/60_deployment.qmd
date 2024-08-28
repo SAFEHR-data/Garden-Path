@@ -7,9 +7,9 @@ Let's deploy your first FlowEHR App!
 
 ## Pick a 🌱 Seedling
 
-The first step is to pick a seedling. A seedling is a pre-built FlowEHR App template that you can use as a starting point for your own app. You can find a list of seedlings in the [UCLH Foundry GitHub Org](https://github.com/UCLH-Foundry?view_as=public#application-and-model-serving). Which you use largely depends on which frameworks you want, whether you're building a dashboard, web API, model etc.
+The first step is to pick a seedling. A seedling is a pre-built FlowEHR App template that you can use as a starting point for your own app. You can find a list of seedlings in the [UCLH Foundry GitHub Org](https://github.com/SAFEHR-data?view_as=public#application-and-model-serving). Which you use largely depends on which frameworks you want, whether you're building a dashboard, web API, model etc.
 
-If you have no strong preference at this point, the [Dash Seedling](https://github.com/UCLH-Foundry/Dash-Seedling) is a good place to start for building a simple dashboard.
+If you have no strong preference at this point, the [Dash Seedling](https://github.com/SAFEHR-data/Dash-Seedling) is a good place to start for building a simple dashboard.
 
 
 ## Add app to FlowEHR config

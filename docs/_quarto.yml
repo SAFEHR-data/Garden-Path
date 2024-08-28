@@ -22,7 +22,7 @@ website:
         text: About
     right:
       - icon: github
-        href: https://github.com/UCLH-Foundry/Garden-Path
+        href: https://github.com/SAFEHR-data/Garden-Path
         aria-label: GitHub
   page-navigation: true
   page-footer: |
@@ -99,7 +99,7 @@ website:
             text: Vignettes
           - href: faq/faq.qmd
             text: FAQ
-  repo-url: https://github.com/UCLH-Foundry/Garden-Path
+  repo-url: https://github.com/SAFEHR-data/Garden-Path
   repo-actions: [edit, issue]
   repo-subdir: docs
 

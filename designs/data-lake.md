@@ -2,7 +2,7 @@
 
 | Author                     | Issue                                              |
 |----------------------------|----------------------------------------------------|
-| James Griffin (@jjgriff93) | https://github.com/UCLH-Foundry/FlowEHR/issues/160 |
+| James Griffin (@jjgriff93) | https://github.com/SAFEHR-data/FlowEHR/issues/160 |
 
 
 ## Context
