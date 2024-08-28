@@ -9,7 +9,7 @@ We welcome new contributions, edits to existing material, and ad hoc supporting 
 - Notebooks and vignettes can just be saved in `./docs/notebooks/`. Please ensure the first cell in the notebook contains the YAML [metadata](https://quarto.org/docs/tools/jupyter-lab.html#yaml-front-matter) for the author, title, and categories.
 - Quick notes in the style FAQ answers, or 'today I learned' notes can be saved into `./docs/faq/`
 
-Both will be automatically indexed when the site is deployed. The documentation is deployed using [Quarto](https://quarto.org), and the documentation is built from the `./docs/` directory. Please fork or clone [](https://github.com/UCLH-Foundry/Garden-Path).
+Both will be automatically indexed when the site is deployed. The documentation is deployed using [Quarto](https://quarto.org), and the documentation is built from the `./docs/` directory. Please fork or clone [](https://github.com/SAFEHR-data/Garden-Path).
 
 
 You will need to have 

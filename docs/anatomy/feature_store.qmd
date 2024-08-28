@@ -26,20 +26,20 @@ We store all features in a Microsoft SQL database, and for now have focused on t
 
 We chose MSSQL to ensure access to the database for the widest possible community within the NHS.
 
-The feature pipeline is managed by the [Data Forge](https://github.com/UCLH-Foundry/FlowEHR-Data-Forge) repository.
+The feature pipeline is managed by the [Data Forge](https://github.com/SAFEHR-data/FlowEHR-Data-Forge) repository.
 
 The key components of this include:
 
 A pipeline configuration
-: This defines which features are built, and specifies specific configuration. See [pipeline.json](https://github.com/UCLH-Foundry/FlowEHR-Data-Forge/blob/main/patients/pipeline.json)
+: This defines which features are built, and specifies specific configuration. See [pipeline.json](https://github.com/SAFEHR-data/FlowEHR-Data-Forge/blob/main/patients/pipeline.json)
 
 A pipeline trigger
-: This defines the schedule at which features are updated. See [trigger.json](https://github.com/UCLH-Foundry/FlowEHR-Data-Forge/blob/main/patients/trigger.json).
+: This defines the schedule at which features are updated. See [trigger.json](https://github.com/SAFEHR-data/FlowEHR-Data-Forge/blob/main/patients/trigger.json).
 
 A per feature entry point
-: See [bloodpressure.py](https://github.com/UCLH-Foundry/FlowEHR-Data-Forge/blob/main/patients/src/patients/entrypoints/bloodpressure.py) that generates a feature for both the latest, and the average blood pressure (where the 24 hour aggregation window is defined in `pipeline.json`). The are regenerated hourly as per the `trigger.json` configuration.
+: See [bloodpressure.py](https://github.com/SAFEHR-data/FlowEHR-Data-Forge/blob/main/patients/src/patients/entrypoints/bloodpressure.py) that generates a feature for both the latest, and the average blood pressure (where the 24 hour aggregation window is defined in `pipeline.json`). The are regenerated hourly as per the `trigger.json` configuration.
 
 A per feature 'job'
-: See [bloodpressure/job.py](https://github.com/UCLH-Foundry/FlowEHR-Data-Forge/blob/main/patients/src/patients/features/bloodpressure/job.py) that fetches the source data, splits the text representation `120/70` into integers for systolic and diastolic pressures, 
+: See [bloodpressure/job.py](https://github.com/SAFEHR-data/FlowEHR-Data-Forge/blob/main/patients/src/patients/features/bloodpressure/job.py) that fetches the source data, splits the text representation `120/70` into integers for systolic and diastolic pressures, 
 
 Each feature is keyed on an identifier for the hospital visit, and the `horizon_datetime` is the timestamp derived from the trigger against which all these features are anchored. 

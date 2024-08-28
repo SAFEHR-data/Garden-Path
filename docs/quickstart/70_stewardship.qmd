@@ -4,7 +4,7 @@ author: Steve Harris
 date: 2023-03-29
 ---
 
-Models should not be deployed without a monitoring strategy. To this end, we provide a [template](https://github.com/UCLH-Foundry/Model-Seedling) that addresses _data drift_ and _model drift_. These steps are in addition to the data testing that is built into the feature engineering pipeline.
+Models should not be deployed without a monitoring strategy. To this end, we provide a [template](https://github.com/SAFEHR-data/Model-Seedling) that addresses _data drift_ and _model drift_. These steps are in addition to the data testing that is built into the feature engineering pipeline.
 
 ## Key terms
 
@@ -15,6 +15,6 @@ Models should not be deployed without a monitoring strategy. To this end, we pro
 
 ## Walk through
 
-- Clone the 'model seedling' [template](https://github.com/UCLH-Foundry/Model-Seedling)
+- Clone the 'model seedling' [template](https://github.com/SAFEHR-data/Model-Seedling)
 
 
