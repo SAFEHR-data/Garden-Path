@@ -3,7 +3,8 @@ title: Virtual Machines
 author: 
     - Ahmed Al-Hindawi
     - Tom Frost
-date: 2023-03-04
+    - David Ramlakhan
+date: 2023-07-28
 ---
 
 As a user of FlowEHR you will need to create a virtual machine (VM)
@@ -24,13 +25,10 @@ which should be consulted before performing the below steps.
 3. Under `Workspace Services`, select the `VMs` option
 4. Under `Resources`, you will see any previously created VMs. If there
     are none, select `Create New` in the upper right
-5. Select `Linux Machine > Create` (only option available as of
-    05/12/2022)
+5. Click 'Create' on either the 'Windows Virtual Machine' or the 'Linux Virtual Machine'
 6. Choose an approriate name and description for the VM and select the
-    desired image.
-    - For linux VMs, there are two Ubuntu 18.04 images available. The
-      `Data Science` variant may have a more relevant selection of
-      packages installed.
+    desired image. 
+    - For the Windows Virtual Machine, choose the 'Windows 11 DSVM RPython' image, as this is actively maintained
 7. Select an approriate VM size from the dropdown menu. If you’re not
     sure of your requirements, opt for the `2 CPU | 8GB RAM` option. You
     can scale this up later if needed.
@@ -65,8 +63,8 @@ which should be consulted before performing the below steps.
 
 1. Select the three dots at the upper right of the VM entry under
     `Resources`
-2. Select `Action > Stop`
-3. When the VM has been deallocated, repeat step 1. and select `Delete`
+2. Select `Action > Disable`
+3. When the VM has been disabled, repeat step 1. and select `Action > Delete`
 
 ## Installing software within the VM
 
@@ -75,35 +73,24 @@ restricted.
 
 ### GitHub
 
-Access to repositories hosted on [GitHub](https://github.com/) is restricted. Repositories can be mirrored on an ad-hoc basis to a TRE-accessible [Gitea](https://gitea.io) instance, where this documentation can also be found.
+Access to repositories hosted on then internet, such as https://github.com/, is restricted. Repositories can be mirrored a TRE-accessible Gitea Shared Service. If you need to have any repositories mirrored in the Gitea Shared Service, then please ask your TRE Administrator to create the mirror. 
 
-You should be supplied with the URL for the Gitea instance during your onboarding. If you have not received the Gitea URL, please request it from member of the team.
+Note that mirrors on the Gitea Shared Service are read-only copies of the 
+source Github repository: the mirror will periodically pull updates from the source mirror, but
+you will not be able to push changes back to either the Gitea instance or to Github. 
+
+The TRE Workspaces also provides an option to use read-write Gitea repos. This will allow for the
+use of Gitea repositories that can be shared with colleagues within the same TRE workspace. These repositories are read/write from within the TRE Workspace, but there is no direct connection to synchronise these repositories with internet sources. However, if needed, the Airlock facility can be used to transfer data from the Workspace Gitea repo to an 
+internet-accessible location. 
 
 ### APT packages
 
-The VM has access to software packages via a
-[Nexus](https://microsoft.github.io/AzureTRE/latest/tre-templates/shared-services/nexus/)
-mirror
+Workspace Linux VMs are preconfigured to use the [Nexus](https://microsoft.github.io/AzureTRE/latest/tre-templates/shared-services/nexus/)
+mirror. You can use `sudo apt` and its variants to update repository info, and install new 
+packages to your VM. 
 
 ### Python packages via Conda and PyPI
 
 The Nexus mirror provides mirrored access to packages available via
 conda forge and PyPI via the standard `pip install` and `conda install`
 command line interfaces.
-
-
-## Accessing EHR and DICOM data within the TRE
-
-This documentation is accompanied by Jupyter notebook files which provide detailed examples of accessing and viewing EHR and DICOM data from within a Jupyter Lab environment within a TRE VM.
-
-Before launching the notebooks and after following the steps in the [above example](#example-running-a-jupyter-notebook-from-this-documentation-within-a-virtual-environment), install required dependencies within your created virtual environment with
-
-```bash
-pip install -r requirements.txt
-```
-
-### A note on the data accessible from the TRE
-
-Data provided has gone through an anonymisation step and will not entirely look like the original data due to the removal of PII and consequent structural changes that may appear as a result, such as line break removals.
-
-As such, structural elements of reports such as line breaks or sentence lengths should **not** be used to generate features as inputs to machine learning models.
